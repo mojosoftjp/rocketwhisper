@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RocketWhisperのプライバシーポリシー。データの取り扱いについて説明します。">
+    <title>プライバシーポリシー - RocketWhisper</title>
+    <link rel="icon" type="image/png" href="images/RocketWhisper3.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">機能</a></li>
+                <li><a href="index.html#how-it-works">使い方</a></li>
+                <li><a href="index.html#download">ダウンロード</a></li>
+                <li><a href="help.html">ヘルプ</a></li>
+                <li><a href="privacy.html" class="active">プライバシー</a></li>
+                <li><a href="support.html">サポート</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="page-header">
+        <div class="container">
+            <h1>プライバシーポリシー</h1>
+            <p>RocketWhisperは、あなたのプライバシーを最優先に設計されています。</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="page-content">
+        <div class="container">
+            <section class="content-section">
+                <p><strong>最終更新日: 2026年1月19日</strong></p>
+                <p>本プライバシーポリシーは、RocketWhisper（以下「本アプリ」）におけるデータの取り扱いについて説明します。Mojosoft Co., Ltd.（以下「当社」）は、ユーザーのプライバシー保護を最優先に考え、本アプリを設計・開発しています。</p>
+            </section>
+
+            <section class="content-section">
+                <h2>1. 基本方針</h2>
+                <div class="info-card">
+                    <h4>完全オフライン・完全ローカル処理</h4>
+                    <p>RocketWhisperは<strong>完全オフライン</strong>で動作するアプリケーションです。音声認識処理はすべてお使いのコンピュータ内で行われ、<strong>音声データや認識結果が外部サーバーに送信されることは一切ありません</strong>。</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>2. 収集しないデータ</h2>
+                <p>本アプリは以下のデータを<strong>一切収集しません</strong>：</p>
+                <ul>
+                    <li>音声データ（録音された音声）</li>
+                    <li>音声認識結果（テキストデータ）</li>
+                    <li>個人を特定できる情報（氏名、メールアドレス、IPアドレス等）</li>
+                    <li>使用状況のテレメトリデータ</li>
+                    <li>位置情報</li>
+                    <li>デバイス識別情報</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>3. ローカル処理について</h2>
+                <p>本アプリの音声認識機能は、OpenAI Whisperモデルをローカルで実行することで実現されています。</p>
+
+                <h3>処理の流れ</h3>
+                <ol>
+                    <li>マイクから音声を録音、または音声ファイルを読み込み</li>
+                    <li>お使いのコンピュータ上でWhisperモデルが音声を解析</li>
+                    <li>認識結果がアプリ内に表示</li>
+                </ol>
+
+                <p><strong>この処理の全過程において、データがインターネットを経由することはありません。</strong></p>
+            </section>
+
+            <section class="content-section">
+                <h2>4. ローカルに保存されるデータ</h2>
+                <p>本アプリは、ユーザー体験の向上のために以下のデータをお使いのコンピュータにローカル保存します：</p>
+
+                <h3>設定情報（Windowsレジストリ）</h3>
+                <ul>
+                    <li>選択されたWhisperモデル</li>
+                    <li>認識言語設定</li>
+                    <li>マイクデバイス設定</li>
+                    <li>ホットキー設定</li>
+                    <li>自動コピー/貼り付け設定</li>
+                    <li>ウィンドウ位置・サイズ</li>
+                </ul>
+                <p><strong>保存場所:</strong> <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code></p>
+
+                <h3>認識履歴（ローカルファイル）</h3>
+                <ul>
+                    <li>過去の認識結果テキスト</li>
+                    <li>認識日時</li>
+                    <li>ソース情報（マイク/ファイル）</li>
+                </ul>
+                <p><strong>保存場所:</strong> <code>%APPDATA%\RocketWhisper\history.json</code></p>
+
+                <h3>専門用語・修正ルール</h3>
+                <ul>
+                    <li>登録された専門用語</li>
+                    <li>誤認識修正ルール</li>
+                    <li>音声コマンド設定</li>
+                </ul>
+                <p><strong>保存場所:</strong> <code>%APPDATA%\RocketWhisper\</code></p>
+
+                <h3>Whisperモデルファイル</h3>
+                <ul>
+                    <li>ダウンロードしたWhisperモデル（.bin形式）</li>
+                </ul>
+                <p><strong>保存場所:</strong> <code>%APPDATA%\RocketWhisper\Models\</code></p>
+
+                <div class="info-card">
+                    <h4>データの削除方法</h4>
+                    <p>これらのローカルデータは、以下の手順で完全に削除できます：</p>
+                    <ol>
+                        <li>RocketWhisperをアンインストール</li>
+                        <li><code>%APPDATA%\RocketWhisper</code> フォルダを削除</li>
+                        <li>レジストリエディタで <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code> を削除（任意）</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>5. 第三者への提供</h2>
+                <p>本アプリはデータを外部に送信しないため、<strong>第三者へのデータ提供は一切行いません</strong>。</p>
+            </section>
+
+            <section class="content-section">
+                <h2>6. ネットワーク通信</h2>
+                <p>本アプリがネットワーク通信を行うのは、以下の場合のみです：</p>
+
+                <h3>Whisperモデルのダウンロード</h3>
+                <ul>
+                    <li><strong>接続先:</strong> Hugging Face（モデルホスティングサービス）</li>
+                    <li><strong>目的:</strong> 音声認識モデルファイルのダウンロード</li>
+                    <li><strong>送信データ:</strong> なし（ダウンロードリクエストのみ）</li>
+                </ul>
+
+                <p>モデルをダウンロード後は、<strong>完全にオフラインで動作</strong>します。</p>
+            </section>
+
+            <section class="content-section">
+                <h2>7. セキュリティ</h2>
+                <p>本アプリはセキュリティを考慮して設計されています：</p>
+                <ul>
+                    <li>すべての処理がローカルで完結するため、データ漏洩のリスクが最小限</li>
+                    <li>ネットワーク経由でのデータ送信がないため、中間者攻撃のリスクなし</li>
+                    <li>認識履歴はユーザーのローカルストレージにのみ保存</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>8. お子様のプライバシー</h2>
+                <p>本アプリは年齢制限なく使用できますが、13歳未満のお子様が使用される場合は、保護者の監督のもとでご利用ください。本アプリはお子様の個人情報を収集しません。</p>
+            </section>
+
+            <section class="content-section">
+                <h2>9. プライバシーポリシーの変更</h2>
+                <p>当社は、必要に応じて本プライバシーポリシーを更新することがあります。重要な変更がある場合は、本ページで通知します。定期的にご確認ください。</p>
+            </section>
+
+            <section class="content-section">
+                <h2>10. お問い合わせ</h2>
+                <p>本プライバシーポリシーに関するご質問やご意見は、以下の方法でお問い合わせください：</p>
+                <ul>
+                    <li><strong>GitHub Issues:</strong> <a href="https://github.com/mojosoftjp/rocketwhisper/issues">https://github.com/mojosoftjp/rocketwhisper/issues</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <div class="info-card">
+                    <h4>まとめ</h4>
+                    <p>RocketWhisperは、あなたの音声データとプライバシーを完全に保護します。すべての処理はお使いのコンピュータ内で完結し、外部への送信は一切行いません。安心してご利用ください。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">声を、テキストに。瞬時に、正確に。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>製品</h4>
+                        <ul>
+                            <li><a href="index.html#features">機能</a></li>
+                            <li><a href="index.html#download">ダウンロード</a></li>
+                            <li><a href="https://github.com/mojosoftjp/rocketwhisper/releases">リリースノート</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="help.html">ヘルプ</a></li>
+                            <li><a href="support.html">お問い合わせ</a></li>
+                            <li><a href="https://github.com/mojosoftjp/rocketwhisper/issues">バグ報告</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法的情報</h4>
+                        <ul>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                            <li><a href="https://github.com/mojosoftjp/rocketwhisper/blob/main/LICENSE">ライセンス</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

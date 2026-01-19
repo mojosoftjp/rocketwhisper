@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RocketWhisperの使い方ガイド。インストール方法から高度な設定まで詳しく解説。">
+    <title>使い方ガイド - RocketWhisper</title>
+    <link rel="icon" type="image/png" href="images/RocketWhisper3.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">機能</a></li>
+                <li><a href="index.html#how-it-works">使い方</a></li>
+                <li><a href="index.html#download">ダウンロード</a></li>
+                <li><a href="help.html" class="active">ヘルプ</a></li>
+                <li><a href="privacy.html">プライバシー</a></li>
+                <li><a href="support.html">サポート</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="page-header">
+        <div class="container">
+            <h1>使い方ガイド</h1>
+            <p>RocketWhisperの基本的な使い方から高度な設定まで、詳しく解説します。</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="page-content">
+        <div class="container">
+            <!-- 目次 -->
+            <nav class="content-section">
+                <h2>目次</h2>
+                <ol>
+                    <li><a href="#installation">インストール方法</a></li>
+                    <li><a href="#basic-usage">基本的な使い方</a></li>
+                    <li><a href="#settings">設定</a></li>
+                    <li><a href="#hotkey">グローバルホットキー</a></li>
+                    <li><a href="#batch">バッチ処理</a></li>
+                    <li><a href="#history">認識履歴</a></li>
+                    <li><a href="#voice-commands">音声コマンド</a></li>
+                    <li><a href="#custom-terms">専門用語登録</a></li>
+                    <li><a href="#correction-rules">誤認識修正ルール</a></li>
+                    <li><a href="#troubleshooting">トラブルシューティング</a></li>
+                </ol>
+            </nav>
+
+            <!-- インストール -->
+            <section class="content-section" id="installation">
+                <h2>1. インストール方法</h2>
+
+                <h3>動作要件</h3>
+                <ul>
+                    <li>Windows 10 / 11 (64bit)</li>
+                    <li>.NET 8.0 Desktop Runtime</li>
+                    <li>RAM 8GB以上推奨</li>
+                    <li>GPU（CUDA対応）があると高速化</li>
+                </ul>
+
+                <h3>インストール手順</h3>
+                <ol>
+                    <li><a href="https://github.com/mojosoftjp/rocketwhisper/releases">GitHubリリースページ</a>から最新版をダウンロード</li>
+                    <li>ダウンロードしたZIPファイルを展開</li>
+                    <li><code>RocketWhisper.exe</code> を実行</li>
+                    <li>初回起動時、使用するWhisperモデルをダウンロード</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>モデルの選び方</h4>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>モデル</th>
+                                <th>サイズ</th>
+                                <th>精度</th>
+                                <th>速度</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tiny</td>
+                                <td>75MB</td>
+                                <td>低</td>
+                                <td>最速</td>
+                            </tr>
+                            <tr>
+                                <td>base</td>
+                                <td>142MB</td>
+                                <td>中</td>
+                                <td>速い</td>
+                            </tr>
+                            <tr>
+                                <td>small</td>
+                                <td>466MB</td>
+                                <td>高</td>
+                                <td>普通</td>
+                            </tr>
+                            <tr>
+                                <td>medium</td>
+                                <td>1.5GB</td>
+                                <td>高</td>
+                                <td>やや遅い</td>
+                            </tr>
+                            <tr>
+                                <td>large-v3</td>
+                                <td>2.9GB</td>
+                                <td>最高</td>
+                                <td>遅い</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>初めての方は <strong>small</strong> モデルがおすすめです。精度と速度のバランスが良好です。</p>
+                </div>
+            </section>
+
+            <!-- 基本的な使い方 -->
+            <section class="content-section" id="basic-usage">
+                <h2>2. 基本的な使い方</h2>
+
+                <h3>マイク入力で音声認識</h3>
+                <ol>
+                    <li>RocketWhisperを起動</li>
+                    <li>録音ボタン（マイクアイコン）をクリック</li>
+                    <li>マイクに向かって話す</li>
+                    <li>停止ボタンをクリック</li>
+                    <li>認識結果がテキストエリアに表示される</li>
+                </ol>
+
+                <h3>ファイルから音声認識</h3>
+                <ol>
+                    <li>ファイル選択ボタンをクリック</li>
+                    <li>音声ファイル（WAV/MP3/FLAC/OGG/M4A/WMA）を選択</li>
+                    <li>自動的に認識処理が開始</li>
+                    <li>認識結果がテキストエリアに表示される</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>ドラッグ＆ドロップ対応</h4>
+                    <p>音声ファイルをRocketWhisperのウィンドウにドラッグ＆ドロップするだけで、すぐに認識を開始できます。</p>
+                </div>
+
+                <h3>認識結果の利用</h3>
+                <ul>
+                    <li><strong>コピー</strong>: コピーボタンでクリップボードにコピー</li>
+                    <li><strong>保存</strong>: 保存ボタンでテキストファイルとして保存</li>
+                    <li><strong>自動コピー</strong>: 設定で有効にすると認識完了時に自動コピー</li>
+                    <li><strong>自動貼り付け</strong>: 設定で有効にすると認識完了時に自動貼り付け</li>
+                </ul>
+            </section>
+
+            <!-- 設定 -->
+            <section class="content-section" id="settings">
+                <h2>3. 設定</h2>
+                <p>歯車アイコンをクリックして設定画面を開きます。5つのタブで詳細な設定が可能です。</p>
+
+                <h3>基本設定タブ</h3>
+                <ul>
+                    <li><strong>モデル選択</strong>: 使用するWhisperモデルを選択</li>
+                    <li><strong>言語</strong>: 認識言語（日本語/英語/中国語/韓国語/自動検出）</li>
+                    <li><strong>マイクデバイス</strong>: 使用するマイクを選択</li>
+                </ul>
+
+                <h3>動作設定タブ</h3>
+                <ul>
+                    <li><strong>自動コピー</strong>: 認識完了時に自動でクリップボードにコピー</li>
+                    <li><strong>自動貼り付け</strong>: 認識完了時に自動でアクティブウィンドウに貼り付け</li>
+                    <li><strong>音声コマンド</strong>: 音声コマンド機能の有効/無効</li>
+                </ul>
+
+                <h3>ホットキータブ</h3>
+                <ul>
+                    <li><strong>グローバルホットキー</strong>: どのアプリからでも録音を開始できるショートカット</li>
+                    <li><strong>有効/無効</strong>: ホットキー機能のオン/オフ</li>
+                </ul>
+
+                <h3>専門用語タブ</h3>
+                <ul>
+                    <li>認識精度を向上させるためのカスタム用語を登録</li>
+                </ul>
+
+                <h3>修正ルールタブ</h3>
+                <ul>
+                    <li>誤認識を自動修正するルールを設定</li>
+                </ul>
+            </section>
+
+            <!-- グローバルホットキー -->
+            <section class="content-section" id="hotkey">
+                <h2>4. グローバルホットキー</h2>
+                <p>どのアプリケーションを使用中でも、設定したキーの組み合わせで即座に録音を開始できます。</p>
+
+                <h3>設定方法</h3>
+                <ol>
+                    <li>設定画面を開く</li>
+                    <li>「ホットキー」タブを選択</li>
+                    <li>入力欄をクリック</li>
+                    <li>使用したいキーの組み合わせを押す（例: <code>Ctrl + Shift + R</code>）</li>
+                    <li>「有効」にチェックを入れる</li>
+                </ol>
+
+                <h3>使い方</h3>
+                <ol>
+                    <li>テキストエディタやブラウザなど、任意のアプリを開く</li>
+                    <li>設定したホットキーを押す → 録音開始</li>
+                    <li>話し終えたら再度ホットキーを押す → 録音停止</li>
+                    <li>自動貼り付けが有効なら、認識結果が自動的に入力される</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>おすすめのホットキー</h4>
+                    <ul>
+                        <li><code>Ctrl + Shift + R</code> - Record（録音）のR</li>
+                        <li><code>Ctrl + Alt + V</code> - Voice（音声）のV</li>
+                        <li><code>F9</code> - ファンクションキー（他と競合しにくい）</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- バッチ処理 -->
+            <section class="content-section" id="batch">
+                <h2>5. バッチ処理</h2>
+                <p>複数の音声ファイルを一括で文字起こしできます。</p>
+
+                <h3>バッチ処理の手順</h3>
+                <ol>
+                    <li>メニューから「バッチ処理」を選択</li>
+                    <li>処理したいファイルを追加（複数選択可）</li>
+                    <li>出力形式を選択（テキスト/SRT/VTT）</li>
+                    <li>「処理開始」をクリック</li>
+                    <li>処理完了まで待機</li>
+                </ol>
+
+                <h3>対応フォーマット</h3>
+                <ul>
+                    <li><strong>入力</strong>: WAV, MP3, FLAC, OGG, M4A, WMA</li>
+                    <li><strong>出力</strong>: TXT（プレーンテキスト）, SRT（字幕）, VTT（Web字幕）</li>
+                </ul>
+            </section>
+
+            <!-- 認識履歴 -->
+            <section class="content-section" id="history">
+                <h2>6. 認識履歴</h2>
+                <p>過去の認識結果は自動的に保存され、いつでも参照・再利用できます。</p>
+
+                <h3>履歴の確認</h3>
+                <ol>
+                    <li>履歴ボタン（時計アイコン）をクリック</li>
+                    <li>過去の認識結果一覧が表示される</li>
+                    <li>項目をクリックして詳細を確認</li>
+                </ol>
+
+                <h3>履歴の操作</h3>
+                <ul>
+                    <li><strong>検索</strong>: キーワードで過去の認識結果を検索</li>
+                    <li><strong>コピー</strong>: 選択した結果をクリップボードにコピー</li>
+                    <li><strong>削除</strong>: 不要な履歴を削除</li>
+                    <li><strong>エクスポート</strong>: 履歴をファイルとして出力</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>履歴の保存場所</h4>
+                    <p>履歴データは <code>%APPDATA%\RocketWhisper\history.json</code> に保存されます。</p>
+                </div>
+            </section>
+
+            <!-- 音声コマンド -->
+            <section class="content-section" id="voice-commands">
+                <h2>7. 音声コマンド</h2>
+                <p>音声で句読点や改行を入力できます。声だけで完璧な文章を作成可能。</p>
+
+                <h3>利用可能なコマンド</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>コマンド</th>
+                            <th>トリガーフレーズ</th>
+                            <th>動作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>改行</td>
+                            <td>「改行」「かいぎょう」「エンター」</td>
+                            <td>改行を挿入</td>
+                        </tr>
+                        <tr>
+                            <td>段落</td>
+                            <td>「段落」「だんらく」「新しい段落」</td>
+                            <td>2回改行（段落区切り）</td>
+                        </tr>
+                        <tr>
+                            <td>句点</td>
+                            <td>「句点」「ピリオド」</td>
+                            <td>「。」を挿入</td>
+                        </tr>
+                        <tr>
+                            <td>読点</td>
+                            <td>「読点」「コンマ」「カンマ」</td>
+                            <td>「、」を挿入</td>
+                        </tr>
+                        <tr>
+                            <td>疑問符</td>
+                            <td>「疑問符」「はてな」「クエスチョン」</td>
+                            <td>「？」を挿入</td>
+                        </tr>
+                        <tr>
+                            <td>感嘆符</td>
+                            <td>「感嘆符」「びっくり」</td>
+                            <td>「！」を挿入</td>
+                        </tr>
+                        <tr>
+                            <td>削除</td>
+                            <td>「削除」「取り消し」「デリート」</td>
+                            <td>直前の単語を削除</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>使い方のコツ</h3>
+                <ul>
+                    <li>コマンドは文章の区切りではっきりと発声する</li>
+                    <li>コマンド前後に少し間を置くと認識精度が向上</li>
+                    <li>設定画面で音声コマンドの有効/無効を切り替え可能</li>
+                </ul>
+            </section>
+
+            <!-- 専門用語登録 -->
+            <section class="content-section" id="custom-terms">
+                <h2>8. 専門用語登録</h2>
+                <p>業界特有の用語や固有名詞を登録して、認識精度を向上させます。</p>
+
+                <h3>登録方法</h3>
+                <ol>
+                    <li>設定画面を開く</li>
+                    <li>「専門用語」タブを選択</li>
+                    <li>用語を入力して「追加」をクリック</li>
+                </ol>
+
+                <h3>効果的な登録のコツ</h3>
+                <ul>
+                    <li><strong>固有名詞</strong>: 会社名、製品名、人名など</li>
+                    <li><strong>業界用語</strong>: 専門的な技術用語</li>
+                    <li><strong>略語</strong>: よく使う略称や頭字語</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>例</h4>
+                    <p>「Whisper.NET」「Mojosoft」「RocketWhisper」などを登録しておくと、これらの単語が正確に認識されやすくなります。</p>
+                </div>
+            </section>
+
+            <!-- 誤認識修正ルール -->
+            <section class="content-section" id="correction-rules">
+                <h2>9. 誤認識修正ルール</h2>
+                <p>特定の誤認識パターンを自動的に修正するルールを設定できます。</p>
+
+                <h3>ルールの追加方法</h3>
+                <ol>
+                    <li>設定画面を開く</li>
+                    <li>「修正ルール」タブを選択</li>
+                    <li>「認識される文字列」と「修正後の文字列」を入力</li>
+                    <li>「追加」をクリック</li>
+                </ol>
+
+                <h3>正規表現の使用</h3>
+                <p>高度なパターンマッチングには正規表現が使用できます。</p>
+                <pre><code>// 例: 「ですね」の後に自動で句点を追加
+認識: ですね$
+修正: ですね。</code></pre>
+
+                <div class="info-card">
+                    <h4>内蔵ハルシネーション対策</h4>
+                    <p>RocketWhisperには73種類のWhisperハルシネーション対策が内蔵されています。「ご視聴ありがとうございました」などの不要なフレーズは自動的に削除されます。</p>
+                </div>
+            </section>
+
+            <!-- トラブルシューティング -->
+            <section class="content-section" id="troubleshooting">
+                <h2>10. トラブルシューティング</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question">モデルのダウンロードが途中で止まる</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>ネットワーク接続を確認してください。ファイアウォールやプロキシの設定が原因の場合があります。</p>
+                            <ul>
+                                <li>インターネット接続を確認</li>
+                                <li>ファイアウォールでRocketWhisperを許可</li>
+                                <li>VPNを一時的に無効化</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">認識精度が低い</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>より大きなモデル（small以上）を使用</li>
+                                <li>マイクを口に近づける</li>
+                                <li>周囲の騒音を減らす</li>
+                                <li>専門用語を登録する</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">ホットキーが動作しない</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>設定でホットキーが「有効」になっているか確認</li>
+                                <li>他のアプリと競合していないか確認</li>
+                                <li>管理者権限で実行してみる</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">音声コマンドが認識されない</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>設定で音声コマンドが「有効」になっているか確認</li>
+                                <li>コマンドをはっきりと発声する</li>
+                                <li>コマンドの前後に少し間を置く</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">アプリが起動しない</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>.NET 8.0 Desktop Runtimeがインストールされているか確認</li>
+                                <li>Windows 10/11 64bitであるか確認</li>
+                                <li>アンチウイルスソフトにブロックされていないか確認</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- サポートへのリンク -->
+            <section class="content-section">
+                <div class="info-card">
+                    <h4>問題が解決しない場合</h4>
+                    <p><a href="support.html">サポートページ</a>からお問い合わせいただくか、<a href="https://github.com/mojosoftjp/rocketwhisper/issues">GitHub Issues</a>でバグ報告をお願いします。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">声を、テキストに。瞬時に、正確に。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>製品</h4>
+                        <ul>
+                            <li><a href="index.html#features">機能</a></li>
+                            <li><a href="index.html#download">ダウンロード</a></li>
+                            <li><a href="https://github.com/mojosoftjp/rocketwhisper/releases">リリースノート</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="help.html">ヘルプ</a></li>
+                            <li><a href="support.html">お問い合わせ</a></li>
+                            <li><a href="https://github.com/mojosoftjp/rocketwhisper/issues">バグ報告</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法的情報</h4>
+                        <ul>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                            <li><a href="https://github.com/mojosoftjp/rocketwhisper/blob/main/LICENSE">ライセンス</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
