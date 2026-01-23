@@ -61,6 +61,7 @@
                     <li><a href="#custom-terms">専門用語登録</a></li>
                     <li><a href="#correction-rules">誤認識修正ルール</a></li>
                     <li><a href="#app-specific">アプリ別処理モード</a></li>
+                    <li><a href="#ai-formatting">AI整形（LLM連携）</a></li>
                     <li><a href="#troubleshooting">トラブルシューティング</a></li>
                 </ol>
             </nav>
@@ -171,7 +172,7 @@
             <!-- 設定 -->
             <section class="content-section" id="settings">
                 <h2>3. 設定</h2>
-                <p>歯車アイコンをクリックして設定画面を開きます。7つのタブで詳細な設定が可能です。</p>
+                <p>歯車アイコンをクリックして設定画面を開きます。8つのタブで詳細な設定が可能です。</p>
 
                 <h3>モデル・言語タブ</h3>
                 <ul>
@@ -213,6 +214,14 @@
                 <ul>
                     <li><strong>処理モード</strong>: アプリごとに異なるテキスト処理設定を適用</li>
                     <li><strong>アプリマッピング</strong>: 特定のアプリに処理モードを割り当て</li>
+                </ul>
+
+                <h3>AI整形タブ</h3>
+                <ul>
+                    <li><strong>AIプロバイダ</strong>: OpenAI、Anthropic、Groq、Gemini、ローカルLLMから選択</li>
+                    <li><strong>モデル選択</strong>: 使用するAIモデルを選択</li>
+                    <li><strong>APIキー</strong>: 各プロバイダのAPIキーを入力</li>
+                    <li><strong>接続テスト</strong>: 設定が正しいか確認</li>
                 </ul>
 
                 <div class="info-card">
@@ -617,9 +626,122 @@
                 </div>
             </section>
 
+            <!-- AI整形（LLM連携） -->
+            <section class="content-section" id="ai-formatting">
+                <h2>12. AI整形（LLM連携）</h2>
+                <p>外部のAI（LLM）と連携して、認識結果を自動的にビジネス敬語やカジュアル文体に変換したり、要約・翻訳を行う機能です。</p>
+
+                <h3>対応AIプロバイダ</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>プロバイダ</th>
+                            <th>モデル例</th>
+                            <th>特徴</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td>gpt-4o, gpt-4o-mini</td>
+                            <td>高精度、安定した品質</td>
+                        </tr>
+                        <tr>
+                            <td>Anthropic</td>
+                            <td>Claude 4.5 Sonnet/Haiku</td>
+                            <td>自然な日本語、長文対応</td>
+                        </tr>
+                        <tr>
+                            <td>Groq</td>
+                            <td>LLaMA 3.3 70B, Mixtral</td>
+                            <td>高速・無料枠あり</td>
+                        </tr>
+                        <tr>
+                            <td>Google Gemini</td>
+                            <td>gemini-2.5-pro/flash</td>
+                            <td>無料枠豊富、高品質</td>
+                        </tr>
+                        <tr>
+                            <td>ローカルLLM</td>
+                            <td>LM Studio, Ollama</td>
+                            <td>オフライン動作、プライバシー保護</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>設定方法</h3>
+                <ol>
+                    <li>設定画面を開く</li>
+                    <li>「AI整形」タブを選択</li>
+                    <li>使用するプロバイダを選択</li>
+                    <li>APIキーを入力（ローカルLLMの場合はベースURLのみ）</li>
+                    <li>「接続テスト」で動作確認</li>
+                </ol>
+
+                <h3>AI整形モード</h3>
+                <p>AI整形を設定すると、アプリ別処理で以下のモードが使用可能になります。</p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>モード</th>
+                            <th>説明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>💼 ビジネス</td>
+                            <td>敬語・丁寧な文体に自動変換</td>
+                        </tr>
+                        <tr>
+                            <td>💬 カジュアル</td>
+                            <td>親しみやすい文体に変換</td>
+                        </tr>
+                        <tr>
+                            <td>📝 要約</td>
+                            <td>テキストを簡潔に要約</td>
+                        </tr>
+                        <tr>
+                            <td>🌐 翻訳</td>
+                            <td>日本語から英語に翻訳</td>
+                        </tr>
+                        <tr>
+                            <td>✔️ 文法修正</td>
+                            <td>誤認識・文法を自動修正</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>ローカルLLM（LM Studio）の設定例</h3>
+                <ol>
+                    <li>LM Studioを起動</li>
+                    <li>使用するモデルをロード</li>
+                    <li>「Local Server」タブで「Start Server」をクリック</li>
+                    <li>RocketWhisperの設定画面 → AI整形タブ</li>
+                    <li>「ローカルLLM」を選択</li>
+                    <li>ベースURL: <code>http://127.0.0.1:1234</code> を入力</li>
+                    <li>モデルID: 空欄のままでOK（サーバーでロード中のモデルを使用）</li>
+                    <li>「接続テスト」をクリックして確認</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>ローカルLLMのメリット</h4>
+                    <ul>
+                        <li><strong>プライバシー保護</strong>: データは外部に送信されません</li>
+                        <li><strong>無料</strong>: APIコストがかかりません</li>
+                        <li><strong>オフライン動作</strong>: インターネット接続不要</li>
+                    </ul>
+                    <p>※ /v1 パスは自動的に追加されます</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 処理フロー</strong></p>
+                    <p>AI整形は、音声認識 → 句読点挿入 → 改行挿入 → <strong>AI整形</strong> → 半角→全角変換 の順で処理されます。AI整形が失敗した場合は、元のテキストがそのまま使用されます。</p>
+                </div>
+            </section>
+
             <!-- トラブルシューティング -->
             <section class="content-section" id="troubleshooting">
-                <h2>12. トラブルシューティング</h2>
+                <h2>13. トラブルシューティング</h2>
 
                 <div class="faq-item">
                     <button class="faq-question">モデルのダウンロードが途中で止まる</button>
