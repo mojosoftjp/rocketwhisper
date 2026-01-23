@@ -65,6 +65,7 @@
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <p>初回のモデルダウンロード時のみインターネット接続が必要です。モデルをダウンロード後は、完全にオフラインで動作します。</p>
+                            <p>※ AI整形機能でクラウドAPI（OpenAI、Gemini等）を使用する場合は、その通信にインターネット接続が必要です。ローカルLLM（LM Studio、Ollama）を選択すれば完全オフラインで利用できます。</p>
                         </div>
                     </div>
                 </div>
@@ -73,7 +74,8 @@
                     <button class="faq-question">音声データはどこに送信されますか？</button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>どこにも送信されません。RocketWhisperはすべての音声処理をお使いのコンピュータ内で完結させます。音声データが外部サーバーに送信されることは一切ありません。詳細は<a href="privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+                            <p>音声データはどこにも送信されません。RocketWhisperはすべての音声処理をお使いのコンピュータ内で完結させます。</p>
+                            <p>※ AI整形機能でクラウドAPI（OpenAI、Gemini等）を使用する場合は、認識結果のテキストのみが各プロバイダに送信されます。音声データ自体は送信されません。プライバシーを最優先にする場合は、ローカルLLMを選択してください。詳細は<a href="privacy.html">プライバシーポリシー</a>をご確認ください。</p>
                         </div>
                     </div>
                 </div>
@@ -97,7 +99,7 @@
                     <button class="faq-question">GPUがなくても使えますか？</button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>はい、CPUのみでも動作します。ただし、GPUがあると認識速度が大幅に向上します。GPUなしの場合は、tinyやbaseなどの小さなモデルの使用をおすすめします。</p>
+                            <p>はい、CPUのみでも動作します。ただし、GPUがあると認識速度が大幅に向上します。GPUなしの場合は、smallモデルの使用をおすすめします。</p>
                         </div>
                     </div>
                 </div>
@@ -191,7 +193,7 @@
                     <ol>
                         <li><strong>RocketWhisperのバージョン</strong>（設定画面で確認可能）</li>
                         <li><strong>Windowsのバージョン</strong>（Windows 10/11、ビルド番号）</li>
-                        <li><strong>使用しているWhisperモデル</strong>（tiny/base/small/medium/large-v3）</li>
+                        <li><strong>使用しているWhisperモデル</strong>（small/medium/large-v3）</li>
                         <li><strong>問題の詳細な説明</strong>
                             <ul>
                                 <li>何をしようとしたか</li>
