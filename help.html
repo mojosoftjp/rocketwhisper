@@ -629,7 +629,7 @@
             <!-- AI整形（LLM連携） -->
             <section class="content-section" id="ai-formatting">
                 <h2>12. AI整形（LLM連携）</h2>
-                <p>外部のAI（LLM）と連携して、認識結果を自動的にビジネス敬語やカジュアル文体に変換したり、要約・翻訳を行う機能です。</p>
+                <p>外部のAI（LLM）と連携して、認識結果を自動的にビジネス敬語やカジュアル文体に変換したり、要約・翻訳を行う機能です。ローカルLLM（LM Studio/Ollama）を使えば、オフライン環境でもAI整形が利用できます。</p>
 
                 <h3>対応AIプロバイダ</h3>
                 <table class="command-table">
@@ -726,9 +726,9 @@
                 <div class="info-card">
                     <h4>ローカルLLMのメリット</h4>
                     <ul>
-                        <li><strong>プライバシー保護</strong>: データは外部に送信されません</li>
+                        <li><strong>完全オフライン</strong>: 音声認識もAI整形もインターネット接続不要</li>
+                        <li><strong>プライバシー保護</strong>: 音声データもテキストも外部に一切送信されません</li>
                         <li><strong>無料</strong>: APIコストがかかりません</li>
-                        <li><strong>オフライン動作</strong>: インターネット接続不要</li>
                     </ul>
                     <p>※ /v1 パスは自動的に追加されます</p>
                 </div>
