@@ -69,8 +69,12 @@
                     <button class="faq-question">インターネット接続は必要ですか？</button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>初回のモデルダウンロード時のみインターネット接続が必要です。モデルをダウンロード後は、完全にオフラインで動作します。</p>
-                            <p>※ AI整形機能でクラウドAPI（OpenAI、Gemini等）を使用する場合は、その通信にインターネット接続が必要です。ローカルLLM（LM Studio、Ollama）を選択すれば完全オフラインで利用できます。</p>
+                            <p><strong>音声認識機能</strong>は、初回のモデルダウンロード後は完全にオフラインで動作します。</p>
+                            <p><strong>AI整形機能</strong>を使用する場合：</p>
+                            <ul>
+                                <li><strong>クラウドAPI（OpenAI / Anthropic / Groq / Gemini）</strong>: インターネット接続が必要</li>
+                                <li><strong>ローカルLLM（LM Studio / Ollama）</strong>: インターネット接続不要（完全オフライン）</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -79,8 +83,13 @@
                     <button class="faq-question">音声データはどこに送信されますか？</button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>音声データはどこにも送信されません。RocketWhisperはすべての音声処理をお使いのコンピュータ内で完結させます。</p>
-                            <p>※ AI整形機能でクラウドAPI（OpenAI、Gemini等）を使用する場合は、認識結果のテキストのみが各プロバイダに送信されます。音声データ自体は送信されません。プライバシーを最優先にする場合は、ローカルLLMを選択してください。詳細は<a href="privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+                            <p><strong>音声データ</strong>はどこにも送信されません。音声認識処理はすべてお使いのコンピュータ内で完結します。</p>
+                            <p><strong>AI整形機能</strong>を使用する場合、認識結果の<strong>テキストのみ</strong>が送信されます：</p>
+                            <ul>
+                                <li><strong>クラウドAPI（OpenAI / Anthropic / Groq / Gemini）</strong>: 認識結果テキストが各プロバイダのサーバーに送信されます</li>
+                                <li><strong>ローカルLLM（LM Studio / Ollama）</strong>: データは外部に送信されません（完全オフライン）</li>
+                            </ul>
+                            <p>詳細は<a href="privacy.html">プライバシーポリシー</a>をご確認ください。</p>
                         </div>
                     </div>
                 </div>
