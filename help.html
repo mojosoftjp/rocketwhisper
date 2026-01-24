@@ -62,6 +62,8 @@
                     <li><a href="#correction-rules">誤認識修正ルール</a></li>
                     <li><a href="#app-specific">アプリ別処理モード</a></li>
                     <li><a href="#ai-formatting">AI整形（LLM連携）</a></li>
+                    <li><a href="#recording-indicator">録音中インジケーター</a></li>
+                    <li><a href="#tray-icon">トレイアイコン</a></li>
                     <li><a href="#troubleshooting">トラブルシューティング</a></li>
                 </ol>
             </nav>
@@ -72,7 +74,7 @@
 
                 <h3>動作要件</h3>
                 <ul>
-                    <li>Windows 10 / 11 (64bit)</li>
+                    <li>Windows 11 (64bit)</li>
                     <li>.NET 8.0 Desktop Runtime</li>
                     <li>RAM 8GB以上推奨</li>
                     <li>GPU（CUDA対応）があると高速化</li>
@@ -273,6 +275,14 @@
                         <li><code>F9</code> - ファンクションキー（他と競合しにくい）</li>
                     </ul>
                 </div>
+
+                <h3>録音キャンセル</h3>
+                <p>録音中に<kbd>Escape</kbd>キーを押すと、認識処理を行わずに録音をキャンセルできます。</p>
+                <ul>
+                    <li><strong>デフォルトキー</strong>: Escape</li>
+                    <li><strong>カスタマイズ</strong>: 設定画面 → ホットキータブ → キャンセルホットキー</li>
+                    <li><strong>有効/無効</strong>: チェックボックスで切り替え可能</li>
+                </ul>
             </section>
 
             <!-- バッチ処理 -->
@@ -526,13 +536,66 @@
                 <h2>11. アプリ別処理モード</h2>
                 <p>使用するアプリケーションに応じて、異なるテキスト処理設定を自動的に適用できます。</p>
 
-                <h3>処理モードとは</h3>
+                <h3>処理モード一覧</h3>
                 <p>処理モードは、句読点挿入・改行・音声コマンドなどの設定をまとめたプリセットです。</p>
-                <ul>
-                    <li><strong>スマート</strong>: 句読点・改行を自動で整形（標準設定）</li>
-                    <li><strong>シンプル</strong>: そのまま出力（整形なし）</li>
-                    <li><strong>カスタムモード</strong>: 独自の設定で新しいモードを作成可能</li>
-                </ul>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>モード</th>
+                            <th>アイコン</th>
+                            <th>AI必須</th>
+                            <th>説明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>スマート</td>
+                            <td>✨</td>
+                            <td>不要</td>
+                            <td>句読点・改行を自動で整形（標準設定）</td>
+                        </tr>
+                        <tr>
+                            <td>シンプル</td>
+                            <td>📋</td>
+                            <td>不要</td>
+                            <td>認識したテキストをそのまま出力</td>
+                        </tr>
+                        <tr>
+                            <td>ビジネス</td>
+                            <td>💼</td>
+                            <td>必須</td>
+                            <td>敬語・丁寧な文体に自動変換</td>
+                        </tr>
+                        <tr>
+                            <td>カジュアル</td>
+                            <td>💬</td>
+                            <td>必須</td>
+                            <td>親しみやすい文体に変換</td>
+                        </tr>
+                        <tr>
+                            <td>要約</td>
+                            <td>📝</td>
+                            <td>必須</td>
+                            <td>テキストを簡潔に要約</td>
+                        </tr>
+                        <tr>
+                            <td>翻訳（日→英）</td>
+                            <td>🌐</td>
+                            <td>必須</td>
+                            <td>日本語を英語に翻訳</td>
+                        </tr>
+                        <tr>
+                            <td>文法修正</td>
+                            <td>✔️</td>
+                            <td>必須</td>
+                            <td>誤認識・文法を自動修正</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box">
+                    <p><strong>💡 ヒント</strong></p>
+                    <p>「AI必須」のモードを使用するには、設定画面の「AI整形」タブでAIプロバイダを設定してください。</p>
+                </div>
 
                 <h3>アプリへのモード割り当て</h3>
                 <ol>
@@ -669,9 +732,71 @@
                 </div>
             </section>
 
+            <!-- 録音中インジケーター -->
+            <section class="content-section" id="recording-indicator">
+                <h2>13. 録音中インジケーター</h2>
+                <p>タスクトレイに格納した状態でホットキー録音を行うと、録音状態を視覚的に確認できるフローティングウィンドウが表示されます。</p>
+
+                <h3>インジケーターの機能</h3>
+                <ul>
+                    <li><strong>リアルタイム波形表示</strong>: 16本のバーで音声レベルを視覚化</li>
+                    <li><strong>処理モード表示</strong>: 現在適用中のモード（スマート、ビジネス等）をアイコンと名前で表示</li>
+                    <li><strong>フォーカス非奪取</strong>: 他のアプリの操作を妨げません</li>
+                    <li><strong>ドラッグ移動</strong>: 好きな位置に移動可能、位置は自動保存</li>
+                </ul>
+
+                <h3>デフォルト位置</h3>
+                <p>初回は画面下部中央（タスクバーの上）に表示されます。ドラッグして移動すると、次回から同じ位置に表示されます。</p>
+
+                <div class="info-card">
+                    <h4>インジケーターの表示条件</h4>
+                    <p>録音中インジケーターは、RocketWhisperがタスクトレイに格納されている状態でホットキー録音を行ったときのみ表示されます。メインウィンドウが表示されている場合は表示されません。</p>
+                </div>
+            </section>
+
+            <!-- トレイアイコン -->
+            <section class="content-section" id="tray-icon">
+                <h2>14. トレイアイコン</h2>
+                <p>タスクトレイのアイコンでアプリケーションの状態を確認できます。</p>
+
+                <h3>アイコンの状態</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>状態</th>
+                            <th>アイコン</th>
+                            <th>説明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>待機中</td>
+                            <td>🎤（青）</td>
+                            <td>録音待機状態</td>
+                        </tr>
+                        <tr>
+                            <td>録音中</td>
+                            <td>🎤（青）+ 🔴（点滅）</td>
+                            <td>右下に赤い丸が点滅</td>
+                        </tr>
+                        <tr>
+                            <td>処理中</td>
+                            <td>⚙️（黄・回転）</td>
+                            <td>Whisperで音声認識中</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>トレイアイコンの操作</h3>
+                <ul>
+                    <li><strong>左クリック</strong>: メインウィンドウを表示</li>
+                    <li><strong>右クリック</strong>: コンテキストメニューを表示</li>
+                </ul>
+            </section>
+
             <!-- トラブルシューティング -->
             <section class="content-section" id="troubleshooting">
-                <h2>13. トラブルシューティング</h2>
+                <h2>15. トラブルシューティング</h2>
 
                 <div class="faq-item">
                     <button class="faq-question">モデルのダウンロードが途中で止まる</button>
@@ -733,7 +858,7 @@
                         <div class="faq-answer-content">
                             <ul>
                                 <li>.NET 8.0 Desktop Runtimeがインストールされているか確認</li>
-                                <li>Windows 10/11 64bitであるか確認</li>
+                                <li>Windows 11 64bitであるか確認</li>
                                 <li>アンチウイルスソフトにブロックされていないか確認</li>
                             </ul>
                         </div>
