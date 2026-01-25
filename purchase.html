@@ -149,6 +149,67 @@
             margin-right: 4px;
         }
 
+        /* ハードウェアID入力欄 */
+        .hardware-id-section {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(74, 144, 217, 0.1);
+            border: 1px solid rgba(74, 144, 217, 0.3);
+            border-radius: 8px;
+        }
+
+        .hardware-id-section label {
+            display: block;
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hardware-id-section input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 0.95rem;
+            font-family: 'Consolas', 'Monaco', monospace;
+            box-sizing: border-box;
+        }
+
+        .hardware-id-section input:focus {
+            outline: none;
+            border-color: #4A90D9;
+            box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+        }
+
+        .hardware-id-section input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hardware-id-section .help-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .hardware-id-section .help-text a {
+            color: #4A90D9;
+            text-decoration: none;
+        }
+
+        .hardware-id-section .help-text a:hover {
+            text-decoration: underline;
+        }
+
+        .hardware-id-error {
+            color: #FF6B6B;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
         /* 購入後の流れセクション */
         .process-section {
             padding: 4rem 2rem;
@@ -302,6 +363,7 @@
                 <li><a href="index.html#features">機能</a></li>
                 <li><a href="index.html#how-it-works">使い方</a></li>
                 <li><a href="index.html#download">ダウンロード</a></li>
+                <li><a href="purchase.html" class="active">購入</a></li>
                 <li><a href="help.html">ヘルプ</a></li>
                 <li><a href="privacy.html">プライバシー</a></li>
                 <li><a href="support.html">サポート</a></li>
@@ -350,6 +412,16 @@
                             メールサポート
                         </li>
                     </ul>
+                    <!-- ハードウェアID入力欄（個人版は1PC限定のため必須） -->
+                    <div class="hardware-id-section">
+                        <label for="hardware-id-input">ハードウェアID（必須）</label>
+                        <input type="text" id="hardware-id-input" placeholder="RW-HW-XXXXXXXXXXXXXXXX" maxlength="24">
+                        <p class="help-text">
+                            RocketWhisperの設定画面 → ライセンスタブで確認・コピーできます。
+                            <a href="help.html#license" target="_blank">詳しい手順</a>
+                        </p>
+                        <p id="hardware-id-error" class="hardware-id-error">ハードウェアIDを入力してください</p>
+                    </div>
                     <div id="paypal-button-personal" class="paypal-button-container"></div>
                     <p class="payment-note">
                         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -402,6 +474,14 @@
                             請求書払い対応
                         </li>
                     </ul>
+                    <!-- ハードウェアID入力欄（法人版は任意、記録用） -->
+                    <div class="hardware-id-section">
+                        <label for="hardware-id-input-business">ハードウェアID（任意）</label>
+                        <input type="text" id="hardware-id-input-business" placeholder="RW-HW-XXXXXXXXXXXXXXXX" maxlength="24">
+                        <p class="help-text">
+                            代表PCのハードウェアIDを入力（記録用・任意）
+                        </p>
+                    </div>
                     <div id="paypal-button-business" class="paypal-button-container"></div>
                     <p class="payment-note">
                         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -410,6 +490,17 @@
                         PayPalで安全にお支払い
                     </p>
                 </div>
+            </div>
+
+            <div class="notice-box">
+                <h4>ハードウェアIDの確認方法</h4>
+                <p>個人版の購入にはハードウェアIDが必要です。以下の手順で確認できます：</p>
+                <ol>
+                    <li>RocketWhisperを起動</li>
+                    <li>設定画面を開く（歯車アイコン）</li>
+                    <li>「ライセンス」タブを選択</li>
+                    <li>ハードウェアIDの横にある「コピー」ボタンをクリック</li>
+                </ol>
             </div>
 
             <div class="notice-box">
@@ -557,6 +648,21 @@
         // PayPal ボタンのレンダリング
         // ※ YOUR_PAYPAL_CLIENT_ID を実際のClient IDに置き換えてください
 
+        // ハードウェアID検証関数
+        function validateHardwareId(hardwareId) {
+            // RW-HW- で始まり、その後に16文字の英数字が続く形式
+            const pattern = /^RW-HW-[A-Z0-9]{16}$/;
+            return pattern.test(hardwareId);
+        }
+
+        // エラー表示関数
+        function showHardwareIdError(show) {
+            const errorEl = document.getElementById('hardware-id-error');
+            if (errorEl) {
+                errorEl.style.display = show ? 'block' : 'none';
+            }
+        }
+
         // 個人版ボタン
         if (document.getElementById('paypal-button-personal')) {
             paypal.Buttons({
@@ -566,21 +672,54 @@
                     shape: 'rect',
                     label: 'paypal'
                 },
+                onClick: function(data, actions) {
+                    // PayPalボタンクリック時にハードウェアIDを検証
+                    const hardwareIdInput = document.getElementById('hardware-id-input');
+                    const hardwareId = hardwareIdInput ? hardwareIdInput.value.trim().toUpperCase() : '';
+
+                    if (!hardwareId) {
+                        showHardwareIdError(true);
+                        hardwareIdInput.focus();
+                        return actions.reject();
+                    }
+
+                    if (!validateHardwareId(hardwareId)) {
+                        const errorEl = document.getElementById('hardware-id-error');
+                        if (errorEl) {
+                            errorEl.textContent = 'ハードウェアIDの形式が正しくありません（例: RW-HW-A3F2K9X1B7D4E6G8）';
+                            errorEl.style.display = 'block';
+                        }
+                        hardwareIdInput.focus();
+                        return actions.reject();
+                    }
+
+                    showHardwareIdError(false);
+                    return actions.resolve();
+                },
                 createOrder: function(data, actions) {
+                    const hardwareIdInput = document.getElementById('hardware-id-input');
+                    const hardwareId = hardwareIdInput ? hardwareIdInput.value.trim().toUpperCase() : '';
+
                     return actions.order.create({
                         purchase_units: [{
-                            description: 'RocketWhisper 個人版ライセンス',
+                            description: 'RocketWhisper 個人版ライセンス [HW:' + hardwareId + ']',
                             amount: {
                                 currency_code: 'JPY',
                                 value: '4980'
-                            }
+                            },
+                            custom_id: hardwareId  // ハードウェアIDをカスタムIDとして保存
                         }]
                     });
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
+                        const hardwareIdInput = document.getElementById('hardware-id-input');
+                        const hardwareId = hardwareIdInput ? hardwareIdInput.value.trim().toUpperCase() : '';
+
                         // 支払い完了時の処理
-                        alert('お支払いありがとうございます！\n\nライセンスキーは24時間以内にメール（' + details.payer.email_address + '）にてお届けします。');
+                        alert('お支払いありがとうございます！\n\n' +
+                              'ライセンスキーは24時間以内にメール（' + details.payer.email_address + '）にてお届けします。\n\n' +
+                              '登録ハードウェアID: ' + hardwareId);
                         // ここでサーバーに通知を送るなどの処理を追加可能
                     });
                 },
@@ -601,20 +740,37 @@
                     label: 'paypal'
                 },
                 createOrder: function(data, actions) {
+                    const hardwareIdInput = document.getElementById('hardware-id-input-business');
+                    const hardwareId = hardwareIdInput ? hardwareIdInput.value.trim().toUpperCase() : '';
+
+                    // 法人版は任意なのでハードウェアIDがあれば含める
+                    const description = hardwareId
+                        ? 'RocketWhisper 法人版ライセンス（PC台数無制限）[HW:' + hardwareId + ']'
+                        : 'RocketWhisper 法人版ライセンス（PC台数無制限）';
+
                     return actions.order.create({
                         purchase_units: [{
-                            description: 'RocketWhisper 法人版ライセンス（PC台数無制限）',
+                            description: description,
                             amount: {
                                 currency_code: 'JPY',
                                 value: '59800'
-                            }
+                            },
+                            custom_id: hardwareId || 'BUSINESS-UNLIMITED'  // 法人版は識別用
                         }]
                     });
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
+                        const hardwareIdInput = document.getElementById('hardware-id-input-business');
+                        const hardwareId = hardwareIdInput ? hardwareIdInput.value.trim().toUpperCase() : '';
+
                         // 支払い完了時の処理
-                        alert('お支払いありがとうございます！\n\nライセンスキーは24時間以内にメール（' + details.payer.email_address + '）にてお届けします。');
+                        let message = 'お支払いありがとうございます！\n\n' +
+                              'ライセンスキーは24時間以内にメール（' + details.payer.email_address + '）にてお届けします。';
+                        if (hardwareId) {
+                            message += '\n\n登録ハードウェアID: ' + hardwareId;
+                        }
+                        alert(message);
                         // ここでサーバーに通知を送るなどの処理を追加可能
                     });
                 },
