@@ -210,6 +210,125 @@
             display: none;
         }
 
+        /* 銀行振込セクション */
+        .bank-transfer-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .bank-transfer-section h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bank-transfer-section h3 svg {
+            color: #4A90D9;
+        }
+
+        .bank-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .bank-info {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bank-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bank-table th,
+        .bank-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bank-table th {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+            width: 30%;
+        }
+
+        .bank-table td {
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+
+        .bank-table tr:last-child th,
+        .bank-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .bank-notice {
+            background: rgba(74, 144, 217, 0.1);
+            border: 1px solid rgba(74, 144, 217, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .bank-notice h4 {
+            color: #4A90D9;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bank-notice ol {
+            color: rgba(255, 255, 255, 0.9);
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .bank-notice ol li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .bank-notice ol li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bank-notice ol ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .bank-notice ol ul li {
+            margin-bottom: 0.25rem;
+        }
+
+        .bank-notice a {
+            color: #4A90D9;
+            text-decoration: none;
+        }
+
+        .bank-notice a:hover {
+            text-decoration: underline;
+        }
+
+        .bank-note {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
         /* 購入後の流れセクション */
         .process-section {
             padding: 4rem 2rem;
@@ -512,6 +631,69 @@
                     <li>返金は原則として対応しておりません。購入前に7日間の試用版でご確認ください</li>
                 </ul>
             </div>
+
+            <!-- 銀行振込 -->
+            <div class="bank-transfer-section">
+                <h3>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"/>
+                    </svg>
+                    銀行振込でのお支払い
+                </h3>
+                <p class="bank-description">PayPal以外に、銀行振込でもお支払いいただけます。</p>
+
+                <div class="bank-info">
+                    <table class="bank-table">
+                        <tr>
+                            <th>銀行名</th>
+                            <td>三菱UFJ銀行</td>
+                        </tr>
+                        <tr>
+                            <th>支店名</th>
+                            <td>新瑞橋（あらたまばし）支店</td>
+                        </tr>
+                        <tr>
+                            <th>口座種別</th>
+                            <td>普通</td>
+                        </tr>
+                        <tr>
+                            <th>口座番号</th>
+                            <td>1402999</td>
+                        </tr>
+                        <tr>
+                            <th>口座名義</th>
+                            <td>ユ）モジヨソフト</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="bank-notice">
+                    <h4>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                        銀行振込でのご購入手順
+                    </h4>
+                    <ol>
+                        <li>上記口座に代金をお振込みください
+                            <ul>
+                                <li>個人版: <strong>4,980円</strong></li>
+                                <li>法人版: <strong>59,800円</strong></li>
+                            </ul>
+                        </li>
+                        <li>お振込み後、以下の情報を <a href="mailto:support@mojosoft.biz?subject=RocketWhisper%20銀行振込%20ライセンス申請">support@mojosoft.biz</a> までメールでお送りください：
+                            <ul>
+                                <li>お振込み名義</li>
+                                <li>ご購入ライセンス種別（個人版 / 法人版）</li>
+                                <li><strong>ハードウェアID</strong>（個人版は必須、法人版は任意）</li>
+                                <li>ライセンスキー送付先メールアドレス</li>
+                            </ul>
+                        </li>
+                        <li>入金確認後、24時間以内にライセンスキーをメールでお届けします</li>
+                    </ol>
+                    <p class="bank-note">※ 振込手数料はお客様のご負担となります</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -521,13 +703,13 @@
         <div class="process-steps">
             <div class="process-step">
                 <div class="step-number">1</div>
-                <h4>PayPalで支払い</h4>
-                <p>PayPalアカウントまたはクレジットカードでお支払いいただけます</p>
+                <h4>お支払い</h4>
+                <p>PayPalまたは銀行振込でお支払いいただけます</p>
             </div>
             <div class="process-step">
                 <div class="step-number">2</div>
                 <h4>ライセンスキー受け取り</h4>
-                <p>24時間以内にメールでライセンスキーをお届けします</p>
+                <p>入金確認後、24時間以内にメールでお届けします</p>
             </div>
             <div class="process-step">
                 <div class="step-number">3</div>
@@ -540,19 +722,6 @@
                 <p>すべての機能が無制限でご利用いただけます</p>
             </div>
         </div>
-    </section>
-
-    <!-- 銀行振込オプション -->
-    <section class="bank-transfer-section">
-        <h3>銀行振込をご希望の方</h3>
-        <p>法人のお客様で請求書払い・銀行振込をご希望の場合は、メールにてお問い合わせください。</p>
-        <a href="mailto:support@mojosoft.biz?subject=RocketWhisper 法人ライセンス（銀行振込）" class="contact-button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            お問い合わせ
-        </a>
     </section>
 
     <!-- よくある質問 -->
