@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RocketWhisper ライセンス購入 - AI音声認識アプリのライセンスを購入">
+    <meta name="keywords" content="RocketWhisper, ライセンス, 購入, 音声認識">
+    <meta property="og:title" content="RocketWhisper - ライセンス購入">
+    <meta property="og:description" content="RocketWhisperのライセンスを購入して、すべての機能をご利用ください">
+    <title>ライセンス購入 - RocketWhisper</title>
+    <link rel="icon" type="image/png" href="images/RocketWhisper3.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* 購入ページ専用スタイル */
+        .purchase-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .purchase-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4A90D9, #67B8F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .purchase-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-section {
+            padding: 4rem 2rem;
+            background: #0d1117;
+        }
+
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(74, 144, 217, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(74, 144, 217, 0.2);
+        }
+
+        .pricing-card.recommended {
+            border: 2px solid #4A90D9;
+            position: relative;
+        }
+
+        .pricing-card.recommended::before {
+            content: "おすすめ";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #4A90D9, #67B8F7);
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .pricing-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4A90D9;
+            margin: 1rem 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .pricing-card .description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card ul li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-card ul li svg {
+            width: 20px;
+            height: 20px;
+            color: #4ADE80;
+            flex-shrink: 0;
+        }
+
+        .paypal-button-container {
+            min-height: 55px;
+        }
+
+        .payment-note {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .payment-note svg {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        /* 購入後の流れセクション */
+        .process-section {
+            padding: 4rem 2rem;
+            background: #161b22;
+        }
+
+        .process-section h2 {
+            text-align: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .process-step .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4A90D9, #67B8F7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ セクション */
+        .purchase-faq {
+            padding: 4rem 2rem;
+            background: #0d1117;
+        }
+
+        .purchase-faq h2 {
+            text-align: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 注意事項 */
+        .notice-box {
+            background: rgba(74, 144, 217, 0.1);
+            border: 1px solid rgba(74, 144, 217, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .notice-box h4 {
+            color: #4A90D9;
+            margin-bottom: 0.5rem;
+        }
+
+        .notice-box p, .notice-box ul {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .notice-box ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        /* 銀行振込オプション */
+        .bank-transfer-section {
+            padding: 3rem 2rem;
+            background: #161b22;
+            text-align: center;
+        }
+
+        .bank-transfer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .bank-transfer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 2px solid #4A90D9;
+            color: #4A90D9;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #4A90D9;
+            color: white;
+        }
+
+        .contact-button svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">機能</a></li>
+                <li><a href="index.html#how-it-works">使い方</a></li>
+                <li><a href="index.html#download">ダウンロード</a></li>
+                <li><a href="help.html">ヘルプ</a></li>
+                <li><a href="privacy.html">プライバシー</a></li>
+                <li><a href="support.html">サポート</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="purchase-hero">
+        <h1>ライセンス購入</h1>
+        <p>RocketWhisperのライセンスを購入して、高精度な音声認識を無制限でご利用ください。7日間の無料試用後も継続してお使いいただけます。</p>
+    </section>
+
+    <!-- 価格セクション -->
+    <section class="pricing-section">
+        <div class="pricing-container">
+            <div class="pricing-grid">
+                <!-- 個人版 -->
+                <div class="pricing-card recommended">
+                    <h3>個人版</h3>
+                    <div class="price">¥4,980<span>/1PC</span></div>
+                    <p class="description">個人利用・フリーランスの方向け。1台のPCでご利用いただけます。</p>
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            すべての機能が利用可能
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            永続ライセンス（買い切り）
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            無料アップデート
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            メールサポート
+                        </li>
+                    </ul>
+                    <div id="paypal-button-personal" class="paypal-button-container"></div>
+                    <p class="payment-note">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                        </svg>
+                        PayPalで安全にお支払い
+                    </p>
+                </div>
+
+                <!-- 法人版 -->
+                <div class="pricing-card">
+                    <h3>法人版</h3>
+                    <div class="price">¥59,800<span>/無制限</span></div>
+                    <p class="description">企業・チームでの利用向け。PC台数無制限でご利用いただけます。</p>
+                    <ul>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            すべての機能が利用可能
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            永続ライセンス（買い切り）
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <strong>PC台数無制限</strong>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            無料アップデート
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            優先メールサポート
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            請求書払い対応
+                        </li>
+                    </ul>
+                    <div id="paypal-button-business" class="paypal-button-container"></div>
+                    <p class="payment-note">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                        </svg>
+                        PayPalで安全にお支払い
+                    </p>
+                </div>
+            </div>
+
+            <div class="notice-box">
+                <h4>ご購入前にご確認ください</h4>
+                <ul>
+                    <li>ライセンスキーは、お支払い完了後24時間以内にメールでお届けします</li>
+                    <li>個人版は1台のPCでのみ有効です。PC変更時は再発行が必要です</li>
+                    <li>法人版は同一法人内であればPC台数無制限でご利用いただけます</li>
+                    <li>返金は原則として対応しておりません。購入前に7日間の試用版でご確認ください</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 購入後の流れ -->
+    <section class="process-section">
+        <h2>購入後の流れ</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>PayPalで支払い</h4>
+                <p>PayPalアカウントまたはクレジットカードでお支払いいただけます</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>ライセンスキー受け取り</h4>
+                <p>24時間以内にメールでライセンスキーをお届けします</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>アプリでキーを入力</h4>
+                <p>RocketWhisperの設定画面でライセンスキーを入力</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>利用開始</h4>
+                <p>すべての機能が無制限でご利用いただけます</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 銀行振込オプション -->
+    <section class="bank-transfer-section">
+        <h3>銀行振込をご希望の方</h3>
+        <p>法人のお客様で請求書払い・銀行振込をご希望の場合は、メールにてお問い合わせください。</p>
+        <a href="mailto:support@mojosoft.biz?subject=RocketWhisper 法人ライセンス（銀行振込）" class="contact-button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            お問い合わせ
+        </a>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="purchase-faq">
+        <h2>よくある質問</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">ライセンスキーはすぐに届きますか？</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>お支払い確認後、24時間以内にメールでライセンスキーをお届けします。通常は数時間以内にお届けしますが、時差や確認作業により遅れる場合があります。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">PCを買い替えた場合はどうなりますか？</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>個人版</strong>の場合は、サポートまでご連絡ください。新しいPCで使用できるようライセンスを再発行いたします。<strong>法人版</strong>の場合は、PC台数無制限のため再発行は不要です。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">返金はできますか？</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>原則として返金には対応しておりません。ご購入前に7日間の無料試用版ですべての機能をお試しいただき、動作をご確認ください。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">領収書は発行できますか？</button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>はい、ご希望の方には領収書を発行いたします。お支払い後、メールにてお申し付けください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">声を、テキストに。瞬時に、正確に。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>製品</h4>
+                        <ul>
+                            <li><a href="index.html#features">機能</a></li>
+                            <li><a href="index.html#download">ダウンロード</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="help.html">ヘルプ</a></li>
+                            <li><a href="support.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法的情報</h4>
+                        <ul>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PayPal SDK -->
+    <!--
+    ============================================================
+    PayPal設定手順:
+    1. PayPal Business アカウントでログイン
+    2. Developer Dashboard (https://developer.paypal.com/) にアクセス
+    3. Apps & Credentials から Client ID を取得
+    4. 下記の YOUR_PAYPAL_CLIENT_ID を実際の Client ID に置き換え
+    ============================================================
+    -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=JPY&locale=ja_JP"></script>
+    <script>
+        // PayPal ボタンのレンダリング
+        // ※ YOUR_PAYPAL_CLIENT_ID を実際のClient IDに置き換えてください
+
+        // 個人版ボタン
+        if (document.getElementById('paypal-button-personal')) {
+            paypal.Buttons({
+                style: {
+                    layout: 'vertical',
+                    color: 'blue',
+                    shape: 'rect',
+                    label: 'paypal'
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: 'RocketWhisper 個人版ライセンス',
+                            amount: {
+                                currency_code: 'JPY',
+                                value: '4980'
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // 支払い完了時の処理
+                        alert('お支払いありがとうございます！\n\nライセンスキーは24時間以内にメール（' + details.payer.email_address + '）にてお届けします。');
+                        // ここでサーバーに通知を送るなどの処理を追加可能
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal Error:', err);
+                    alert('決済処理中にエラーが発生しました。もう一度お試しください。');
+                }
+            }).render('#paypal-button-personal');
+        }
+
+        // 法人版ボタン
+        if (document.getElementById('paypal-button-business')) {
+            paypal.Buttons({
+                style: {
+                    layout: 'vertical',
+                    color: 'gold',
+                    shape: 'rect',
+                    label: 'paypal'
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: 'RocketWhisper 法人版ライセンス（PC台数無制限）',
+                            amount: {
+                                currency_code: 'JPY',
+                                value: '59800'
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // 支払い完了時の処理
+                        alert('お支払いありがとうございます！\n\nライセンスキーは24時間以内にメール（' + details.payer.email_address + '）にてお届けします。');
+                        // ここでサーバーに通知を送るなどの処理を追加可能
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal Error:', err);
+                    alert('決済処理中にエラーが発生しました。もう一度お試しください。');
+                }
+            }).render('#paypal-button-business');
+        }
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
