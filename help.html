@@ -64,6 +64,7 @@
                     <li><a href="#app-specific">アプリ別処理モード</a></li>
                     <li><a href="#ai-formatting">AI整形（LLM連携）</a></li>
                     <li><a href="#recording-indicator">録音中インジケーター</a></li>
+                    <li><a href="#voice-launcher">音声ランチャー</a></li>
                     <li><a href="#tray-icon">トレイアイコン</a></li>
                     <li><a href="#troubleshooting">トラブルシューティング</a></li>
                 </ol>
@@ -761,9 +762,74 @@
                 </div>
             </section>
 
+            <!-- 音声ランチャー -->
+            <section class="content-section" id="voice-launcher">
+                <h2>14. 音声ランチャー</h2>
+                <p>特定のキーワードを認識したら、対応するアプリケーションを自動起動する機能です。「メモ帳」と話すだけでメモ帳が開くなど、声だけでアプリを操作できます。</p>
+
+                <h3>設定方法</h3>
+                <ol>
+                    <li>設定画面を開き、「音声ランチャー」タブを選択</li>
+                    <li>「音声ランチャーを有効にする」にチェック</li>
+                    <li>「ランチャー設定を編集...」をクリック</li>
+                    <li>「追加」ボタンでキーワードと実行ファイルを登録</li>
+                    <li>設定画面で「保存」をクリック</li>
+                </ol>
+
+                <h3>登録項目</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>説明</th>
+                            <th>例</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>キーワード</td>
+                            <td>起動トリガーとなる言葉</td>
+                            <td>メモ帳、電卓、ブラウザ</td>
+                        </tr>
+                        <tr>
+                            <td>実行ファイル</td>
+                            <td>起動するアプリのパス</td>
+                            <td>C:\Windows\notepad.exe</td>
+                        </tr>
+                        <tr>
+                            <td>パラメータ</td>
+                            <td>起動時の引数（オプション）</td>
+                            <td>--new-window</td>
+                        </tr>
+                        <tr>
+                            <td>説明</td>
+                            <td>メモ（オプション）</td>
+                            <td>メモ帳を起動</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>マッチング仕様</h3>
+                <ul>
+                    <li><strong>完全一致</strong>: 認識結果がキーワードと完全に一致した場合のみ起動</li>
+                    <li><strong>句読点は無視</strong>: 末尾の「、」「。」「！」「？」は自動的に除去されます</li>
+                    <li><strong>大文字小文字を区別しない</strong>: 英単語は大文字小文字を区別しません</li>
+                </ul>
+
+                <div class="tip-box">
+                    <h4>登録のコツ</h4>
+                    <p>話す言葉をそのままキーワードとして登録してください。例えば「メモ帳を開いて」と話すなら、キーワードも「メモ帳を開いて」と登録します。短いキーワード（「メモ帳」など）の方が認識しやすくなります。</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>音声コマンドとの違い</h4>
+                    <p>音声コマンド（「改行」「段落」など）はテキスト編集用の機能で、音声ランチャーはアプリケーション起動用の機能です。両方を同時に有効にできますが、同じキーワードが登録されている場合は音声ランチャーが優先されます。</p>
+                </div>
+            </section>
+
             <!-- トレイアイコン -->
             <section class="content-section" id="tray-icon">
-                <h2>14. トレイアイコン</h2>
+                <h2>15. トレイアイコン</h2>
                 <p>タスクトレイのアイコンでアプリケーションの状態を確認できます。</p>
 
                 <h3>アイコンの状態</h3>
@@ -803,7 +869,7 @@
 
             <!-- トラブルシューティング -->
             <section class="content-section" id="troubleshooting">
-                <h2>15. トラブルシューティング</h2>
+                <h2>16. トラブルシューティング</h2>
 
                 <div class="faq-item">
                     <button class="faq-question">モデルのダウンロードが途中で止まる</button>
