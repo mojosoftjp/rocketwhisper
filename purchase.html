@@ -593,12 +593,12 @@
                             請求書払い対応
                         </li>
                     </ul>
-                    <!-- ハードウェアID入力欄（法人版は任意、記録用） -->
+                    <!-- ハードウェアID入力欄（法人版） -->
                     <div class="hardware-id-section">
-                        <label for="hardware-id-input-business">ハードウェアID（任意）</label>
+                        <label for="hardware-id-input-business">ハードウェアID</label>
                         <input type="text" id="hardware-id-input-business" placeholder="RW-HW-XXXXXXXXXXXXXXXX" maxlength="24">
                         <p class="help-text">
-                            代表PCのハードウェアIDを入力（記録用・任意）
+                            代表PCのハードウェアIDを入力
                         </p>
                     </div>
                     <div id="paypal-button-business" class="paypal-button-container"></div>
@@ -685,7 +685,7 @@
                             <ul>
                                 <li>お振込み名義</li>
                                 <li>ご購入ライセンス種別（個人版 / 法人版）</li>
-                                <li><strong>ハードウェアID</strong>（個人版は必須、法人版は任意）</li>
+                                <li><strong>ハードウェアID</strong></li>
                                 <li>ライセンスキー送付先メールアドレス</li>
                             </ul>
                         </li>
@@ -912,7 +912,7 @@
                     const hardwareIdInput = document.getElementById('hardware-id-input-business');
                     const hardwareId = hardwareIdInput ? hardwareIdInput.value.trim().toUpperCase() : '';
 
-                    // 法人版は任意なのでハードウェアIDがあれば含める
+                    // ハードウェアIDがあれば含める
                     const description = hardwareId
                         ? 'RocketWhisper 法人版ライセンス（PC台数無制限）[HW:' + hardwareId + ']'
                         : 'RocketWhisper 法人版ライセンス（PC台数無制限）';
