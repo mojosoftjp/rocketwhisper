@@ -1108,8 +1108,24 @@
                             description: 'RocketWhisper 個人版ライセンス [HW:' + hardwareId + ']',
                             amount: {
                                 currency_code: 'JPY',
-                                value: '4800'
+                                value: '4800',
+                                breakdown: {
+                                    item_total: {
+                                        currency_code: 'JPY',
+                                        value: '4800'
+                                    }
+                                }
                             },
+                            items: [{
+                                name: 'RocketWhisper 個人版ライセンス',
+                                sku: 'MJ010',  // IPNのitem_numberとして使用
+                                unit_amount: {
+                                    currency_code: 'JPY',
+                                    value: '4800'
+                                },
+                                quantity: '1',
+                                description: 'HW:' + hardwareId
+                            }],
                             custom_id: hardwareId  // ハードウェアIDをカスタムIDとして保存
                         }]
                     });
@@ -1158,8 +1174,24 @@
                             description: description,
                             amount: {
                                 currency_code: 'JPY',
-                                value: '59800'
+                                value: '59800',
+                                breakdown: {
+                                    item_total: {
+                                        currency_code: 'JPY',
+                                        value: '59800'
+                                    }
+                                }
                             },
+                            items: [{
+                                name: 'RocketWhisper 法人版ライセンス（PC台数無制限）',
+                                sku: 'MJ011',  // IPNのitem_numberとして使用
+                                unit_amount: {
+                                    currency_code: 'JPY',
+                                    value: '59800'
+                                },
+                                quantity: '1',
+                                description: hardwareId ? 'HW:' + hardwareId : 'PC台数無制限'
+                            }],
                             custom_id: hardwareId || 'BUSINESS-UNLIMITED'  // 法人版は識別用
                         }]
                     });
