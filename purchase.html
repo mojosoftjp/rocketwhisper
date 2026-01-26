@@ -1126,7 +1126,7 @@
                                 quantity: '1',
                                 description: 'HW:' + hardwareId
                             }],
-                            custom_id: hardwareId  // ハードウェアIDをカスタムIDとして保存
+                            custom_id: 'MJ010|' + hardwareId  // 製品コード|ハードウェアID
                         }]
                     });
                 },
@@ -1192,7 +1192,7 @@
                                 quantity: '1',
                                 description: hardwareId ? 'HW:' + hardwareId : 'PC台数無制限'
                             }],
-                            custom_id: hardwareId || 'BUSINESS-UNLIMITED'  // 法人版は識別用
+                            custom_id: 'MJ011|' + (hardwareId || 'UNLIMITED')  // 製品コード|ハードウェアID
                         }]
                     });
                 },
