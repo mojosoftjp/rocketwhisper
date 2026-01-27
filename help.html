@@ -730,10 +730,18 @@
                 </table>
 
                 <h3>ローカルLLM（LM Studio）の設定例</h3>
+                <h4>LM Studio側の設定</h4>
                 <ol>
                     <li>LM Studioを起動</li>
-                    <li>使用するモデルをロード</li>
-                    <li>「Local Server」タブで「Start Server」をクリック</li>
+                    <li>使用するモデルを選択</li>
+                    <li>ステータスバーの User / Power User / Developer から「Power User」もしくは「Developer」を選択</li>
+                    <li>Developerタブに移動（左側メニューの緑色の「Developer」アイコンをクリック）</li>
+                    <li>画面上の「Status: Running」のトグルがオンになっていればサーバーは起動しています</li>
+                    <li>「Running」であれば、API URL（例: <code>http://localhost:1234/v1</code>）が表示されます</li>
+                    <li>サーバーを停止するには、トグルをクリックして「Stopped」にします</li>
+                </ol>
+                <h4>RocketWhisper側の設定</h4>
+                <ol>
                     <li>RocketWhisperの設定画面 → AI整形タブ</li>
                     <li>「ローカルLLM」を選択</li>
                     <li>ベースURL: <code>http://127.0.0.1:1234</code> を入力</li>
