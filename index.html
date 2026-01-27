@@ -447,37 +447,104 @@
     <!-- テクニカルスペック -->
     <section class="specs">
         <div class="container">
-            <h2 class="section-title fade-in">テクニカル<span class="highlight">スペック</span></h2>
-            <div class="specs-card fade-in">
+            <h2 class="section-title fade-in">動作環境・<span class="highlight">スペック</span></h2>
+
+            <!-- 動作環境 -->
+            <div class="specs-card fade-in" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">動作環境</h3>
                 <table class="specs-table">
                     <tbody>
                         <tr>
                             <th>対応OS</th>
-                            <td>Windows 11 (64bit)</td>
+                            <td>Windows 11 / Windows 10（バージョン1809以降）<br><small style="color: #888;">※ 64ビット版のみ対応。32ビット版は非対応</small></td>
                         </tr>
                         <tr>
+                            <th>CPU</th>
+                            <td><strong>必須:</strong> x64 (64ビット) 対応プロセッサ<br><strong>推奨:</strong> Intel Core i5 / AMD Ryzen 5 以上</td>
+                        </tr>
+                        <tr>
+                            <th>メモリ</th>
+                            <td><strong>最小:</strong> 4GB RAM<br><strong>推奨:</strong> 8GB RAM以上（large-v3モデル使用時は16GB推奨）</td>
+                        </tr>
+                        <tr>
+                            <th>ディスク容量</th>
+                            <td><strong>アプリ本体:</strong> 約200MB<br><strong>モデル:</strong> 75MB〜2.9GB（選択するモデルによる）</td>
+                        </tr>
+                        <tr>
+                            <th>ランタイム</th>
+                            <td>.NET 8.0 Desktop Runtime<br><small style="color: #888;">※ Full版は同梱。Lite版は初回起動時にインストールを案内</small></td>
+                        </tr>
+                        <tr>
+                            <th>その他</th>
+                            <td>マイク（リアルタイム認識用）<br>インターネット接続（モデルダウンロード時・AI整形機能使用時）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- モデル別要件 -->
+            <div class="specs-card fade-in" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">モデル別 メモリ・ディスク要件</h3>
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>モデル</th>
+                            <th>ファイルサイズ</th>
+                            <th>推奨メモリ</th>
+                            <th>特徴</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>medium</td>
+                            <td>1.5GB</td>
+                            <td>8GB</td>
+                            <td>5秒以内の短い発話に最適</td>
+                        </tr>
+                        <tr>
+                            <td>large-v3-turbo</td>
+                            <td>1.6GB</td>
+                            <td>8GB</td>
+                            <td>5〜20秒の発話におすすめ（高速）</td>
+                        </tr>
+                        <tr>
+                            <td>large-v3</td>
+                            <td>2.9GB</td>
+                            <td>16GB</td>
+                            <td>20秒以上の長い発話に最適（最高精度）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- テクニカルスペック -->
+            <div class="specs-card fade-in">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">テクニカルスペック</h3>
+                <table class="specs-table">
+                    <tbody>
+                        <tr>
                             <th>フレームワーク</th>
-                            <td>.NET 8.0</td>
+                            <td>.NET 8.0 WPF</td>
                         </tr>
                         <tr>
                             <th>認識エンジン</th>
-                            <td>OpenAI Whisper (Whisper.NET)</td>
+                            <td>OpenAI Whisper (Whisper.NET 1.9.0)</td>
                         </tr>
                         <tr>
                             <th>対応言語</th>
                             <td>日本語 / 英語 / 中国語 / 韓国語 / 自動検出</td>
                         </tr>
                         <tr>
-                            <th>対応形式</th>
+                            <th>対応入力形式</th>
                             <td>WAV / MP3 / FLAC / OGG / M4A / WMA</td>
                         </tr>
                         <tr>
                             <th>出力形式</th>
-                            <td>テキスト / クリップボードコピー</td>
+                            <td>テキスト / クリップボードコピー / 直接貼り付け</td>
                         </tr>
                         <tr>
-                            <th>推奨スペック</th>
-                            <td>RAM 8GB以上 / GPU推奨(CUDA対応)</td>
+                            <th>GPU高速化</th>
+                            <td>CUDA対応GPU（任意）<br><small style="color: #888;">※ GPUがなくてもCPUで動作します</small></td>
                         </tr>
                     </tbody>
                 </table>
@@ -628,7 +695,7 @@
             </div>
 
             <p class="requirements fade-in" style="text-align: center; margin-top: 2rem;">
-                動作要件: Windows 11 64bit、RAM 8GB以上推奨、GPU（CUDA対応）があると高速化
+                動作要件: Windows 11 / 10 (64bit)、RAM 8GB以上推奨、.NET 8.0 Desktop Runtime
             </p>
         </div>
     </section>
