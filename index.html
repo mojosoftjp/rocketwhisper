@@ -197,6 +197,76 @@
         </div>
     </section>
 
+    <!-- GPU高速化セクション -->
+    <section class="gpu-boost">
+        <div class="container">
+            <div class="gpu-boost-card fade-in">
+                <div class="gpu-boost-content">
+                    <div class="gpu-boost-badge">NEW</div>
+                    <h2 class="gpu-boost-title">
+                        <svg class="gpu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                            <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+                            <line x1="2" y1="9" x2="4" y2="9"></line>
+                            <line x1="2" y1="15" x2="4" y2="15"></line>
+                            <line x1="20" y1="9" x2="22" y2="9"></line>
+                            <line x1="20" y1="15" x2="22" y2="15"></line>
+                            <line x1="9" y1="2" x2="9" y2="4"></line>
+                            <line x1="15" y1="2" x2="15" y2="4"></line>
+                            <line x1="9" y1="20" x2="9" y2="22"></line>
+                            <line x1="15" y1="20" x2="15" y2="22"></line>
+                        </svg>
+                        NVIDIAグラフィックボードで<br class="sp-only"><span class="gpu-highlight">爆速認識</span>
+                    </h2>
+                    <p class="gpu-boost-description">
+                        お使いのPCにNVIDIA製GPUが搭載されていれば、音声認識処理が<strong>数倍〜10倍以上高速化</strong>。<br>
+                        面倒な設定は一切不要 ── 起動するだけで自動的にGPUを検出し、最適な高速化を適用します。
+                    </p>
+                    <div class="gpu-speed-comparison">
+                        <div class="speed-bar-group">
+                            <div class="speed-bar-label">
+                                <span class="speed-bar-name">CPU のみ</span>
+                                <span class="speed-bar-time">通常速度</span>
+                            </div>
+                            <div class="speed-bar">
+                                <div class="speed-bar-fill cpu-fill"></div>
+                            </div>
+                        </div>
+                        <div class="speed-bar-group">
+                            <div class="speed-bar-label">
+                                <span class="speed-bar-name gpu-name">GPU 使用</span>
+                                <span class="speed-bar-time gpu-time">数倍〜10倍以上高速</span>
+                            </div>
+                            <div class="speed-bar">
+                                <div class="speed-bar-fill gpu-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gpu-features">
+                        <div class="gpu-feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>設定不要・自動検出</span>
+                        </div>
+                        <div class="gpu-feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>GPUがなくてもCPUで動作</span>
+                        </div>
+                        <div class="gpu-feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>NVIDIA CUDA対応</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 機能紹介セクション -->
     <section class="features" id="features">
         <div class="container">
@@ -544,7 +614,10 @@
                         </tr>
                         <tr>
                             <th>GPU高速化</th>
-                            <td>CUDA対応GPU（任意）<br><small style="color: #888;">※ GPUがなくてもCPUで動作します</small></td>
+                            <td>
+                                <span style="color: #76B900; font-weight: 600;">NVIDIA CUDA 対応</span>（自動検出）<br>
+                                <small style="color: #888;">NVIDIA製GPUがあれば自動的に高速化。GPUがなくてもCPUで問題なく動作します</small>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
