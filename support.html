@@ -71,7 +71,7 @@
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <p><strong>音声認識機能</strong>は、初回のモデルダウンロード後は完全にオフラインで動作します。</p>
-                            <p><strong>AI整形機能</strong>を使用する場合：</p>
+                            <p><strong>AI処理機能</strong>を使用する場合：</p>
                             <ul>
                                 <li><strong>クラウドAPI（OpenAI / Anthropic / Groq / Gemini）</strong>: インターネット接続が必要</li>
                                 <li><strong>ローカルLLM（LM Studio / Ollama）</strong>: インターネット接続不要（完全オフライン）</li>
@@ -85,7 +85,7 @@
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <p><strong>音声データ</strong>はどこにも送信されません。音声認識処理はすべてお使いのコンピュータ内で完結します。</p>
-                            <p><strong>AI整形機能</strong>を使用する場合、認識結果の<strong>テキストのみ</strong>が送信されます：</p>
+                            <p><strong>AI処理機能</strong>を使用する場合、認識結果の<strong>テキストのみ</strong>が送信されます：</p>
                             <ul>
                                 <li><strong>クラウドAPI（OpenAI / Anthropic / Groq / Gemini）</strong>: 認識結果テキストが各プロバイダのサーバーに送信されます</li>
                                 <li><strong>ローカルLLM（LM Studio / Ollama）</strong>: データは外部に送信されません（完全オフライン）</li>
@@ -101,8 +101,8 @@
                         <div class="faq-answer-content">
                             <p>認識精度は使用するモデルによって異なります。</p>
                             <ul>
+                                <li><strong>large-v3-turbo</strong>: 高精度・高速（日本語認識率93%以上）【デフォルト・推奨】</li>
                                 <li><strong>large-v3</strong>: 最高精度（日本語認識率95%以上）</li>
-                                <li><strong>large-v3-turbo</strong>: 高精度・高速（日本語認識率93%以上）</li>
                                 <li><strong>medium</strong>: 高精度（日本語認識率90%以上）</li>
                                 <li><strong>small</strong>: 良好（日本語認識率85%以上）</li>
                             </ul>
