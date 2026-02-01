@@ -62,9 +62,11 @@
                     <li><a href="#custom-terms">専門用語登録</a></li>
                     <li><a href="#correction-rules">誤認識修正ルール</a></li>
                     <li><a href="#app-specific">アプリ別処理モード</a></li>
-                    <li><a href="#ai-formatting">AI整形（LLM連携）</a></li>
+                    <li><a href="#ai-formatting">AI処理（LLM連携）</a></li>
+                    <li><a href="#ai-command">AIコマンドモード</a></li>
                     <li><a href="#recording-indicator">録音中インジケーター</a></li>
                     <li><a href="#voice-launcher">音声ランチャー</a></li>
+                    <li><a href="#voice-search">音声検索</a></li>
                     <li><a href="#tray-icon">トレイアイコン</a></li>
                     <li><a href="#troubleshooting">トラブルシューティング</a></li>
                 </ol>
@@ -229,7 +231,7 @@
                     <li><strong>アプリマッピング</strong>: 特定のアプリに処理モードを割り当て</li>
                 </ul>
 
-                <h3>AI整形タブ</h3>
+                <h3>AI処理タブ</h3>
                 <ul>
                     <li><strong>AIプロバイダ</strong>: OpenAI、Anthropic、Groq、Gemini、ローカルLLMから選択</li>
                     <li><strong>モデル選択</strong>: 使用するAIモデルを選択</li>
@@ -619,7 +621,7 @@
                 </table>
                 <div class="tip-box">
                     <p><strong>💡 ヒント</strong></p>
-                    <p>「AI必須」のモードを使用するには、設定画面の「AI整形」タブでAIプロバイダを設定してください。</p>
+                    <p>「AI必須」のモードを使用するには、設定画面の「AI処理」タブでAIプロバイダを設定してください。</p>
                 </div>
 
                 <h3>アプリへのモード割り当て</h3>
@@ -644,10 +646,10 @@
                 </div>
             </section>
 
-            <!-- AI整形（LLM連携） -->
+            <!-- AI処理（LLM連携） -->
             <section class="content-section" id="ai-formatting">
-                <h2>12. AI整形（LLM連携）</h2>
-                <p>外部のAI（LLM）と連携して、認識結果を自動的にビジネス敬語やカジュアル文体に変換したり、要約・翻訳を行う機能です。ローカルLLM（LM Studio/Ollama）を使えば、オフライン環境でもAI整形が利用できます。</p>
+                <h2>12. AI処理（LLM連携）</h2>
+                <p>外部のAI（LLM）と連携して、認識結果を自動的にビジネス敬語やカジュアル文体に変換したり、要約・翻訳を行う機能です。ローカルLLM（LM Studio/Ollama）を使えば、オフライン環境でもAI処理が利用できます。</p>
 
                 <h3>対応AIプロバイダ</h3>
                 <table class="command-table">
@@ -690,14 +692,14 @@
                 <h3>設定方法</h3>
                 <ol>
                     <li>設定画面を開く</li>
-                    <li>「AI整形」タブを選択</li>
+                    <li>「AI処理」タブを選択</li>
                     <li>使用するプロバイダを選択</li>
                     <li>APIキーを入力（ローカルLLMの場合はベースURLのみ）</li>
                     <li>「接続テスト」で動作確認</li>
                 </ol>
 
-                <h3>AI整形モード</h3>
-                <p>AI整形を設定すると、アプリ別処理で以下のモードが使用可能になります。</p>
+                <h3>AI処理モード</h3>
+                <p>AI処理を設定すると、アプリ別処理で以下のモードが使用可能になります。</p>
                 <table class="command-table">
                     <thead>
                         <tr>
@@ -742,7 +744,7 @@
                 </ol>
                 <h4>RocketWhisper側の設定</h4>
                 <ol>
-                    <li>RocketWhisperの設定画面 → AI整形タブ</li>
+                    <li>RocketWhisperの設定画面 → AI処理タブ</li>
                     <li>「ローカルLLM」を選択</li>
                     <li>ベースURL: <code>http://127.0.0.1:1234</code> を入力</li>
                     <li>モデルID: 空欄のままでOK（サーバーでロード中のモデルを使用）</li>
@@ -752,7 +754,7 @@
                 <div class="info-card">
                     <h4>ローカルLLMのメリット</h4>
                     <ul>
-                        <li><strong>完全オフライン</strong>: 音声認識もAI整形もインターネット接続不要</li>
+                        <li><strong>完全オフライン</strong>: 音声認識もAI処理もインターネット接続不要</li>
                         <li><strong>プライバシー保護</strong>: 音声データもテキストも外部に一切送信されません</li>
                         <li><strong>無料</strong>: APIコストがかかりません</li>
                     </ul>
@@ -761,13 +763,80 @@
 
                 <div class="tip-box">
                     <p><strong>💡 処理フロー</strong></p>
-                    <p>AI整形は、音声認識 → 句読点挿入 → 改行挿入 → <strong>AI整形</strong> → 半角→全角変換 の順で処理されます。AI整形が失敗した場合は、元のテキストがそのまま使用されます。</p>
+                    <p>AI処理は、音声認識 → 句読点挿入 → 改行挿入 → <strong>AI処理</strong> → 半角→全角変換 の順で処理されます。AI処理が失敗した場合は、元のテキストがそのまま使用されます。</p>
+                </div>
+            </section>
+
+            <!-- AIコマンドモード -->
+            <section class="content-section" id="ai-command">
+                <h2>13. AIコマンドモード</h2>
+                <p>テキストを選択して専用ホットキーを押し、音声で指示するだけでAIが即座にテキストを処理する機能です。翻訳、要約、敬語変換など、自由な指示に対応します。</p>
+
+                <h3>基本的な使い方</h3>
+                <ol>
+                    <li>任意のアプリケーション（メモ帳、ブラウザ、Word等）でテキストを選択</li>
+                    <li>AIコマンドホットキー（デフォルト: <code>Ctrl + Shift + A</code>）を押す</li>
+                    <li>ステータスが「音声指示を待機中...」に変わるので、音声で指示（例: 「日本語に翻訳して」「要約して」「敬語に直して」）</li>
+                    <li>もう一度AIコマンドホットキーを押して録音停止</li>
+                    <li>AIが処理を実行し、結果がRocketWhisperのテキストエリアに表示されます</li>
+                </ol>
+
+                <h3>使用例</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>選択テキスト</th>
+                            <th>音声指示</th>
+                            <th>結果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>英語の文章</td>
+                            <td>「日本語に翻訳して」</td>
+                            <td>日本語に翻訳されたテキスト</td>
+                        </tr>
+                        <tr>
+                            <td>長い議事録</td>
+                            <td>「要約して」</td>
+                            <td>簡潔な要約</td>
+                        </tr>
+                        <tr>
+                            <td>カジュアルなメモ</td>
+                            <td>「敬語に直して」</td>
+                            <td>ビジネス文体のテキスト</td>
+                        </tr>
+                        <tr>
+                            <td>プログラムのコード</td>
+                            <td>「コメントを追加して」</td>
+                            <td>コメント付きのコード</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>ホットキーの設定</h3>
+                <ol>
+                    <li>設定画面を開く</li>
+                    <li>「ホットキー」タブを選択</li>
+                    <li>「AIコマンドホットキー」の入力欄をクリック</li>
+                    <li>使用したいキーの組み合わせを押す（デフォルト: <code>Ctrl + Shift + A</code>）</li>
+                    <li>「有効」にチェックを入れる</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>前提条件</h4>
+                    <p>AIコマンドモードを使用するには、設定画面の「AI処理」タブでAIプロバイダを設定する必要があります。ローカルLLM（LM Studio / Ollama）を使えば、完全オフライン・完全無料で利用できます。</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 排他制御</strong></p>
+                    <p>通常の録音中はAIコマンドは無効になり、AIコマンド録音中は通常のホットキーは無効になります。誤操作を防ぐ安全設計です。</p>
                 </div>
             </section>
 
             <!-- 録音中インジケーター -->
             <section class="content-section" id="recording-indicator">
-                <h2>13. 録音中インジケーター</h2>
+                <h2>14. 録音中インジケーター</h2>
                 <p>タスクトレイに格納した状態でホットキー録音を行うと、録音状態を視覚的に確認できるフローティングウィンドウが表示されます。</p>
 
                 <h3>インジケーターの機能</h3>
@@ -789,7 +858,7 @@
 
             <!-- 音声ランチャー -->
             <section class="content-section" id="voice-launcher">
-                <h2>14. 音声ランチャー</h2>
+                <h2>15. 音声ランチャー</h2>
                 <p>特定のキーワードを認識したら、対応するアプリケーションを自動起動する機能です。「メモ帳」と話すだけでメモ帳が開くなど、声だけでアプリを操作できます。</p>
 
                 <h3>設定方法</h3>
@@ -852,9 +921,76 @@
                 </div>
             </section>
 
+            <!-- 音声検索 -->
+            <section class="content-section" id="voice-search">
+                <h2>16. 音声検索</h2>
+                <p>通常の音声入力で「〇〇について調べて」と話すだけで、デフォルトブラウザでGoogle検索を自動実行する機能です。</p>
+
+                <h3>対応フレーズ</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>フレーズ</th>
+                            <th>例</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>〇〇について調べて</td>
+                            <td>「東京タワーについて調べて」</td>
+                        </tr>
+                        <tr>
+                            <td>〇〇を検索して</td>
+                            <td>「天気予報を検索して」</td>
+                        </tr>
+                        <tr>
+                            <td>〇〇をググって</td>
+                            <td>「レシピをググって」</td>
+                        </tr>
+                        <tr>
+                            <td>〇〇について教えて</td>
+                            <td>「Pythonについて教えて」</td>
+                        </tr>
+                        <tr>
+                            <td>〇〇って何？</td>
+                            <td>「AIって何？」</td>
+                        </tr>
+                        <tr>
+                            <td>〇〇とは</td>
+                            <td>「機械学習とは」</td>
+                        </tr>
+                        <tr>
+                            <td>Search 〇〇 / Look up 〇〇</td>
+                            <td>「Search RocketWhisper」</td>
+                        </tr>
+                        <tr>
+                            <td>Google 〇〇</td>
+                            <td>「Google weather forecast」</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>設定方法</h3>
+                <ol>
+                    <li>設定画面を開く</li>
+                    <li>「音声ランチャー」タブを選択</li>
+                    <li>「音声検索を有効にする」にチェック</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>動作の仕組み</h4>
+                    <p>録音 → 音声認識 → フレーズ検出 → デフォルトブラウザでGoogle検索を自動起動という流れで動作します。検索フレーズに一致しない場合は、通常のテキスト処理パイプラインに進みます。</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>💡 音声ランチャーとの違い</strong></p>
+                    <p>音声ランチャーは「登録したキーワードに完全一致でアプリ起動」、音声検索は「検索フレーズのパターンに一致でブラウザ検索」です。両方を同時に有効にできます。</p>
+                </div>
+            </section>
+
             <!-- トレイアイコン -->
             <section class="content-section" id="tray-icon">
-                <h2>15. トレイアイコン</h2>
+                <h2>17. トレイアイコン</h2>
                 <p>タスクトレイのアイコンでアプリケーションの状態を確認できます。</p>
 
                 <h3>アイコンの状態</h3>
@@ -894,7 +1030,7 @@
 
             <!-- トラブルシューティング -->
             <section class="content-section" id="troubleshooting">
-                <h2>16. トラブルシューティング</h2>
+                <h2>18. トラブルシューティング</h2>
 
                 <div class="faq-item">
                     <button class="faq-question">モデルのダウンロードが途中で止まる</button>
@@ -915,10 +1051,10 @@
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <ul>
-                                <li>large-v3モデルを使用（最高精度・専門用語対応）</li>
+                                <li>large-v3-turboモデルを使用（高精度・高速、デフォルト）</li>
                                 <li>マイクを口に近づける</li>
                                 <li>周囲の騒音を減らす</li>
-                                <li>専門用語を登録する（※large-v3モデル推奨）</li>
+                                <li>専門用語を登録する（※専門用語の認識精度をさらに向上させたい場合は、large-v3モデルの使用もご検討ください）</li>
                             </ul>
                         </div>
                     </div>
