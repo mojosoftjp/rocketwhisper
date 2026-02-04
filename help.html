@@ -803,8 +803,11 @@
                     </tbody>
                 </table>
 
-                <h3>ローカルLLM（LM Studio）の設定例</h3>
-                <h4>LM Studio側の設定</h4>
+                <h3>ローカルLLMの設定例</h3>
+                <p>LM StudioまたはOllamaを使用して、完全オフラインでAI処理を利用できます。</p>
+
+                <h4>LM Studio の場合</h4>
+                <p><strong>LM Studio側の設定:</strong></p>
                 <ol>
                     <li>LM Studioを起動</li>
                     <li>使用するモデルを選択</li>
@@ -814,14 +817,97 @@
                     <li>「Running」であれば、API URL（例: <code>http://localhost:1234</code>）が表示されます</li>
                     <li>サーバーを停止するには、トグルをクリックして「Stopped」にします</li>
                 </ol>
-                <h4>RocketWhisper側の設定</h4>
+                <p><strong>RocketWhisper側の設定:</strong></p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>設定値</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>プロバイダ</td>
+                            <td>ローカルLLM</td>
+                        </tr>
+                        <tr>
+                            <td>ベースURL</td>
+                            <td><code>http://127.0.0.1:1234</code></td>
+                        </tr>
+                        <tr>
+                            <td>モデルID</td>
+                            <td>空欄のままでOK（サーバーでロード中のモデルを自動使用）</td>
+                        </tr>
+                        <tr>
+                            <td>APIキー</td>
+                            <td>空欄のままでOK</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Ollama の場合</h4>
+                <p><strong>Ollama側の設定:</strong></p>
                 <ol>
-                    <li>RocketWhisperの設定画面 → AI処理タブ</li>
-                    <li>「ローカルLLM」を選択</li>
-                    <li>ベースURL: <code>http://127.0.0.1:1234</code> を入力</li>
-                    <li>モデルID: 空欄のままでOK（サーバーでロード中のモデルを使用）</li>
-                    <li>「接続テスト」をクリックして確認</li>
+                    <li>Ollamaをインストールして起動（バックグラウンドで自動的にAPIサーバーが起動します）</li>
+                    <li>使用したいモデルをダウンロード: <code>ollama pull gemma3</code></li>
+                    <li>ダウンロード済みモデルの確認: <code>ollama list</code></li>
                 </ol>
+                <p><strong>RocketWhisper側の設定:</strong></p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>設定値</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>プロバイダ</td>
+                            <td>ローカルLLM</td>
+                        </tr>
+                        <tr>
+                            <td>ベースURL</td>
+                            <td><code>http://localhost:11434</code></td>
+                        </tr>
+                        <tr>
+                            <td>モデルID</td>
+                            <td>ダウンロード済みのモデル名を入力（例: <code>gemma3</code>）</td>
+                        </tr>
+                        <tr>
+                            <td>APIキー</td>
+                            <td>空欄のままでOK</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box">
+                    <p><strong>💡 LM StudioとOllamaの違い</strong></p>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>項目</th>
+                                <th>LM Studio</th>
+                                <th>Ollama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>デフォルトポート</td>
+                                <td>1234</td>
+                                <td>11434</td>
+                            </tr>
+                            <tr>
+                                <td>モデルID</td>
+                                <td>空欄でOK（ロード中のモデルを自動使用）</td>
+                                <td><strong>必須</strong>（ダウンロード済みモデル名を指定）</td>
+                            </tr>
+                            <tr>
+                                <td>GUI</td>
+                                <td>あり（デスクトップアプリ）</td>
+                                <td>CLIベース（別途Open WebUI等で補完可能）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <div class="info-card">
                     <h4>ローカルLLMのメリット</h4>
