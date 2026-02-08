@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RocketWhisper User Guide. From installation to advanced settings, everything explained in detail.">
+    <title>User Guide - RocketWhisper</title>
+    <link rel="icon" type="image/png" href="../images/RocketWhisper3.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+                <li><a href="help.html" class="active">Help</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="../help.html">&#x1F1EF;&#x1F1F5; Japanese</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>User Guide</h1>
+            <p>A comprehensive guide covering everything from basic usage to advanced settings for RocketWhisper.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Table of Contents -->
+            <nav class="content-section">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#basic-usage">Basic Usage</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#hotkey">Global Hotkeys</a></li>
+                    <li><a href="#batch">Batch Processing</a></li>
+                    <li><a href="#history">Recognition History</a></li>
+                    <li><a href="#text-processing">Text Processing (Punctuation &amp; Line Breaks)</a></li>
+                    <li><a href="#voice-commands">Voice Commands</a></li>
+                    <li><a href="#custom-terms">Custom Terminology</a></li>
+                    <li><a href="#correction-rules">Misrecognition Correction Rules</a></li>
+                    <li><a href="#app-specific">App-Specific Processing Modes</a></li>
+                    <li><a href="#ai-formatting">AI Processing (LLM Integration)</a></li>
+                    <li><a href="#ai-command">AI Command Mode</a></li>
+                    <li><a href="#recording-indicator">Recording Indicator</a></li>
+                    <li><a href="#voice-launcher">Voice Launcher</a></li>
+                    <li><a href="#voice-search">Voice Search</a></li>
+                    <li><a href="#tray-icon">Tray Icon</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ol>
+            </nav>
+
+            <!-- Installation -->
+            <section class="content-section" id="installation">
+                <h2>1. Installation</h2>
+
+                <h3>System Requirements</h3>
+                <ul>
+                    <li>Windows 11 (64-bit)</li>
+                    <li>.NET 8.0 Desktop Runtime</li>
+                    <li>8GB+ RAM recommended</li>
+                    <li>GPU (CUDA-compatible) for accelerated processing</li>
+                </ul>
+
+                <h3>Installation Steps</h3>
+                <ol>
+                    <li>Download the latest version from the <a href="index.html#download">Download page</a></li>
+                    <li>Extract the downloaded ZIP file</li>
+                    <li>Run <code>RocketWhisper.exe</code></li>
+                    <li>On first launch, download the Whisper model you want to use</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>Choosing the Right Model</h4>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Size</th>
+                                <th>Accuracy</th>
+                                <th>Speed</th>
+                                <th>Recommended Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>small</td>
+                                <td>466MB</td>
+                                <td>High</td>
+                                <td>Fast</td>
+                                <td>Low-spec PCs</td>
+                            </tr>
+                            <tr>
+                                <td>medium</td>
+                                <td>1.5GB</td>
+                                <td>High</td>
+                                <td>Normal</td>
+                                <td><strong>Best for audio under 5 seconds</strong></td>
+                            </tr>
+                            <tr>
+                                <td>large-v3-turbo</td>
+                                <td>1.6GB</td>
+                                <td>High</td>
+                                <td>Fast</td>
+                                <td><strong>Best for 5&ndash;20 second audio</strong></td>
+                            </tr>
+                            <tr>
+                                <td>large-v3</td>
+                                <td>2.9GB</td>
+                                <td>Highest</td>
+                                <td>Slightly slow</td>
+                                <td><strong>Best for audio over 20 seconds</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Tips for Choosing</strong></p>
+                    <ul>
+                        <li><strong>Short audio (under 5 seconds)</strong>: medium is recommended</li>
+                        <li><strong>Medium-length audio (5&ndash;20 seconds)</strong>: large-v3-turbo is recommended</li>
+                        <li><strong>Long audio (over 20 seconds)</strong>: large-v3 offers the highest accuracy</li>
+                    </ul>
+                    <p class="note">* Larger models may produce repetition artifacts with very short audio clips. If your use case involves brief utterances, try the medium model.</p>
+                </div>
+            </section>
+
+            <!-- Basic Usage -->
+            <section class="content-section" id="basic-usage">
+                <h2>2. Basic Usage</h2>
+
+                <h3>Speech Recognition via Microphone</h3>
+                <ol>
+                    <li>Launch RocketWhisper</li>
+                    <li>Click the record button (microphone icon)</li>
+                    <li>Speak into the microphone</li>
+                    <li>Click the stop button</li>
+                    <li>The recognized text appears in the text area</li>
+                </ol>
+
+                <h3>Speech Recognition from File</h3>
+                <ol>
+                    <li>Click the file select button</li>
+                    <li>Choose an audio file (WAV/MP3/FLAC/OGG/M4A/WMA)</li>
+                    <li>Recognition processing starts automatically</li>
+                    <li>The recognized text appears in the text area</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>Drag &amp; Drop Support</h4>
+                    <p>Simply drag and drop an audio file onto the RocketWhisper window to start recognition immediately.</p>
+                </div>
+
+                <h3>Using Recognition Results</h3>
+                <ul>
+                    <li><strong>Copy</strong>: Click the copy button to copy to clipboard</li>
+                    <li><strong>Save</strong>: Click the save button to save as a text file</li>
+                    <li><strong>Auto Copy</strong>: When enabled in settings, automatically copies upon recognition completion</li>
+                    <li><strong>Auto Paste</strong>: When enabled in settings, automatically pastes upon recognition completion</li>
+                </ul>
+            </section>
+
+            <!-- Settings -->
+            <section class="content-section" id="settings">
+                <h2>3. Settings</h2>
+                <p>Click the gear icon to open the settings window. Detailed configuration is available across 8 tabs.</p>
+
+                <h3>Model &amp; Language Tab</h3>
+                <ul>
+                    <li><strong>Model Selection</strong>: Choose the Whisper model to use</li>
+                    <li><strong>Language</strong>: Recognition language (Japanese/English/Chinese/Korean/Auto-detect)</li>
+                    <li><strong>Punctuation Prompt</strong>: Instructs Whisper to include punctuation in the output (recommended)</li>
+                </ul>
+
+                <h3>Input Device Tab</h3>
+                <ul>
+                    <li><strong>Microphone Device</strong>: Select the microphone to use</li>
+                    <li><strong>Auto Copy</strong>: Automatically copy to clipboard upon recognition completion</li>
+                    <li><strong>Auto Paste</strong>: Automatically paste to the active window upon recognition completion</li>
+                </ul>
+
+                <h3>Hotkey Tab</h3>
+                <ul>
+                    <li><strong>Record Start/Stop Hotkey</strong>: A shortcut to start recording from any application</li>
+                    <li><strong>Right Alt (Hold)</strong>: Hold Right Alt to record, release to stop (double-tap for continuous recording)</li>
+                    <li><strong>Cancel Hotkey</strong>: Key to cancel recording (default: Escape)</li>
+                    <li><strong>AI Command Hotkey</strong>: Key to execute AI processing with text selection + voice instruction (default: Ctrl + Space)</li>
+                </ul>
+
+                <h3>Custom Terms Tab</h3>
+                <ul>
+                    <li><strong>Custom Term Registration</strong>: Register terms to improve recognition accuracy</li>
+                    <li><strong>Token Usage</strong>: Whisper accepts up to 224 tokens' worth of terms (approximately 50 English words)</li>
+                </ul>
+
+                <h3>Text Processing Tab</h3>
+                <ul>
+                    <li><strong>Auto Punctuation</strong>: Add punctuation via post-processing after recognition</li>
+                    <li><strong>Auto Line Breaks</strong>: Automatically insert line breaks in long text</li>
+                    <li><strong>Voice Commands</strong>: Enable/disable voice command functionality</li>
+                </ul>
+
+                <h3>Correction Rules Tab</h3>
+                <ul>
+                    <li><strong>Auto Correction</strong>: Enable/disable automatic correction of misrecognition patterns</li>
+                    <li><strong>Preset Rules</strong>: One-click addition of AI/tech terms, numbers/dates, common errors, and filler removal</li>
+                    <li><strong>Custom Rules</strong>: Add and edit custom correction rules (regex supported)</li>
+                </ul>
+
+                <h3>App-Specific Processing Tab</h3>
+                <ul>
+                    <li><strong>Processing Modes</strong>: Apply different text processing settings per application</li>
+                    <li><strong>App Mapping</strong>: Assign processing modes to specific applications</li>
+                </ul>
+
+                <h3>AI Processing Tab</h3>
+                <ul>
+                    <li><strong>AI Provider</strong>: Choose from OpenAI, Anthropic, Groq, Gemini, or Local LLM</li>
+                    <li><strong>Model Selection</strong>: Select the AI model to use</li>
+                    <li><strong>API Key</strong>: Enter the API key for your chosen provider</li>
+                    <li><strong>Connection Test</strong>: Verify that settings are correct</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>Punctuation Prompt vs. Auto Punctuation</h4>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Processing Timing</th>
+                                <th>How It Works</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Punctuation Prompt</td>
+                                <td>During recognition (inside Whisper)</td>
+                                <td>The AI understands context and places punctuation naturally</td>
+                            </tr>
+                            <tr>
+                                <td>Auto Punctuation</td>
+                                <td>After recognition (post-processing)</td>
+                                <td>Mechanically inserts punctuation after sentence-ending patterns</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>We recommend starting with <strong>Punctuation Prompt only</strong>. If punctuation is still insufficient, enable Auto Punctuation as well.</p>
+                </div>
+
+                <h3>License Tab</h3>
+                <ul>
+                    <li><strong>License Type</strong>: Free, Personal License, Business License</li>
+                    <li><strong>License Key</strong>: Enter and authenticate your license key</li>
+                </ul>
+            </section>
+
+            <!-- Global Hotkeys -->
+            <section class="content-section" id="hotkey">
+                <h2>4. Global Hotkeys</h2>
+                <p>Regardless of which application you are using, you can instantly start recording with your configured key combination.</p>
+
+                <h3>Setup</h3>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "Hotkey" tab</li>
+                    <li>Click the input field</li>
+                    <li>Press your desired key combination (e.g., <code>Ctrl + Shift + R</code>)</li>
+                    <li>Check the "Enabled" checkbox</li>
+                </ol>
+
+                <h3>How to Use</h3>
+                <ol>
+                    <li>Open any application such as a text editor or web browser</li>
+                    <li>Press the configured hotkey to start recording</li>
+                    <li>When finished speaking, press the hotkey again to stop recording</li>
+                    <li>If Auto Paste is enabled, the recognized text is automatically typed into your application</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>Recommended Hotkeys</h4>
+                    <ul>
+                        <li><code>Right Alt (Hold)</code> - Hold to record, release to stop (default, most recommended)</li>
+                        <li><code>Ctrl + Shift + R</code> - R for Record (toggle mode)</li>
+                        <li><code>F9</code> - Function key (unlikely to conflict with other apps)</li>
+                    </ul>
+                </div>
+
+                <h3>Right Alt Hold Mode (Push-to-Talk)</h3>
+                <p>An intuitive mode where recording occurs only while the Right Alt key is held down, and stops automatically when released.</p>
+
+                <h4>Basic Operations</h4>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Behavior</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hold Right Alt &rarr; Release</td>
+                            <td>Records only while held (Push-to-Talk)</td>
+                        </tr>
+                        <tr>
+                            <td>Quick double-tap Right Alt</td>
+                            <td>Switches to continuous recording mode (tap again to stop)</td>
+                        </tr>
+                        <tr>
+                            <td>Press another key while holding Right Alt</td>
+                            <td>Cancels recording (normal shortcuts like Alt+Tab remain functional)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Setup</h4>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "Hotkey" tab</li>
+                    <li>Click the "Right Alt (Hold)" button for the Record Start/Stop hotkey</li>
+                    <li>Check "Enabled" and save</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>Comparison with Traditional Hotkeys</h4>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Mode</th>
+                                <th>Start Recording</th>
+                                <th>Stop Recording</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Traditional Hotkey</td>
+                                <td>Press once</td>
+                                <td>Press again (toggle)</td>
+                            </tr>
+                            <tr>
+                                <td>Right Alt Hold</td>
+                                <td>Hold down</td>
+                                <td>Release (auto-stop)</td>
+                            </tr>
+                            <tr>
+                                <td>Right Alt Double-Tap</td>
+                                <td>Quick double-tap</td>
+                                <td>Tap once more</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Tip</strong></p>
+                    <p>Use "Hold" mode for short phrases and "Double-Tap (continuous recording)" for longer dictation. Since v1.0.5, the default hotkey is set to "Right Alt (Hold)".</p>
+                </div>
+
+                <h3>Cancel Recording</h3>
+                <p>Press the <kbd>Escape</kbd> key during recording to cancel without performing recognition. This works in both Hold mode and continuous recording mode.</p>
+                <ul>
+                    <li><strong>Default Key</strong>: Escape</li>
+                    <li><strong>Customize</strong>: Settings &rarr; Hotkey tab &rarr; Cancel Hotkey</li>
+                    <li><strong>Enable/Disable</strong>: Toggle with the checkbox</li>
+                </ul>
+            </section>
+
+            <!-- Batch Processing -->
+            <section class="content-section" id="batch">
+                <h2>5. Batch Processing</h2>
+                <p>Transcribe multiple audio files at once.</p>
+
+                <h3>Batch Processing Steps</h3>
+                <ol>
+                    <li>Select "Batch Processing" from the menu</li>
+                    <li>Add the files you want to process (multiple selection supported)</li>
+                    <li>Choose the output format (Text/SRT/VTT)</li>
+                    <li>Click "Start Processing"</li>
+                    <li>Wait for processing to complete</li>
+                </ol>
+
+                <h3>Supported Formats</h3>
+                <ul>
+                    <li><strong>Input</strong>: WAV, MP3, FLAC, OGG, M4A, WMA</li>
+                    <li><strong>Output</strong>: TXT (plain text), SRT (subtitles), VTT (web subtitles)</li>
+                </ul>
+            </section>
+
+            <!-- Recognition History -->
+            <section class="content-section" id="history">
+                <h2>6. Recognition History</h2>
+                <p>Past recognition results are automatically saved and can be referenced or reused at any time.</p>
+
+                <h3>Viewing History</h3>
+                <ol>
+                    <li>Click the history button (clock icon)</li>
+                    <li>A list of past recognition results is displayed</li>
+                    <li>Click an item to view its details</li>
+                </ol>
+
+                <h3>History Operations</h3>
+                <ul>
+                    <li><strong>Search</strong>: Search past recognition results by keyword</li>
+                    <li><strong>Copy</strong>: Copy the selected result to the clipboard</li>
+                    <li><strong>Delete</strong>: Delete unwanted history entries</li>
+                    <li><strong>Export</strong>: Export history as a file</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>History Storage Location</h4>
+                    <p>History data is stored at <code>%APPDATA%\RocketWhisper\history.json</code>.</p>
+                </div>
+            </section>
+
+            <!-- Text Processing -->
+            <section class="content-section" id="text-processing">
+                <h2>7. Text Processing (Punctuation &amp; Line Breaks)</h2>
+                <p>Features for automatically inserting punctuation and line breaks into recognition results. There are two approaches.</p>
+
+                <h3>Punctuation Prompt (Recommended)</h3>
+                <p>Instructs Whisper AI to output recognition results that include punctuation.</p>
+                <ul>
+                    <li><strong>How it works</strong>: Passes a sample sentence to Whisper to encourage punctuated output</li>
+                    <li><strong>Advantage</strong>: The AI understands context and places punctuation naturally</li>
+                    <li><strong>Supported languages</strong>: Japanese, English, Chinese, Korean</li>
+                </ul>
+
+                <h3>Auto Punctuation (Post-Processing)</h3>
+                <p>Adds punctuation using rule-based logic after recognition.</p>
+                <ul>
+                    <li><strong>How it works</strong>: Detects sentence-ending patterns and inserts periods</li>
+                    <li><strong>Advantage</strong>: Useful as a fallback when Whisper doesn't output punctuation</li>
+                    <li><strong>Note</strong>: Pattern-based mechanical processing that doesn't consider context</li>
+                </ul>
+
+                <h3>Auto Line Breaks</h3>
+                <p>Inserts line breaks at appropriate positions in long text.</p>
+                <ul>
+                    <li>Breaks before conjunctions (e.g., "however", "also", "furthermore")</li>
+                    <li>Splits sentences longer than 100 characters at sentence boundaries</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>Recommended Settings</h4>
+                    <ol>
+                        <li>Start with <strong>Punctuation Prompt only</strong> enabled</li>
+                        <li>If punctuation is insufficient, also enable <strong>Auto Punctuation</strong></li>
+                        <li>For long text, consider enabling <strong>Auto Line Breaks</strong></li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Voice Commands -->
+            <section class="content-section" id="voice-commands">
+                <h2>8. Voice Commands</h2>
+                <p>Perform actions like inserting line breaks or deleting text using voice commands.</p>
+
+                <h3>Available Commands</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Trigger Phrase</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>New Line</td>
+                            <td>"new line", "enter"</td>
+                            <td>Inserts a line break</td>
+                        </tr>
+                        <tr>
+                            <td>New Paragraph</td>
+                            <td>"new paragraph", "paragraph"</td>
+                            <td>Inserts two line breaks (paragraph break)</td>
+                        </tr>
+                        <tr>
+                            <td>Delete</td>
+                            <td>"delete", "undo", "backspace"</td>
+                            <td>Deletes the previous word</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip-box">
+                    <p><strong>About Punctuation</strong></p>
+                    <p>Punctuation (periods, commas, question marks, exclamation marks) is automatically inserted by the "Punctuation Prompt" and "Auto Punctuation" features. Enable them in the Text Processing tab of the settings.</p>
+                </div>
+
+                <h3>Usage Tips</h3>
+                <ul>
+                    <li>Speak commands clearly at natural pauses in your speech</li>
+                    <li>Pausing briefly before and after a command improves recognition accuracy</li>
+                    <li>Voice commands can be enabled/disabled in the settings</li>
+                </ul>
+            </section>
+
+            <!-- Custom Terminology -->
+            <section class="content-section" id="custom-terms">
+                <h2>9. Custom Terminology</h2>
+                <p>Register industry-specific terms and proper nouns to improve recognition accuracy.</p>
+
+                <h3>How to Register</h3>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "Custom Terms" tab</li>
+                    <li>Enter a term and click "Add"</li>
+                </ol>
+
+                <h3>Registration Capacity</h3>
+                <p>There is a limit to the number of custom terms Whisper can accept (up to approximately 224 tokens).</p>
+                <ul>
+                    <li><strong>English</strong>: Approximately 50 words</li>
+                    <li><strong>Japanese</strong>: Approximately 100 words</li>
+                </ul>
+                <p>Registration capacity can be monitored in real-time in the settings. When the limit is exceeded, older terms are ignored, so prioritize registering frequently used terms.</p>
+
+                <div class="info-card">
+                    <h4>This Feature is Completely Free</h4>
+                    <p>Custom terminology registration uses Whisper's initial prompt feature and processes everything locally. There are no API costs whatsoever.</p>
+                </div>
+            </section>
+
+            <!-- Misrecognition Correction Rules -->
+            <section class="content-section" id="correction-rules">
+                <h2>10. Misrecognition Correction Rules</h2>
+                <p>Set up rules to automatically correct specific misrecognition patterns. Similar to an IME word dictionary, it replaces recognized text strings with different strings.</p>
+
+                <h3>How to Add Rules</h3>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "Correction Rules" tab</li>
+                    <li>Check "Auto-correct misrecognition patterns"</li>
+                    <li>Click the "Edit Correction Rules..." button</li>
+                    <li>Enter the "Search Pattern" and "Replacement String"</li>
+                    <li>Click "Add Rule"</li>
+                </ol>
+
+                <h3>Basic Usage (Simple Replacement)</h3>
+                <p>Perform simple string replacements without using regular expressions.</p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Search Pattern</th>
+                            <th>Replacement String</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>micro soft</td>
+                            <td>Microsoft</td>
+                            <td>Fix spacing in company name</td>
+                        </tr>
+                        <tr>
+                            <td>mojosoft</td>
+                            <td>Mojosoft</td>
+                            <td>Fix capitalization of company name</td>
+                        </tr>
+                        <tr>
+                            <td>whisper</td>
+                            <td>Whisper</td>
+                            <td>Fix capitalization of product name</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Using Regular Expressions (Advanced Replacement)</h3>
+                <p>Check "Use Regular Expressions" to enable advanced pattern matching.</p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Search Pattern</th>
+                            <th>Replacement String</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>micro\s*soft</td>
+                            <td>Microsoft</td>
+                            <td>Replace regardless of spacing</td>
+                        </tr>
+                        <tr>
+                            <td>you know$</td>
+                            <td></td>
+                            <td>Remove "you know" at end of line</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="table-note"><strong>Regular Expression Symbol Guide:</strong></p>
+                <ul class="regex-notes">
+                    <li><code>\s*</code> : Matches zero or more whitespace characters (spaces, tabs, etc.). For example, "micro\s*soft" matches both "microsoft" and "micro soft".</li>
+                    <li><code>$</code> : Matches the end of a line. "you know$" only matches "you know" at the end of a line, not in the middle of a sentence.</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>Built-in Hallucination Protection</h4>
+                    <p>RocketWhisper includes 73 built-in Whisper hallucination countermeasures. Unwanted phrases such as "Thank you for watching" are automatically removed.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Difference from Custom Terminology</strong></p>
+                    <ul>
+                        <li><strong>Custom Terminology</strong>: Gives Whisper a hint that "this word might appear," improving recognition accuracy</li>
+                        <li><strong>Correction Rules</strong>: Replaces text in the recognition result after the fact</li>
+                    </ul>
+                    <p>Using both together yields the most accurate recognition results.</p>
+                </div>
+            </section>
+
+            <!-- App-Specific Processing Modes -->
+            <section class="content-section" id="app-specific">
+                <h2>11. App-Specific Processing Modes</h2>
+                <p>Automatically apply different text processing settings depending on which application you are using.</p>
+
+                <h3>Processing Mode List</h3>
+                <p>Processing modes are presets that bundle settings for punctuation, line breaks, voice commands, and more.</p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Mode</th>
+                            <th>Icon</th>
+                            <th>AI Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Smart</td>
+                            <td>&#x2728;</td>
+                            <td>No</td>
+                            <td>Auto-formats with punctuation and line breaks (standard)</td>
+                        </tr>
+                        <tr>
+                            <td>Simple</td>
+                            <td>&#x1F4CB;</td>
+                            <td>No</td>
+                            <td>Outputs recognized text as-is</td>
+                        </tr>
+                        <tr>
+                            <td>Business</td>
+                            <td>&#x1F4BC;</td>
+                            <td>Yes</td>
+                            <td>Auto-converts to formal/polite language</td>
+                        </tr>
+                        <tr>
+                            <td>Casual</td>
+                            <td>&#x1F4AC;</td>
+                            <td>Yes</td>
+                            <td>Converts to friendly, casual tone</td>
+                        </tr>
+                        <tr>
+                            <td>Summary</td>
+                            <td>&#x1F4DD;</td>
+                            <td>Yes</td>
+                            <td>Summarizes text concisely</td>
+                        </tr>
+                        <tr>
+                            <td>Translation</td>
+                            <td>&#x1F310;</td>
+                            <td>Yes</td>
+                            <td>Translates to English</td>
+                        </tr>
+                        <tr>
+                            <td>Grammar Fix</td>
+                            <td>&#x2714;&#xFE0F;</td>
+                            <td>Yes</td>
+                            <td>Auto-corrects misrecognitions and grammar</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box">
+                    <p><strong>Hint</strong></p>
+                    <p>To use modes marked "AI Required", configure an AI provider in the "AI Processing" tab of the settings.</p>
+                </div>
+
+                <h3>Assigning Modes to Apps</h3>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "App-Specific Processing" tab</li>
+                    <li>Click "Add App"</li>
+                    <li>Select the target app (from the list of running apps or enter manually)</li>
+                    <li>Choose the processing mode to apply</li>
+                </ol>
+
+                <h3>Usage Examples</h3>
+                <ul>
+                    <li><strong>Email client</strong>: Auto-insert punctuation and line breaks (Smart mode)</li>
+                    <li><strong>Code editor</strong>: No formatting (Simple mode)</li>
+                    <li><strong>Notepad</strong>: Bullet-point-friendly settings (Custom mode)</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>Default Processing Mode</h4>
+                    <p>If an app is not registered, the "Default" mode is applied. Default mode settings can be changed in the "Text Processing" tab.</p>
+                </div>
+            </section>
+
+            <!-- AI Processing (LLM Integration) -->
+            <section class="content-section" id="ai-formatting">
+                <h2>12. AI Processing (LLM Integration)</h2>
+                <p>Integrate with external AI (LLM) to automatically convert recognition results to business language, casual tone, or perform summarization and translation. With a local LLM (LM Studio / Ollama), AI processing works even in offline environments.</p>
+
+                <h3>Supported AI Providers</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Example Models</th>
+                            <th>Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td>gpt-4o, gpt-4o-mini</td>
+                            <td>High accuracy, consistent quality</td>
+                        </tr>
+                        <tr>
+                            <td>Anthropic</td>
+                            <td>Claude 4.5 Sonnet/Haiku</td>
+                            <td>Natural language, long text support</td>
+                        </tr>
+                        <tr>
+                            <td>Groq</td>
+                            <td>LLaMA 3.3 70B, Mixtral</td>
+                            <td>High speed, free tier available</td>
+                        </tr>
+                        <tr>
+                            <td>Google Gemini</td>
+                            <td>gemini-2.5-pro/flash</td>
+                            <td>Generous free tier, high quality</td>
+                        </tr>
+                        <tr>
+                            <td>Local LLM</td>
+                            <td>LM Studio, Ollama</td>
+                            <td>Offline operation, privacy protection</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Setup</h3>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "AI Processing" tab</li>
+                    <li>Choose the provider to use</li>
+                    <li>Enter the API key (for Local LLM, only the base URL is needed)</li>
+                    <li>Click "Connection Test" to verify</li>
+                </ol>
+
+                <h3>AI Processing Modes</h3>
+                <p>Once AI processing is configured, the following modes become available in app-specific processing.</p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Mode</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&#x1F4BC; Business</td>
+                            <td>Auto-converts to formal/polite language</td>
+                        </tr>
+                        <tr>
+                            <td>&#x1F4AC; Casual</td>
+                            <td>Converts to friendly, casual tone</td>
+                        </tr>
+                        <tr>
+                            <td>&#x1F4DD; Summary</td>
+                            <td>Summarizes text concisely</td>
+                        </tr>
+                        <tr>
+                            <td>&#x1F310; Translation</td>
+                            <td>Translates to English</td>
+                        </tr>
+                        <tr>
+                            <td>&#x2714;&#xFE0F; Grammar Fix</td>
+                            <td>Auto-corrects misrecognitions and grammar</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Local LLM Setup Examples</h3>
+                <p>Use LM Studio or Ollama to utilize AI processing completely offline.</p>
+
+                <h4>LM Studio</h4>
+                <p><strong>LM Studio Setup:</strong></p>
+                <ol>
+                    <li>Launch LM Studio</li>
+                    <li>Select the model to use</li>
+                    <li>In the status bar, choose "Power User" or "Developer" from User / Power User / Developer</li>
+                    <li>Navigate to the Developer tab (click the green "Developer" icon in the left menu)</li>
+                    <li>If the "Status: Running" toggle at the top of the screen is ON, the server is running</li>
+                    <li>When "Running", the API URL (e.g., <code>http://localhost:1234</code>) is displayed</li>
+                    <li>To stop the server, click the toggle to switch to "Stopped"</li>
+                </ol>
+                <p><strong>RocketWhisper Setup:</strong></p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Provider</td>
+                            <td>Local LLM</td>
+                        </tr>
+                        <tr>
+                            <td>Base URL</td>
+                            <td><code>http://127.0.0.1:1234</code></td>
+                        </tr>
+                        <tr>
+                            <td>Model ID</td>
+                            <td>Leave empty (automatically uses the currently loaded model)</td>
+                        </tr>
+                        <tr>
+                            <td>API Key</td>
+                            <td>Leave empty</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Ollama</h4>
+                <p><strong>Ollama Setup:</strong></p>
+                <ol>
+                    <li>Install and launch Ollama (the API server starts automatically in the background)</li>
+                    <li>Download the desired model: <code>ollama pull gemma3</code></li>
+                    <li>Verify downloaded models: <code>ollama list</code></li>
+                </ol>
+                <p><strong>RocketWhisper Setup:</strong></p>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Provider</td>
+                            <td>Local LLM</td>
+                        </tr>
+                        <tr>
+                            <td>Base URL</td>
+                            <td><code>http://localhost:11434</code></td>
+                        </tr>
+                        <tr>
+                            <td>Model ID</td>
+                            <td>Enter the name of a downloaded model (e.g., <code>gemma3</code>)</td>
+                        </tr>
+                        <tr>
+                            <td>API Key</td>
+                            <td>Leave empty</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tip-box">
+                    <p><strong>LM Studio vs. Ollama</strong></p>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>LM Studio</th>
+                                <th>Ollama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Default Port</td>
+                                <td>1234</td>
+                                <td>11434</td>
+                            </tr>
+                            <tr>
+                                <td>Model ID</td>
+                                <td>Leave empty (auto-uses loaded model)</td>
+                                <td><strong>Required</strong> (specify downloaded model name)</td>
+                            </tr>
+                            <tr>
+                                <td>GUI</td>
+                                <td>Yes (desktop app)</td>
+                                <td>CLI-based (can supplement with Open WebUI, etc.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-card">
+                    <h4>Benefits of Local LLM</h4>
+                    <ul>
+                        <li><strong>Fully Offline</strong>: Both speech recognition and AI processing work without internet</li>
+                        <li><strong>Privacy Protection</strong>: Neither audio data nor text is sent to any external service</li>
+                        <li><strong>Free</strong>: No API costs</li>
+                    </ul>
+                    <p>* The /v1 path is automatically appended</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Processing Flow</strong></p>
+                    <p>AI processing follows this pipeline: Speech Recognition &rarr; Punctuation Insertion &rarr; Line Break Insertion &rarr; <strong>AI Processing</strong> &rarr; Character Conversion. If AI processing fails, the original text is used as-is.</p>
+                </div>
+            </section>
+
+            <!-- AI Command Mode -->
+            <section class="content-section" id="ai-command">
+                <h2>13. AI Command Mode</h2>
+                <p>Select text, press the dedicated hotkey, and give a voice instruction &mdash; the AI instantly processes the text. Supports translation, summarization, tone adjustment, and any other instruction you can think of.</p>
+
+                <h3>Basic Usage</h3>
+                <ol>
+                    <li>Select text in any application (Notepad, browser, Word, etc.)</li>
+                    <li>Press the AI Command hotkey (default: <code>Ctrl + Space</code>)</li>
+                    <li>The status changes to "Waiting for voice instruction..." &mdash; give your instruction by voice (e.g., "Translate to Japanese", "Summarize this", "Make it formal")</li>
+                    <li>Press the AI Command hotkey again to stop recording</li>
+                    <li>The AI processes the text, and the result appears in RocketWhisper's text area</li>
+                </ol>
+
+                <h3>Usage Examples</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Selected Text</th>
+                            <th>Voice Instruction</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Text in another language</td>
+                            <td>"Translate to English"</td>
+                            <td>Text translated to English</td>
+                        </tr>
+                        <tr>
+                            <td>Long meeting notes</td>
+                            <td>"Summarize this"</td>
+                            <td>A concise summary</td>
+                        </tr>
+                        <tr>
+                            <td>Casual memo</td>
+                            <td>"Make it formal"</td>
+                            <td>Business-appropriate text</td>
+                        </tr>
+                        <tr>
+                            <td>Program code</td>
+                            <td>"Add comments"</td>
+                            <td>Code with comments added</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Hotkey Configuration</h3>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "Hotkey" tab</li>
+                    <li>Click the "AI Command Hotkey" input field</li>
+                    <li>Press your desired key combination (default: <code>Ctrl + Space</code>)</li>
+                    <li>Check "Enabled"</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>Prerequisites</h4>
+                    <p>To use AI Command Mode, you must configure an AI provider in the "AI Processing" tab of the settings. With a local LLM (LM Studio / Ollama), it works completely offline and free of charge.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Mutual Exclusion</strong></p>
+                    <p>AI Command is disabled during normal recording, and normal hotkeys are disabled during AI Command recording. This safety design prevents accidental operations.</p>
+                </div>
+            </section>
+
+            <!-- Recording Indicator -->
+            <section class="content-section" id="recording-indicator">
+                <h2>14. Recording Indicator</h2>
+                <p>When performing hotkey recording while RocketWhisper is minimized to the system tray, a floating window appears to visually confirm the recording state.</p>
+
+                <h3>Indicator Features</h3>
+                <ul>
+                    <li><strong>Real-time Waveform Display</strong>: Visualizes audio levels with 16 animated bars</li>
+                    <li><strong>Processing Mode Display</strong>: Shows the currently applied mode (Smart, Business, etc.) with icon and name</li>
+                    <li><strong>Non-Focus-Stealing</strong>: Does not steal focus from other applications</li>
+                    <li><strong>Draggable</strong>: Can be moved to any position; position is automatically saved</li>
+                </ul>
+
+                <h3>Default Position</h3>
+                <p>Initially appears at the bottom center of the screen (above the taskbar). Once dragged to a new position, it will appear there on subsequent recordings.</p>
+
+                <div class="info-card">
+                    <h4>When the Indicator Appears</h4>
+                    <p>The recording indicator only appears when hotkey recording is performed while RocketWhisper is minimized to the system tray. It does not appear when the main window is visible.</p>
+                </div>
+            </section>
+
+            <!-- Voice Launcher -->
+            <section class="content-section" id="voice-launcher">
+                <h2>15. Voice Launcher</h2>
+                <p>Automatically launches an application when a specific keyword is recognized. Simply say "Notepad" to open Notepad &mdash; control apps with just your voice.</p>
+
+                <h3>Setup</h3>
+                <ol>
+                    <li>Open the settings window and select the "Voice Launcher &amp; Search" tab</li>
+                    <li>Check "Enable Voice Launcher"</li>
+                    <li>Click "Edit Launcher Settings..."</li>
+                    <li>Click "Add" to register a keyword and executable file</li>
+                    <li>Click "Save" in the settings window</li>
+                </ol>
+
+                <h3>Registration Fields</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Keyword</td>
+                            <td>The trigger phrase for launching</td>
+                            <td>Notepad, Calculator, Browser</td>
+                        </tr>
+                        <tr>
+                            <td>Executable</td>
+                            <td>Path to the application</td>
+                            <td>C:\Windows\notepad.exe</td>
+                        </tr>
+                        <tr>
+                            <td>Parameters</td>
+                            <td>Launch arguments (optional)</td>
+                            <td>--new-window</td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>Notes (optional)</td>
+                            <td>Launch Notepad</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Matching Behavior</h3>
+                <ul>
+                    <li><strong>Exact Match</strong>: Launches only when the recognition result exactly matches the keyword</li>
+                    <li><strong>Punctuation Ignored</strong>: Trailing punctuation marks (commas, periods, !, ?) are automatically stripped</li>
+                    <li><strong>Case Insensitive</strong>: English words are matched regardless of case</li>
+                </ul>
+
+                <div class="tip-box">
+                    <h4>Registration Tips</h4>
+                    <p>Register the exact phrase you would naturally say as the keyword. For example, if you would say "open Notepad", register "open Notepad" as the keyword. Shorter keywords (like "Notepad") are easier to recognize.</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Difference from Voice Commands</h4>
+                    <p>Voice commands ("new line", "new paragraph", etc.) are for text editing, while Voice Launcher is for launching applications. Both can be enabled simultaneously, but if the same keyword is registered for both, Voice Launcher takes priority.</p>
+                </div>
+            </section>
+
+            <!-- Voice Search -->
+            <section class="content-section" id="voice-search">
+                <h2>16. Voice Search</h2>
+                <p>Simply say "Search for..." during normal voice input to automatically open a Google search in your default browser.</p>
+
+                <h3>Supported Phrases</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Phrase</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Search for ___</td>
+                            <td>"Search for Tokyo Tower"</td>
+                        </tr>
+                        <tr>
+                            <td>Look up ___</td>
+                            <td>"Look up weather forecast"</td>
+                        </tr>
+                        <tr>
+                            <td>Google ___</td>
+                            <td>"Google RocketWhisper"</td>
+                        </tr>
+                        <tr>
+                            <td>What is ___</td>
+                            <td>"What is machine learning"</td>
+                        </tr>
+                        <tr>
+                            <td>Tell me about ___</td>
+                            <td>"Tell me about Python"</td>
+                        </tr>
+                        <tr>
+                            <td>___ meaning</td>
+                            <td>"AI meaning"</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Setup</h3>
+                <ol>
+                    <li>Open the settings window</li>
+                    <li>Select the "Voice Launcher &amp; Search" tab</li>
+                    <li>Check "Enable Voice Search"</li>
+                </ol>
+
+                <div class="info-card">
+                    <h4>How It Works</h4>
+                    <p>The flow is: Recording &rarr; Speech Recognition &rarr; Phrase Detection &rarr; Auto-open Google search in default browser. If the input doesn't match a search phrase, it proceeds through the normal text processing pipeline.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Difference from Voice Launcher</strong></p>
+                    <p>Voice Launcher "launches a specific app when an exact keyword match is detected", while Voice Search "opens a browser search when a search phrase pattern is matched". Both can be enabled simultaneously.</p>
+                </div>
+            </section>
+
+            <!-- Tray Icon -->
+            <section class="content-section" id="tray-icon">
+                <h2>17. Tray Icon</h2>
+                <p>Check the application's status via the system tray icon.</p>
+
+                <h3>Icon States</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>State</th>
+                            <th>Icon</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Standby</td>
+                            <td>&#x1F3A4; (blue)</td>
+                            <td>Ready to record</td>
+                        </tr>
+                        <tr>
+                            <td>Recording</td>
+                            <td>&#x1F3A4; (blue) + &#x1F534; (blinking)</td>
+                            <td>Red dot blinks in the bottom-right corner</td>
+                        </tr>
+                        <tr>
+                            <td>Processing</td>
+                            <td>&#x2699;&#xFE0F; (yellow, spinning)</td>
+                            <td>Whisper is performing speech recognition</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Tray Icon Actions</h3>
+                <ul>
+                    <li><strong>Left Click</strong>: Show the main window</li>
+                    <li><strong>Right Click</strong>: Show the context menu</li>
+                </ul>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section class="content-section" id="troubleshooting">
+                <h2>18. Troubleshooting</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question">Model download stalls midway</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Please check your network connection. Firewall or proxy settings may be causing the issue.</p>
+                            <ul>
+                                <li>Verify your internet connection</li>
+                                <li>Allow RocketWhisper through your firewall</li>
+                                <li>Temporarily disable VPN</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Recognition accuracy is low</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>Use the large-v3-turbo model (high accuracy &amp; fast, default)</li>
+                                <li>Move the microphone closer to your mouth</li>
+                                <li>Reduce ambient noise</li>
+                                <li>Register custom terminology (* For even better accuracy with specialized terms, consider using the large-v3 model)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Hotkey does not work</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>Verify that the hotkey is set to "Enabled" in settings</li>
+                                <li>Check for conflicts with other applications</li>
+                                <li>Try running as administrator</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Voice commands are not recognized</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>Verify that voice commands are "Enabled" in settings</li>
+                                <li>Speak commands clearly</li>
+                                <li>Pause briefly before and after the command</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Application does not launch</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>Verify that .NET 8.0 Desktop Runtime is installed</li>
+                                <li>Confirm you are running Windows 11 64-bit</li>
+                                <li>Check if antivirus software is blocking the application</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support Link -->
+            <section class="content-section">
+                <div class="info-card">
+                    <h4>Still Having Issues?</h4>
+                    <p>Please contact us through the <a href="support.html">Support page</a>.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">Voice to Text. Instant. Accurate.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help</a></li>
+                            <li><a href="support.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

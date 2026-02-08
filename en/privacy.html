@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RocketWhisper Privacy Policy. Learn how we handle your data.">
+    <title>Privacy Policy - RocketWhisper</title>
+    <link rel="icon" type="image/png" href="../images/RocketWhisper3.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="privacy.html" class="active">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="../privacy.html">&#x1F1EF;&#x1F1F5; Japanese</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>RocketWhisper is designed with your privacy as the top priority.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <section class="content-section">
+                <p><strong>Last Updated: January 24, 2026</strong></p>
+                <p>This Privacy Policy explains how data is handled in RocketWhisper (hereinafter "the App"). Mojosoft Co., Ltd. (hereinafter "we") designs and develops the App with user privacy protection as the highest priority.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>1. Core Principle</h2>
+                <div class="info-card">
+                    <h4>Completely Offline &amp; Fully Local Processing</h4>
+                    <p>RocketWhisper is an application that operates <strong>completely offline</strong>. All speech recognition processing is performed on your computer, and <strong>audio data and recognition results are never sent to any external server</strong>.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>2. Data We Do Not Collect</h2>
+                <p>The App does <strong>not collect any</strong> of the following data:</p>
+                <ul>
+                    <li>Audio data (recorded voice)</li>
+                    <li>Speech recognition results (text data)</li>
+                    <li>Personally identifiable information (name, email address, IP address, etc.)</li>
+                    <li>Usage telemetry data</li>
+                    <li>Location information</li>
+                    <li>Device identification information</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>3. About Local Processing</h2>
+                <p>The speech recognition feature is powered by running the OpenAI Whisper model locally.</p>
+
+                <h3>Processing Flow</h3>
+                <ol>
+                    <li>Record audio from microphone, or load an audio file</li>
+                    <li>The Whisper model analyzes the audio on your computer</li>
+                    <li>Recognition results are displayed within the app</li>
+                </ol>
+
+                <p><strong>Throughout this entire process, no data passes through the Internet.</strong></p>
+            </section>
+
+            <section class="content-section">
+                <h2>4. Data Stored Locally</h2>
+                <p>The App stores the following data locally on your computer to improve user experience:</p>
+
+                <h3>Settings (Windows Registry)</h3>
+                <ul>
+                    <li>Selected Whisper model</li>
+                    <li>Recognition language setting</li>
+                    <li>Microphone device setting</li>
+                    <li>Hotkey settings</li>
+                    <li>Auto copy/paste settings</li>
+                    <li>Window position and size</li>
+                </ul>
+                <p><strong>Location:</strong> <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code></p>
+
+                <h3>Recognition History (Local File)</h3>
+                <ul>
+                    <li>Past recognition result text</li>
+                    <li>Recognition date and time</li>
+                    <li>Source information (microphone/file)</li>
+                </ul>
+                <p><strong>Location:</strong> <code>%APPDATA%\RocketWhisper\history.json</code></p>
+
+                <h3>Custom Terms &amp; Correction Rules</h3>
+                <ul>
+                    <li>Registered custom terms</li>
+                    <li>Misrecognition correction rules</li>
+                    <li>Voice command settings</li>
+                </ul>
+                <p><strong>Location:</strong> <code>%APPDATA%\RocketWhisper\</code></p>
+
+                <h3>Whisper Model Files</h3>
+                <ul>
+                    <li>Downloaded Whisper models (.bin format)</li>
+                </ul>
+                <p><strong>Location:</strong> <code>%APPDATA%\RocketWhisper\Models\</code></p>
+
+                <div class="info-card">
+                    <h4>How to Delete Data</h4>
+                    <p>You can completely delete all local data by following these steps:</p>
+                    <ol>
+                        <li>Uninstall RocketWhisper</li>
+                        <li>Delete the <code>%APPDATA%\RocketWhisper</code> folder</li>
+                        <li>Optionally, delete <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code> using Registry Editor</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>5. Third-Party Sharing</h2>
+                <p>Since the App does not send data externally, <strong>we do not share any data with third parties</strong>.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>6. Network Communication</h2>
+                <p>The App communicates over the network only in the following cases:</p>
+
+                <h3>Whisper Model Download</h3>
+                <ul>
+                    <li><strong>Connection:</strong> Hugging Face (model hosting service)</li>
+                    <li><strong>Purpose:</strong> Downloading speech recognition model files</li>
+                    <li><strong>Data sent:</strong> None (download request only)</li>
+                </ul>
+
+                <p>After downloading a model, the App <strong>operates completely offline</strong>.</p>
+
+                <h3>AI Processing Feature (Optional)</h3>
+                <p>When using the AI processing feature, the destination of sent data varies depending on the selected AI provider:</p>
+                <ul>
+                    <li><strong>Local LLM (LM Studio / Ollama):</strong> No data is sent externally (completely offline)</li>
+                    <li><strong>Cloud API (OpenAI / Anthropic / Groq / Gemini):</strong> Recognition result text is sent to each provider's servers</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p><strong>Tip: For maximum privacy</strong></p>
+                    <p>When using the AI processing feature, choosing a local LLM (LM Studio or Ollama) allows you to perform AI processing completely offline without sending recognition results externally.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>7. Security</h2>
+                <p>The App is designed with security in mind:</p>
+                <ul>
+                    <li>All processing is completed locally, minimizing the risk of data leakage</li>
+                    <li>No data transmission over the network eliminates the risk of man-in-the-middle attacks</li>
+                    <li>Recognition history is stored only in the user's local storage</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>8. Children's Privacy</h2>
+                <p>The App can be used without age restrictions, but children under 13 should use it under parental supervision. The App does not collect children's personal information.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>9. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy as needed. If there are significant changes, we will notify you on this page. Please check back periodically.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>10. Contact Us</h2>
+                <p>If you have any questions or comments about this Privacy Policy, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:support@mojosoft.biz">support@mojosoft.biz</a></li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <div class="info-card">
+                    <h4>Summary</h4>
+                    <p>RocketWhisper fully protects your voice data and privacy. All processing is completed on your computer, and nothing is sent externally. Use it with confidence.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">Voice to text. Instant and accurate.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help</a></li>
+                            <li><a href="support.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
