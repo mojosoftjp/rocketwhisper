@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RocketWhisper support page. FAQ, contact information, and bug reports.">
+    <title>Support - RocketWhisper</title>
+    <link rel="icon" type="image/png" href="../images/RocketWhisper3.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="support.html" class="active">Support</a></li>
+                <li><a href="../support.html">&#x1F1EF;&#x1F1F5; Japanese</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Support</h1>
+            <p>Questions or inquiries about RocketWhisper? You're in the right place.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- FAQ -->
+            <section class="content-section">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question">Is RocketWhisper free?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We offer a <strong>7-day free trial</strong>. During the trial period, you can try all features without any restrictions.</p>
+                            <p>After the trial period, you can continue using the app by purchasing a license:</p>
+                            <ul>
+                                <li><strong>Personal</strong>: &#165;4,800 (per PC)</li>
+                                <li><strong>Business</strong>: &#165;59,800 (unlimited PCs)</li>
+                            </ul>
+                            <p><a href="purchase.html" style="color: #4A90D9;">Go to the license purchase page</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Is an Internet connection required?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Speech recognition</strong> works completely offline after the initial model download.</p>
+                            <p>When using the <strong>AI processing feature</strong>:</p>
+                            <ul>
+                                <li><strong>Cloud API (OpenAI / Anthropic / Groq / Gemini)</strong>: Internet connection required</li>
+                                <li><strong>Local LLM (LM Studio / Ollama)</strong>: No Internet connection needed (completely offline)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Where is my voice data sent?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p><strong>Voice data</strong> is not sent anywhere. All speech recognition processing is completed entirely on your computer.</p>
+                            <p>When using the <strong>AI processing feature</strong>, only the recognition result <strong>text</strong> is sent:</p>
+                            <ul>
+                                <li><strong>Cloud API (OpenAI / Anthropic / Groq / Gemini)</strong>: Recognition result text is sent to each provider's servers</li>
+                                <li><strong>Local LLM (LM Studio / Ollama)</strong>: No data is sent externally (completely offline)</li>
+                            </ul>
+                            <p>For details, please see our <a href="privacy.html">Privacy Policy</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How accurate is the recognition?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Recognition accuracy varies depending on the model used.</p>
+                            <ul>
+                                <li><strong>large-v3-turbo</strong>: High accuracy &amp; fast (Japanese recognition rate 93%+) [Default / Recommended]</li>
+                                <li><strong>large-v3</strong>: Highest accuracy (Japanese recognition rate 95%+)</li>
+                                <li><strong>medium</strong>: High accuracy (Japanese recognition rate 90%+)</li>
+                                <li><strong>small</strong>: Good accuracy (Japanese recognition rate 85%+)</li>
+                            </ul>
+                            <p>With clear audio, models of large-v3-turbo or above provide practical accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Can I use it without a GPU?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, it works with CPU only. However, having a GPU significantly improves recognition speed. Without a GPU, we recommend using the large-v3-turbo or small model.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Does it support macOS or Linux?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Currently, RocketWhisper is available for Windows only. Support for other platforms is being considered for the future.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Does it support multiple languages?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, it supports Japanese, English, Chinese, and Korean. The automatic language detection feature can also identify the spoken language automatically.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Can I save recognition results?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, you can save results in multiple ways.</p>
+                            <ul>
+                                <li>Save as a text file (.txt)</li>
+                                <li>Save as SRT/VTT subtitle files</li>
+                                <li>Copy to clipboard</li>
+                                <li>Automatically saved to recognition history (viewable later)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Can it process long audio files?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes, long audio files can be processed. Files are automatically split into appropriate segments for processing. However, processing time depends on your PC's specifications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Technical terms are not recognized correctly</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Register the terms you want recognized in the "Custom Terms" tab in Settings. Using Whisper's initial prompt feature, registered terms will have improved recognition accuracy.</p>
+                            <p>Additionally, the misrecognition correction rules in the "Text Processing" tab allow you to set up text replacement after recognition.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">I want different settings for different apps</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>In the "App-specific Processing" tab in Settings, you can configure different processing modes for each application. For example, you can use polite language for email clients and casual tone for notepad.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Contact -->
+            <section class="content-section">
+                <h2>Contact Us</h2>
+
+                <div class="info-card">
+                    <h4>Contact via Email</h4>
+                    <p>We accept bug reports, feature requests, and questions via email.</p>
+                    <p><a href="mailto:support@mojosoft.biz" class="download-btn secondary" style="display: inline-flex; margin-top: 1rem;">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Send Email
+                    </a></p>
+                </div>
+            </section>
+
+            <!-- Bug Reports -->
+            <section class="content-section">
+                <h2>Bug Reports</h2>
+                <p>If you find a bug, please report it via email with the following information.</p>
+
+                <div class="info-card">
+                    <h4>Information to Include in Bug Reports</h4>
+                    <ol>
+                        <li><strong>RocketWhisper version</strong> (check in Settings)</li>
+                        <li><strong>Windows version</strong> (Windows 11, build number)</li>
+                        <li><strong>Whisper model in use</strong> (small/medium/large-v3-turbo/large-v3)</li>
+                        <li><strong>Detailed description of the issue</strong>
+                            <ul>
+                                <li>What you were trying to do</li>
+                                <li>What happened</li>
+                                <li>What you expected to happen</li>
+                            </ul>
+                        </li>
+                        <li><strong>Steps to reproduce</strong> (steps to reproduce the problem)</li>
+                        <li><strong>Error messages</strong> (if displayed)</li>
+                        <li><strong>Screenshots</strong> (if helpful to explain the issue)</li>
+                    </ol>
+                </div>
+
+                <p><a href="mailto:support@mojosoft.biz?subject=RocketWhisper Bug Report" class="download-btn primary" style="display: inline-flex;">
+                    Report a Bug
+                </a></p>
+            </section>
+
+            <!-- Feature Requests -->
+            <section class="content-section">
+                <h2>Feature Requests</h2>
+                <p>If you have ideas or suggestions for new features, feel free to let us know by email.</p>
+
+                <div class="info-card">
+                    <h4>Information to Include in Feature Requests</h4>
+                    <ol>
+                        <li><strong>Feature overview</strong> (what feature you want)</li>
+                        <li><strong>Use case</strong> (in what situation you would use it)</li>
+                        <li><strong>Expected benefit</strong> (how this feature would be helpful)</li>
+                        <li><strong>Reference</strong> (other apps with similar features, etc.)</li>
+                    </ol>
+                </div>
+
+                <p><a href="mailto:support@mojosoft.biz?subject=RocketWhisper Feature Request" class="download-btn secondary" style="display: inline-flex;">
+                    Request a Feature
+                </a></p>
+            </section>
+
+            <!-- Acknowledgments -->
+            <section class="content-section">
+                <h2>Acknowledgments</h2>
+                <p>RocketWhisper uses the following open-source libraries:</p>
+
+                <ul>
+                    <li><strong>OpenAI Whisper</strong> - Speech recognition engine</li>
+                    <li><strong>Whisper.NET</strong> - .NET Whisper wrapper</li>
+                    <li><strong>NAudio</strong> - Audio library</li>
+                    <li><strong>CommunityToolkit.Mvvm</strong> - MVVM toolkit</li>
+                </ul>
+
+                <p>We express our gratitude to the developers and contributors of these projects.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">Voice to text. Instant and accurate.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help</a></li>
+                            <li><a href="support.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
