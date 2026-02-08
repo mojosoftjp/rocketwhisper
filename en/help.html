@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script>!function(){var l=localStorage.getItem("rw-lang");if("en"!==l&&"ja"===l){var p=location.pathname.split("/").pop()||"index.html";location.replace("../"+p+location.hash)}}();</script>
+    <script>!function(){var l=localStorage.getItem("rw-lang");if("en"!==l&&("ja"===l||(navigator.language||"").startsWith("ja"))){var p=location.pathname.split("/").pop()||"index.html";location.replace("../"+p+location.hash)}}();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RocketWhisper User Guide. From installation to advanced settings, everything explained in detail.">
     <title>User Guide - RocketWhisper</title>
