@@ -237,13 +237,16 @@ img {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--spacing-md);
+    gap: 0.25rem;
+    align-items: center;
 }
 
 .nav-menu a {
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: 0.4rem 0.6rem;
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 .nav-menu a:hover {
@@ -268,8 +271,8 @@ img {
     transition: all var(--transition-fast);
 }
 
-/* モバイルメニュー */
-@media (max-width: 768px) {
+/* モバイル・タブレットメニュー */
+@media (max-width: 960px) {
     .nav-toggle {
         display: flex;
     }
@@ -298,6 +301,7 @@ img {
     .nav-menu a {
         display: block;
         padding: var(--spacing-sm);
+        font-size: 1rem;
     }
 }
 
