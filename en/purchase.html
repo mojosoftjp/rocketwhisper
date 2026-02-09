@@ -662,7 +662,7 @@
                 <!-- Personal -->
                 <div class="pricing-card">
                     <h3>Personal</h3>
-                    <div class="price">&#165;4,800<span>/per PC (excl. tax)</span></div>
+                    <div class="price">$39.99<span>/per PC</span></div>
                     <p class="description">For personal use and freelancers. Valid for use on one PC.</p>
                     <ul>
                         <li>
@@ -712,7 +712,7 @@
                 <!-- Business -->
                 <div class="pricing-card">
                     <h3>Business</h3>
-                    <div class="price">&#165;59,800<span>/unlimited PCs (excl. tax)</span></div>
+                    <div class="price">$299.99<span>/unlimited PCs</span></div>
                     <p class="description">For companies and teams. Unlimited PCs within your organization.</p>
                     <ul>
                         <li>
@@ -1016,7 +1016,7 @@
     4. Replace YOUR_PAYPAL_CLIENT_ID below with your actual Client ID
     ============================================================
     -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AQW_pNfSyvlWxHshLEfmnSzEq85x3im5k-2Khrpns2wh7XV2yp5oYYkwb1_8-8fT2U6fnVIX4xlrTvgO&currency=JPY&locale=ja_JP"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AQW_pNfSyvlWxHshLEfmnSzEq85x3im5k-2Khrpns2wh7XV2yp5oYYkwb1_8-8fT2U6fnVIX4xlrTvgO&currency=USD"></script>
     <script>
         // PayPal button rendering
         // Note: Replace YOUR_PAYPAL_CLIENT_ID with your actual Client ID
@@ -1107,23 +1107,23 @@
 
                     return actions.order.create({
                         purchase_units: [{
-                            description: 'RocketWhisper 個人版ライセンス [HW:' + hardwareId + ']',
+                            description: 'RocketWhisper Personal License [HW:' + hardwareId + ']',
                             amount: {
-                                currency_code: 'JPY',
-                                value: '4800',
+                                currency_code: 'USD',
+                                value: '39.99',
                                 breakdown: {
                                     item_total: {
-                                        currency_code: 'JPY',
-                                        value: '4800'
+                                        currency_code: 'USD',
+                                        value: '39.99'
                                     }
                                 }
                             },
                             items: [{
-                                name: 'RocketWhisper 個人版ライセンス',
+                                name: 'RocketWhisper Personal License',
                                 sku: 'MJ010',  // Used as IPN item_number
                                 unit_amount: {
-                                    currency_code: 'JPY',
-                                    value: '4800'
+                                    currency_code: 'USD',
+                                    value: '39.99'
                                 },
                                 quantity: '1',
                                 description: 'HW:' + hardwareId
@@ -1140,7 +1140,7 @@
                         // Show purchase complete modal
                         showSuccessModal(
                             'RocketWhisper Personal',
-                            '\u00A54,800 (excl. tax)',
+                            '$39.99',
                             details.payer.email_address,
                             hardwareId
                         );
@@ -1168,31 +1168,31 @@
 
                     // Include Hardware ID if provided
                     const description = hardwareId
-                        ? 'RocketWhisper 法人版ライセンス（PC台数無制限）[HW:' + hardwareId + ']'
-                        : 'RocketWhisper 法人版ライセンス（PC台数無制限）';
+                        ? 'RocketWhisper Business License (Unlimited PCs) [HW:' + hardwareId + ']'
+                        : 'RocketWhisper Business License (Unlimited PCs)';
 
                     return actions.order.create({
                         purchase_units: [{
                             description: description,
                             amount: {
-                                currency_code: 'JPY',
-                                value: '59800',
+                                currency_code: 'USD',
+                                value: '299.99',
                                 breakdown: {
                                     item_total: {
-                                        currency_code: 'JPY',
-                                        value: '59800'
+                                        currency_code: 'USD',
+                                        value: '299.99'
                                     }
                                 }
                             },
                             items: [{
-                                name: 'RocketWhisper 法人版ライセンス（PC台数無制限）',
+                                name: 'RocketWhisper Business License (Unlimited PCs)',
                                 sku: 'MJ011',  // Used as IPN item_number
                                 unit_amount: {
-                                    currency_code: 'JPY',
-                                    value: '59800'
+                                    currency_code: 'USD',
+                                    value: '299.99'
                                 },
                                 quantity: '1',
-                                description: hardwareId ? 'HW:' + hardwareId : 'PC台数無制限'
+                                description: hardwareId ? 'HW:' + hardwareId : 'Unlimited PCs'
                             }],
                             custom_id: 'MJ011|' + (hardwareId || 'UNLIMITED')  // Product code|Hardware ID
                         }]
@@ -1206,7 +1206,7 @@
                         // Show purchase complete modal
                         showSuccessModal(
                             'RocketWhisper Business (Unlimited PCs)',
-                            '\u00A559,800 (excl. tax)',
+                            '$299.99',
                             details.payer.email_address,
                             hardwareId || null  // Hardware ID is optional for Business
                         );
