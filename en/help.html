@@ -66,6 +66,7 @@
                     <li><a href="#app-specific">App-Specific Processing Modes</a></li>
                     <li><a href="#ai-formatting">AI Processing (LLM Integration)</a></li>
                     <li><a href="#ai-command">AI Command Mode</a></li>
+                    <li><a href="#custom-instructions">Custom Instructions</a></li>
                     <li><a href="#recording-indicator">Recording Indicator</a></li>
                     <li><a href="#voice-launcher">Voice Launcher</a></li>
                     <li><a href="#voice-search">Voice Search</a></li>
@@ -994,9 +995,90 @@
                 </div>
             </section>
 
+            <!-- Custom Instructions -->
+            <section class="content-section" id="custom-instructions">
+                <h2>14. Custom Instructions</h2>
+                <p>Register your most-used AI tasks (translation, business rephrasing, summarization, etc.) to dedicated hotkeys. Just speak and the AI processing is applied automatically. Unlike AI Command Mode, you don't need to say "translate this" each time, making it ideal for repetitive tasks.</p>
+
+                <h3>Setup</h3>
+                <ol>
+                    <li>Configure an AI provider in the "AI Processing" tab of the settings (local LLM or cloud API)</li>
+                    <li>Open the "Hotkeys" tab in the settings and find the "Custom Instructions" section</li>
+                    <li>Choose from presets (Translate to English, Business Style, Summary, Grammar Fix) or click "Add" to create a new one</li>
+                    <li>Assign a dedicated hotkey</li>
+                    <li>Make sure "Enabled" is checked</li>
+                </ol>
+
+                <h3>Basic Usage</h3>
+                <ol>
+                    <li>Press the hotkey assigned to your custom instruction</li>
+                    <li>Speak into the microphone (any content in any language)</li>
+                    <li>Press the same hotkey again to stop recording</li>
+                    <li>Whisper recognizes the audio &rarr; the pre-configured AI processing is applied automatically &rarr; result is output</li>
+                </ol>
+
+                <h3>Built-in Presets</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Preset</th>
+                            <th>Icon</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Translate to English</td>
+                            <td>🌐</td>
+                            <td>Translates recognized text to English</td>
+                        </tr>
+                        <tr>
+                            <td>Business Style</td>
+                            <td>💼</td>
+                            <td>Rephrases into formal/polite business tone</td>
+                        </tr>
+                        <tr>
+                            <td>Summary</td>
+                            <td>📝</td>
+                            <td>Summarizes the text concisely</td>
+                        </tr>
+                        <tr>
+                            <td>Grammar Fix</td>
+                            <td>✔️</td>
+                            <td>Corrects grammar and misrecognition errors</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Adding Custom Instructions</h3>
+                <ol>
+                    <li>Go to Settings &rarr; "Hotkeys" tab &rarr; "Custom Instructions" section &rarr; click "Add"</li>
+                    <li>Enter a name (e.g., "Translate to French")</li>
+                    <li>Enter a prompt (e.g., "Please translate the following text into French")</li>
+                    <li>Assign a dedicated hotkey</li>
+                    <li>Click "Save"</li>
+                </ol>
+                <p>You can register up to <strong>20</strong> custom instructions.</p>
+
+                <div class="tip-box">
+                    <p><strong>Difference from AI Command Mode</strong></p>
+                    <p>AI Command Mode is a versatile tool where you select text and give voice instructions each time. Custom Instructions bind a pre-set prompt to a hotkey, so no voice instruction is needed &mdash; ideal for repeated tasks.</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Prerequisites</h4>
+                    <p>To use Custom Instructions, you must configure an AI provider in the "AI Processing" tab of the settings. With a local LLM (LM Studio / Ollama), it works completely offline and free of charge.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Mutual Exclusion</strong></p>
+                    <p>Custom Instruction hotkeys are disabled during normal recording or AI Command recording. This safety design prevents accidental operations.</p>
+                </div>
+            </section>
+
             <!-- Recording Indicator -->
             <section class="content-section" id="recording-indicator">
-                <h2>14. Recording Indicator</h2>
+                <h2>15. Recording Indicator</h2>
                 <p>When performing hotkey recording while RocketWhisper is minimized to the system tray, a floating window appears to visually confirm the recording state.</p>
 
                 <h3>Indicator Features</h3>
@@ -1018,7 +1100,7 @@
 
             <!-- Voice Launcher -->
             <section class="content-section" id="voice-launcher">
-                <h2>15. Voice Launcher</h2>
+                <h2>16. Voice Launcher</h2>
                 <p>Automatically launches an application when a specific keyword is recognized. Simply say "Notepad" to open Notepad &mdash; control apps with just your voice.</p>
 
                 <h3>Setup</h3>
@@ -1083,7 +1165,7 @@
 
             <!-- Voice Search -->
             <section class="content-section" id="voice-search">
-                <h2>16. Voice Search</h2>
+                <h2>17. Voice Search</h2>
                 <p>Simply say "Search for..." during normal voice input to automatically open a Google search in your default browser.</p>
 
                 <h3>Supported Phrases</h3>
@@ -1142,7 +1224,7 @@
 
             <!-- Tray Icon -->
             <section class="content-section" id="tray-icon">
-                <h2>17. Tray Icon</h2>
+                <h2>18. Tray Icon</h2>
                 <p>Check the application's status via the system tray icon.</p>
 
                 <h3>Icon States</h3>
@@ -1182,7 +1264,7 @@
 
             <!-- Troubleshooting -->
             <section class="content-section" id="troubleshooting">
-                <h2>18. Troubleshooting</h2>
+                <h2>19. Troubleshooting</h2>
 
                 <div class="faq-item">
                     <button class="faq-question">Model download stalls midway</button>
