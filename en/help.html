@@ -390,7 +390,7 @@
             <!-- Batch Processing -->
             <section class="content-section" id="batch">
                 <h2>5. Batch Processing</h2>
-                <p>Transcribe multiple audio files at once.</p>
+                <p>Transcribe multiple audio and video files at once. Video files are automatically processed by extracting audio via FFmpeg.</p>
 
                 <h3>Batch Processing Steps</h3>
                 <ol>
@@ -403,9 +403,12 @@
 
                 <h3>Supported Formats</h3>
                 <ul>
-                    <li><strong>Input</strong>: WAV, MP3, FLAC, OGG, M4A, WMA</li>
+                    <li><strong>Audio Input</strong>: WAV, MP3, FLAC, OGG, M4A, WMA</li>
+                    <li><strong>Video Input</strong>: MP4, MKV, AVI, MOV, WebM, WMV, FLV</li>
                     <li><strong>Output</strong>: TXT (plain text), SRT (subtitles), VTT (web subtitles)</li>
                 </ul>
+
+                <p><strong>*</strong> FFmpeg is required for video file transcription. It is included with the installer version.</p>
             </section>
 
             <!-- Recognition History -->
