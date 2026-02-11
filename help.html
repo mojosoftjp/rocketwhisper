@@ -390,7 +390,7 @@
             <!-- バッチ処理 -->
             <section class="content-section" id="batch">
                 <h2>5. バッチ処理</h2>
-                <p>複数の音声ファイルを一括で文字起こしできます。</p>
+                <p>複数の音声ファイルや動画ファイルを一括で文字起こしできます。動画ファイルはFFmpegで音声を自動抽出して文字起こしします。</p>
 
                 <h3>バッチ処理の手順</h3>
                 <ol>
@@ -403,9 +403,12 @@
 
                 <h3>対応フォーマット</h3>
                 <ul>
-                    <li><strong>入力</strong>: WAV, MP3, FLAC, OGG, M4A, WMA</li>
+                    <li><strong>音声入力</strong>: WAV, MP3, FLAC, OGG, M4A, WMA</li>
+                    <li><strong>動画入力</strong>: MP4, MKV, AVI, MOV, WebM, WMV, FLV</li>
                     <li><strong>出力</strong>: TXT（プレーンテキスト）, SRT（字幕）, VTT（Web字幕）</li>
                 </ul>
+
+                <p><strong>※</strong> 動画ファイルの文字起こしにはFFmpegが必要です。インストーラー版には同梱されています。</p>
             </section>
 
             <!-- 認識履歴 -->
