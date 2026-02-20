@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XML_DIZ_INFO>
+    <MASTER_PAD_VERSION_INFO>
+        <MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+        <MASTER_PAD_EDITOR>Hand-crafted</MASTER_PAD_EDITOR>
+        <MASTER_PAD_INFO>Portable Application Description, or PAD, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products.</MASTER_PAD_INFO>
+    </MASTER_PAD_VERSION_INFO>
+    <Company_Info>
+        <Company_Name>Mojosoft Co., Ltd.</Company_Name>
+        <Address_1></Address_1>
+        <City_Town></City_Town>
+        <State_Province></State_Province>
+        <Zip_Postal_Code></Zip_Postal_Code>
+        <Country>Japan</Country>
+        <Company_WebSite_URL>https://mojosoftjp.github.io/rocketwhisper/en/</Company_WebSite_URL>
+        <Contact_First_Name>Support</Contact_First_Name>
+        <Contact_Last_Name>Team</Contact_Last_Name>
+        <Contact_Email>support@mojosoft.biz</Contact_Email>
+    </Company_Info>
+    <Program_Info>
+        <Program_Name>RocketWhisper</Program_Name>
+        <Program_Version>1.2.0</Program_Version>
+        <Program_Release_Month>02</Program_Release_Month>
+        <Program_Release_Day>13</Program_Release_Day>
+        <Program_Release_Year>2026</Program_Release_Year>
+        <Program_Cost_Dollars>32</Program_Cost_Dollars>
+        <Program_Cost_Other_Code></Program_Cost_Other_Code>
+        <Program_Cost_Other></Program_Cost_Other>
+        <Program_Type>Shareware</Program_Type>
+        <Program_Release_Status>New Release</Program_Release_Status>
+        <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+        <Program_OS_Support>Win11,Win10</Program_OS_Support>
+        <Program_Language>English,Japanese</Program_Language>
+        <File_Info>
+            <File_Size_Bytes>83886080</File_Size_Bytes>
+            <File_Size_K>81920</File_Size_K>
+            <File_Size_MB>80</File_Size_MB>
+        </File_Info>
+        <Expire_Info>
+            <Has_Expire_Info>Y</Has_Expire_Info>
+            <Expire_Count>7</Expire_Count>
+            <Expire_Based_On>Days</Expire_Based_On>
+            <Expire_Other_Info></Expire_Other_Info>
+            <Expire_Month></Expire_Month>
+            <Expire_Day></Expire_Day>
+            <Expire_Year></Expire_Year>
+        </Expire_Info>
+        <Program_Change_Info>Version 1.2.0: Video file transcription (MP4/MKV/AVI/MOV), multi-language auto-detection, Right-Alt hold-to-talk mode, AI command mode, voice search, NVIDIA CUDA GPU support.</Program_Change_Info>
+        <Program_Category_Class>Audio</Program_Category_Class>
+        <Program_Specific_Category>Audio::Other</Program_Specific_Category>
+        <Program_System_Requirements>.NET 8.0 Desktop Runtime (included in Full installer), Windows 10 or later, 4 GB RAM minimum (8 GB recommended)</Program_System_Requirements>
+    </Program_Info>
+    <Program_Descriptions>
+        <English>
+            <Keywords>speech recognition,transcription,voice to text,AI,Whisper,OpenAI,offline,CUDA,GPU,meeting transcription,subtitle,SRT,VTT,dictation,batch processing,voice typing</Keywords>
+            <Char_Desc_45>Offline AI speech recognition software</Char_Desc_45>
+            <Char_Desc_80>Offline AI speech recognition and transcription powered by OpenAI Whisper.</Char_Desc_80>
+            <Char_Desc_250>RocketWhisper is a fully offline AI speech recognition and transcription app for Windows. Powered by OpenAI Whisper with NVIDIA GPU (CUDA) acceleration. Real-time voice typing, batch processing, video subtitles (SRT/VTT). One-time purchase.</Char_Desc_250>
+            <Char_Desc_450>RocketWhisper is a desktop speech recognition and transcription application that runs 100% offline. Powered by OpenAI Whisper with NVIDIA GPU (CUDA) acceleration. Features: real-time voice typing with global hotkey, batch processing of audio/video files, subtitle export (SRT/VTT), AI text formatting via LLM integration, voice commands, custom vocabulary, and auto-correction. All processing happens locally, no data uploaded. One-time purchase.</Char_Desc_450>
+            <Char_Desc_2000>RocketWhisper is a powerful desktop speech recognition and transcription application that runs 100% offline on your computer. Your voice data never leaves your machine - complete privacy guaranteed.
+
+Key Features:
+- Powered by OpenAI Whisper engine for high-accuracy speech recognition
+- NVIDIA GPU (CUDA) acceleration - up to 10x faster than CPU
+- Real-time voice-to-text input with global hotkey (Right-Alt hold-to-talk)
+- Batch processing for multiple audio and video files
+- Video file transcription: MP4, MKV, AVI, MOV, WebM, WMV, FLV
+- SRT/VTT subtitle export for video creators
+- AI formatting with LLM integration (OpenAI, Claude, Gemini, Groq, local LLM)
+- AI Command Mode: select text and give voice instructions for AI processing
+- Voice search: say "search for..." to instantly open browser search
+- Voice commands (new line, delete, period, etc.)
+- Auto-punctuation and auto-correction with regex support
+- Custom vocabulary for specialized terminology
+- Per-application processing modes
+- Voice launcher for opening apps by voice
+- Multi-language support with auto-detection (25+ languages)
+- Recording indicator with audio level visualization
+- System tray integration for background operation
+
+Why RocketWhisper?
+- 100% Offline: No internet required. Your audio stays on your PC.
+- One-Time Purchase: No subscription fees. Pay once, use forever.
+- NVIDIA GPU Support: Blazing fast transcription with CUDA acceleration.
+- Privacy First: Zero data collection. No cloud processing.
+
+Perfect for meeting transcription, interview transcription, video subtitle creation, real-time dictation, lecture notes, and accessibility.
+
+Free 7-day trial with all features. Personal license: $32 USD. Business license: $399 USD (unlimited PCs).</Char_Desc_2000>
+        </English>
+    </Program_Descriptions>
+    <Web_Info>
+        <Application_URLs>
+            <Application_Info_URL>https://mojosoftjp.github.io/rocketwhisper/en/</Application_Info_URL>
+            <Application_Order_URL>https://mojosoftjp.github.io/rocketwhisper/en/purchase.html</Application_Order_URL>
+            <Application_Screenshot_URL>https://mojosoftjp.github.io/rocketwhisper/images/screenshots/en.main.png</Application_Screenshot_URL>
+            <Application_Icon_URL>https://mojosoftjp.github.io/rocketwhisper/images/icon32.png</Application_Icon_URL>
+            <Application_XML_File_URL>https://mojosoftjp.github.io/rocketwhisper/pad_file.xml</Application_XML_File_URL>
+        </Application_URLs>
+        <Download_URLs>
+            <Primary_Download_URL>https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.0.exe</Primary_Download_URL>
+            <Secondary_Download_URL>https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.0.exe</Secondary_Download_URL>
+            <Additional_Download_URL></Additional_Download_URL>
+        </Download_URLs>
+    </Web_Info>
+</XML_DIZ_INFO>
