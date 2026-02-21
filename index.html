@@ -5,10 +5,10 @@
     <script>!function(){var l=sessionStorage.getItem("rw-lang");if("ja"!==l&&("en"===l||!(navigator.language||"").startsWith("ja"))){var p=location.pathname.split("/").pop()||"index.html";location.replace("en/"+p+location.hash)}}();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta name="description" content="RocketWhisperは完全オフラインで動作するAI音声認識・文字起こしソフトです。OpenAI Whisperエンジン搭載で高精度な音声入力を実現。NVIDIA GPU(CUDA)対応で爆速認識。会議の議事録作成、動画の字幕生成、リアルタイム音声入力に。月額不要の買い切りライセンス。Windows 11/10対応。">
+    <meta name="description" content="RocketWhisperは完全オフラインで動作するAI音声認識・文字起こしソフトです。OpenAI Whisperエンジン搭載で高精度な音声入力を実現。NVIDIA GPU(CUDA)・AMD/Intel GPU(Vulkan)対応で爆速認識。会議の議事録作成、動画の字幕生成、リアルタイム音声入力に。月額不要の買い切りライセンス。Windows 11/10対応。">
     <meta name="keywords" content="音声認識,文字起こし,音声入力,AI音声認識,Whisper,OpenAI Whisper,オフライン音声認識,ローカル音声認識,リアルタイム音声入力,会議 文字起こし,議事録作成,動画 文字起こし,字幕作成,SRT,VTT,音声テキスト変換,Windows 音声入力,AI文字起こし,NVIDIA CUDA,GPU 音声認識,買い切り,月額不要,プライバシー保護,ローカル処理,RocketWhisper,音声認識ソフト,文字起こしソフト,音声認識アプリ,文字起こしアプリ,バッチ処理,専門用語登録,自動句読点,音声コマンド,カスタム指示,LLM連携,音声 テキスト変換 無料,文字起こし フリーソフト">
     <meta property="og:title" content="RocketWhisper - AI音声認識・文字起こしソフト | 完全オフライン・買い切り">
-    <meta property="og:description" content="完全オフラインで動作するAI音声認識ソフト。OpenAI Whisper搭載で高精度。NVIDIA GPU対応。会議の議事録、動画の字幕作成に。月額不要の買い切りライセンス。">
+    <meta property="og:description" content="完全オフラインで動作するAI音声認識ソフト。OpenAI Whisper搭載で高精度。NVIDIA/AMD/Intel GPU対応で爆速認識。会議の議事録、動画の字幕作成に。月額不要の買い切りライセンス。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mojosoftjp.github.io/rocketwhisper/">
     <meta property="og:site_name" content="RocketWhisper">
@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RocketWhisper - AI音声認識・文字起こしソフト">
-    <meta name="twitter:description" content="完全オフライン・買い切りのAI音声認識ソフト。OpenAI Whisper搭載。NVIDIA GPU対応で爆速認識。">
+    <meta name="twitter:description" content="完全オフライン・買い切りのAI音声認識ソフト。OpenAI Whisper搭載。NVIDIA/AMD/Intel GPU対応で爆速認識。">
     <meta name="twitter:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
     <link rel="canonical" href="https://mojosoftjp.github.io/rocketwhisper/">
     <link rel="alternate" hreflang="ja" href="https://mojosoftjp.github.io/rocketwhisper/">
@@ -33,7 +33,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "RocketWhisper",
-        "description": "完全オフラインで動作するAI音声認識・文字起こしソフト。OpenAI Whisperエンジン搭載。NVIDIA GPU(CUDA)対応で爆速認識。",
+        "description": "完全オフラインで動作するAI音声認識・文字起こしソフト。OpenAI Whisperエンジン搭載。NVIDIA GPU(CUDA)・AMD/Intel GPU(Vulkan)対応で爆速認識。",
         "url": "https://mojosoftjp.github.io/rocketwhisper/",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows 11, Windows 10",
@@ -43,7 +43,7 @@
             "priceCurrency": "JPY",
             "description": "個人版ライセンス（買い切り・月額不要）"
         },
-        "softwareVersion": "1.1.2",
+        "softwareVersion": "1.2.1",
         "author": {
             "@type": "Organization",
             "name": "Mojosoft Co., Ltd.",
@@ -51,7 +51,7 @@
         },
         "inLanguage": ["ja", "en"],
         "downloadUrl": "https://mojosoftjp.github.io/rocketwhisper/#download",
-        "featureList": "オフライン音声認識, リアルタイム文字起こし, NVIDIA CUDA GPU加速, 動画文字起こし, SRT/VTT字幕出力, AI処理(LLM連携), カスタム指示, 専門用語登録, 音声コマンド, バッチ処理"
+        "featureList": "オフライン音声認識, リアルタイム文字起こし, NVIDIA CUDA GPU加速, AMD/Intel Vulkan GPU加速, 動画文字起こし, SRT/VTT字幕出力, AI処理(LLM連携), カスタム指示, 専門用語登録, 音声コマンド, バッチ処理"
     }
     </script>
     <script type="application/ld+json">
@@ -96,7 +96,7 @@
                 "name": "GPUがなくても使えますか？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "はい、CPUのみでも動作します。NVIDIA GPUをお持ちの場合はCUDA加速が自動的に有効になり、認識速度が大幅に向上します。"
+                    "text": "はい、CPUのみでも動作します。NVIDIA GPUをお持ちの場合はCUDA加速、AMD/Intel GPUをお持ちの場合はVulkan加速が自動的に有効になり、認識速度が大幅に向上します。"
                 }
             },
             {
@@ -313,10 +313,10 @@
                             <line x1="9" y1="20" x2="9" y2="22"></line>
                             <line x1="15" y1="20" x2="15" y2="22"></line>
                         </svg>
-                        NVIDIAグラフィックボードで<br class="sp-only"><span class="gpu-highlight">爆速認識</span>
+                        あらゆるGPUで<br class="sp-only"><span class="gpu-highlight">爆速認識</span>
                     </h2>
                     <p class="gpu-boost-description">
-                        お使いのPCにNVIDIA製GPUが搭載されていれば、音声認識処理が<strong>数倍〜10倍以上高速化</strong>。<br>
+                        NVIDIA・AMD・Intel ── お使いのPCにGPUが搭載されていれば、音声認識処理が<strong>数倍〜10倍以上高速化</strong>。<br>
                         面倒な設定は一切不要 ── 起動するだけで自動的にGPUを検出し、最適な高速化を適用します。
                     </p>
                     <div class="gpu-speed-comparison">
@@ -356,7 +356,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>NVIDIA CUDA対応</span>
+                            <span>NVIDIA CUDA / AMD・Intel Vulkan対応</span>
                         </div>
                     </div>
                 </div>
@@ -927,8 +927,8 @@
                         <tr>
                             <th>GPU高速化</th>
                             <td>
-                                <span style="color: #76B900; font-weight: 600;">NVIDIA CUDA 対応</span>（自動検出）<br>
-                                <small style="color: #888;">NVIDIA製GPUがあれば自動的に高速化。GPUがなくてもCPUで問題なく動作します</small>
+                                <span style="color: #76B900; font-weight: 600;">NVIDIA CUDA</span> / <span style="color: #E34F26; font-weight: 600;">AMD・Intel Vulkan</span> 対応（自動検出）<br>
+                                <small style="color: #888;">NVIDIA/AMD/Intel製GPUがあれば自動的に高速化。GPUがなくてもCPUで問題なく動作します</small>
                             </td>
                         </tr>
                     </tbody>
@@ -946,7 +946,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">🐧 Linux版はこちら</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 1.2.0</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 1.2.1</p>
 
             <!-- エディション選択 -->
             <div class="edition-grid fade-in">
@@ -982,7 +982,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1026,7 +1026,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1113,7 +1113,7 @@
                 <div class="target-card fade-in">
                     <div class="target-icon">⚡</div>
                     <h3>GPUがなくても使えますか？</h3>
-                    <p>はい、CPUのみでも動作します。NVIDIA GPUをお持ちの場合はCUDA加速が自動的に有効になり、認識速度が大幅に向上します。設定不要で完全自動です。</p>
+                    <p>はい、CPUのみでも動作します。NVIDIA GPUをお持ちの場合はCUDA加速、AMD/Intel GPUをお持ちの場合はVulkan加速が自動的に有効になり、認識速度が大幅に向上します。設定不要で完全自動です。</p>
                 </div>
                 <div class="target-card fade-in">
                     <div class="target-icon">📋</div>
