@@ -5,10 +5,10 @@
     <script>!function(){var l=sessionStorage.getItem("rw-lang");if("en"!==l&&("ja"===l||(navigator.language||"").startsWith("ja"))){var p=location.pathname.split("/").pop()||"index.html";location.replace("../"+p+location.hash)}}();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta name="description" content="RocketWhisper is a fully offline AI speech recognition and transcription software. Powered by OpenAI Whisper for high-accuracy voice-to-text. NVIDIA GPU (CUDA) acceleration. Meeting transcription, video subtitles (SRT/VTT), real-time voice typing. One-time purchase, no subscription. Windows 11/10.">
+    <meta name="description" content="RocketWhisper is a fully offline AI speech recognition and transcription software. Powered by OpenAI Whisper for high-accuracy voice-to-text. NVIDIA GPU (CUDA) & AMD/Intel GPU (Vulkan) acceleration. Meeting transcription, video subtitles (SRT/VTT), real-time voice typing. One-time purchase, no subscription. Windows 11/10.">
     <meta name="keywords" content="speech recognition,transcription,voice to text,AI speech recognition,Whisper,OpenAI Whisper,offline speech recognition,local transcription,real-time voice typing,meeting transcription,minutes creation,video transcription,subtitle generator,SRT,VTT,speech to text converter,Windows voice typing,AI transcription,NVIDIA CUDA,GPU speech recognition,one-time purchase,no subscription,privacy,local processing,RocketWhisper,speech recognition software,transcription software,transcription app,batch processing,custom vocabulary,auto punctuation,voice commands,custom instructions,LLM integration,free speech to text,offline voice recognition">
     <meta property="og:title" content="RocketWhisper - AI Speech Recognition & Transcription | Fully Offline, One-Time Purchase">
-    <meta property="og:description" content="Fully offline AI speech recognition software. Powered by OpenAI Whisper. NVIDIA GPU accelerated. Meeting transcription, video subtitles. No subscription fees.">
+    <meta property="og:description" content="Fully offline AI speech recognition software. Powered by OpenAI Whisper. NVIDIA/AMD/Intel GPU accelerated. Meeting transcription, video subtitles. No subscription fees.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mojosoftjp.github.io/rocketwhisper/en/">
     <meta property="og:site_name" content="RocketWhisper">
@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RocketWhisper - AI Speech Recognition & Transcription Software">
-    <meta name="twitter:description" content="Fully offline AI speech-to-text. OpenAI Whisper powered. NVIDIA GPU accelerated. One-time purchase.">
+    <meta name="twitter:description" content="Fully offline AI speech-to-text. OpenAI Whisper powered. NVIDIA/AMD/Intel GPU accelerated. One-time purchase.">
     <meta name="twitter:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
     <link rel="canonical" href="https://mojosoftjp.github.io/rocketwhisper/en/">
     <link rel="alternate" hreflang="ja" href="https://mojosoftjp.github.io/rocketwhisper/">
@@ -33,7 +33,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "RocketWhisper",
-        "description": "Fully offline AI speech recognition and transcription software powered by OpenAI Whisper. NVIDIA GPU (CUDA) accelerated.",
+        "description": "Fully offline AI speech recognition and transcription software powered by OpenAI Whisper. NVIDIA GPU (CUDA) & AMD/Intel GPU (Vulkan) accelerated.",
         "url": "https://mojosoftjp.github.io/rocketwhisper/en/",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Windows 11, Windows 10",
@@ -43,7 +43,7 @@
             "priceCurrency": "JPY",
             "description": "Personal License (one-time purchase, no subscription)"
         },
-        "softwareVersion": "1.1.2",
+        "softwareVersion": "1.2.1",
         "author": {
             "@type": "Organization",
             "name": "Mojosoft Co., Ltd.",
@@ -51,7 +51,7 @@
         },
         "inLanguage": ["ja", "en"],
         "downloadUrl": "https://mojosoftjp.github.io/rocketwhisper/en/#download",
-        "featureList": "Offline speech recognition, Real-time transcription, NVIDIA CUDA GPU acceleration, Video transcription, SRT/VTT subtitle export, AI processing (LLM), Custom instructions, Custom vocabulary, Voice commands, Batch processing"
+        "featureList": "Offline speech recognition, Real-time transcription, NVIDIA CUDA GPU acceleration, AMD/Intel Vulkan GPU acceleration, Video transcription, SRT/VTT subtitle export, AI processing (LLM), Custom instructions, Custom vocabulary, Voice commands, Batch processing"
     }
     </script>
     <script type="application/ld+json">
@@ -96,7 +96,7 @@
                 "name": "Do I need a GPU?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No, RocketWhisper works on CPU only. If you have an NVIDIA GPU, CUDA acceleration is automatically enabled for much faster recognition."
+                    "text": "No, RocketWhisper works on CPU only. If you have an NVIDIA GPU, CUDA acceleration is automatically enabled. AMD and Intel GPUs are also supported via Vulkan acceleration for much faster recognition."
                 }
             },
             {
@@ -313,10 +313,10 @@
                             <line x1="9" y1="20" x2="9" y2="22"></line>
                             <line x1="15" y1="20" x2="15" y2="22"></line>
                         </svg>
-                        <span class="gpu-highlight">Blazing Fast</span> with NVIDIA GPU
+                        <span class="gpu-highlight">Blazing Fast</span> with Any GPU
                     </h2>
                     <p class="gpu-boost-description">
-                        If your PC has an NVIDIA GPU, speech recognition speeds up <strong>several times to 10x or more</strong>.<br>
+                        NVIDIA, AMD, or Intel &mdash; if your PC has a GPU, speech recognition speeds up <strong>several times to 10x or more</strong>.<br>
                         No configuration needed &mdash; just launch the app and it automatically detects your GPU for optimal acceleration.
                     </p>
                     <div class="gpu-speed-comparison">
@@ -356,7 +356,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>NVIDIA CUDA supported</span>
+                            <span>NVIDIA CUDA / AMD &amp; Intel Vulkan supported</span>
                         </div>
                     </div>
                 </div>
@@ -927,8 +927,8 @@
                         <tr>
                             <th>GPU Acceleration</th>
                             <td>
-                                <span style="color: #76B900; font-weight: 600;">NVIDIA CUDA Supported</span> (auto-detected)<br>
-                                <small style="color: #888;">Automatically accelerated with NVIDIA GPU. Works fine on CPU without a GPU.</small>
+                                <span style="color: #76B900; font-weight: 600;">NVIDIA CUDA</span> / <span style="color: #E34F26; font-weight: 600;">AMD &amp; Intel Vulkan</span> Supported (auto-detected)<br>
+                                <small style="color: #888;">Automatically accelerated with NVIDIA/AMD/Intel GPU. Works fine on CPU without a GPU.</small>
                             </td>
                         </tr>
                     </tbody>
@@ -946,7 +946,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">&#x1F427; Linux version</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">Latest Version: 1.2.0</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">Latest Version: 1.2.1</p>
 
             <!-- Edition Selection -->
             <div class="edition-grid fade-in">
@@ -982,7 +982,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1026,7 +1026,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1113,7 +1113,7 @@
                 <div class="target-card fade-in">
                     <div class="target-icon">&#x26A1;</div>
                     <h3>Do I need a GPU?</h3>
-                    <p>No, it works on CPU alone. If you have an NVIDIA GPU, CUDA acceleration is automatically enabled for significantly faster recognition. No setup required.</p>
+                    <p>No, it works on CPU alone. If you have an NVIDIA GPU, CUDA acceleration is automatically enabled. AMD and Intel GPUs are also supported via Vulkan acceleration. No setup required &mdash; fully automatic.</p>
                 </div>
                 <div class="target-card fade-in">
                     <div class="target-icon">&#x1F4CB;</div>
