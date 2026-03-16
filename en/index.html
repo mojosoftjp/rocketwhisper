@@ -43,7 +43,7 @@
             "priceCurrency": "JPY",
             "description": "Personal License (one-time purchase, no subscription)"
         },
-        "softwareVersion": "1.2.1",
+        "softwareVersion": "1.2.2",
         "author": {
             "@type": "Organization",
             "name": "Mojosoft Co., Ltd.",
@@ -946,7 +946,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">&#x1F427; Linux version</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">Latest Version: 1.2.1</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">Latest Version: 1.2.2</p>
 
             <!-- Edition Selection -->
             <div class="edition-grid fade-in">
@@ -982,7 +982,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.1.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.2.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1026,7 +1026,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.1.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.2.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1087,6 +1087,37 @@
             <p class="requirements fade-in" style="text-align: center; margin-top: 2rem;">
                 System Requirements: Windows 11 / 10 (64-bit), 8GB+ RAM recommended, .NET 8.0 Desktop Runtime
             </p>
+        </div>
+    </section>
+
+    <!-- Changelog -->
+    <section class="target-users" id="changelog" style="padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title fade-in">Version <span class="highlight">History</span></h2>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.2 - March 16, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Stability] Auto-recovery after hibernate/sleep resume</strong> — Automatically reinitializes Whisper model and audio devices after system resume. Detects and recovers from CUDA GPU memory invalidation and audio driver inconsistencies.</li>
+                        <li><strong>[Critical Fix] Prevent zombie processes</strong> — Added global exception handlers to prevent the app from becoming unresponsive on unhandled exceptions. Displays error message and exits gracefully.</li>
+                        <li><strong>[Robustness] Audio device enumeration protection</strong> — App no longer crashes when audio driver errors occur during microphone enumeration.</li>
+                        <li><strong>[Robustness] App initialization protection</strong> — App continues to start even if initialization encounters errors, notifying users of the issue.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.1 - February 26, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>USB microphone hotplug detection</strong> — Real-time detection of microphone connect/disconnect with automatic device list refresh.</li>
+                        <li><strong>Video file transcription</strong> — Transcribe directly from MP4/MKV/AVI/MOV/WebM video files using FFmpeg audio extraction.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.0 - February 11, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>Custom Instructions</strong> — Execute specific AI instructions instantly with dedicated hotkeys. Fast processing for translation, summarization, proofreading without voice input.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 

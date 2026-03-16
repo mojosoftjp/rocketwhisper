@@ -43,7 +43,7 @@
             "priceCurrency": "JPY",
             "description": "個人版ライセンス（買い切り・月額不要）"
         },
-        "softwareVersion": "1.2.1",
+        "softwareVersion": "1.2.2",
         "author": {
             "@type": "Organization",
             "name": "Mojosoft Co., Ltd.",
@@ -946,7 +946,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">🐧 Linux版はこちら</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 1.2.1</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 1.2.2</p>
 
             <!-- エディション選択 -->
             <div class="edition-grid fade-in">
@@ -982,7 +982,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.1.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.2.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1026,7 +1026,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.1.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.2.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1087,6 +1087,37 @@
             <p class="requirements fade-in" style="text-align: center; margin-top: 2rem;">
                 動作要件: Windows 11 / 10 (64bit)、RAM 8GB以上推奨、.NET 8.0 Desktop Runtime
             </p>
+        </div>
+    </section>
+
+    <!-- バージョン更新情報 -->
+    <section class="target-users" id="changelog" style="padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title fade-in">バージョン<span class="highlight">更新情報</span></h2>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.2 - 2026年3月16日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【安定性改善】休止状態/スリープ復帰後の自動回復</strong> — 休止状態からの復帰時にWhisperモデルとオーディオデバイスを自動的に再初期化。CUDA GPUメモリの無効化やオーディオドライバの不整合を自動検出・復旧します。</li>
+                        <li><strong>【致命的バグ修正】プロセスのゾンビ化防止</strong> — グローバル例外ハンドラを追加し、未処理例外発生時にプロセスが応答不能になる問題を解決。エラーメッセージを表示して安全に終了します。</li>
+                        <li><strong>【堅牢性向上】オーディオデバイス列挙の例外保護</strong> — マイクデバイスの列挙時にドライバエラーが発生してもアプリがクラッシュしない設計に改善。</li>
+                        <li><strong>【堅牢性向上】アプリ初期化の例外保護</strong> — 起動時の初期化処理で例外が発生してもアプリが起動を継続し、エラー内容をユーザーに通知します。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.1 - 2026年2月26日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>USBマイクのホットプラグ検出</strong> — マイクの接続・切断をリアルタイムに検出し、設定画面のデバイス一覧を自動更新。</li>
+                        <li><strong>動画ファイルの文字起こし対応</strong> — MP4/MKV/AVI/MOV/WebMなどの動画ファイルからFFmpegで音声を抽出して直接文字起こし。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.0 - 2026年2月11日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>カスタム指示機能</strong> — 専用ホットキーで特定のAI指示を即座に実行。テキスト翻訳・要約・校正などを音声入力なしで高速処理。</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
