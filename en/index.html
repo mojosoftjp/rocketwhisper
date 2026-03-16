@@ -1099,9 +1099,8 @@
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.2 - March 16, 2026</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>[Stability] Auto-recovery after hibernate/sleep resume</strong> — Automatically reinitializes Whisper model and audio devices after system resume. Detects and recovers from CUDA GPU memory invalidation and audio driver inconsistencies.</li>
-                        <li><strong>[Critical Fix] Prevent zombie processes</strong> — Added global exception handlers to prevent the app from becoming unresponsive on unhandled exceptions. Displays error message and exits gracefully.</li>
+                        <li><strong>[Robustness] Graceful error handling</strong> — Improved handling of unexpected errors to prevent the app from becoming unresponsive. Displays error message and exits gracefully.</li>
                         <li><strong>[Robustness] Audio device enumeration protection</strong> — App no longer crashes when audio driver errors occur during microphone enumeration.</li>
-                        <li><strong>[Robustness] App initialization protection</strong> — App continues to start even if initialization encounters errors, notifying users of the issue.</li>
                     </ul>
                 </div>
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
