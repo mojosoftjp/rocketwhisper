@@ -43,7 +43,7 @@
             "priceCurrency": "JPY",
             "description": "個人版ライセンス（買い切り・月額不要）"
         },
-        "softwareVersion": "1.2.3",
+        "softwareVersion": "1.2.4",
         "author": {
             "@type": "Organization",
             "name": "Mojosoft Co., Ltd.",
@@ -946,7 +946,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">🐧 Linux版はこちら</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 1.2.3</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 1.2.4</p>
 
             <!-- エディション選択 -->
             <div class="edition-grid fade-in">
@@ -982,7 +982,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.3.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.4.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1026,7 +1026,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.3.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.4.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1095,6 +1095,14 @@
         <div class="container">
             <h2 class="section-title fade-in">バージョン<span class="highlight">更新情報</span></h2>
             <div style="max-width: 700px; margin: 0 auto;">
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.4 - 2026年4月2日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【安定性改善】GPU障害からの自動回復</strong> — 休止状態復帰後にGPUドライバ（CUDA/Vulkan）がクラッシュした場合、Whisperモデルを自動で再読み込みして復帰します。</li>
+                        <li><strong>【安定性改善】音声認識タイムアウト</strong> — GPUハング時に無限待機しなくなりました。タイムアウト検出後にモデルを自動再読み込みします。</li>
+                        <li><strong>【安定性改善】電源復帰時のリトライ</strong> — ドライバ復帰に時間がかかる場合も最大3回リトライして確実に再初期化します。</li>
+                    </ul>
+                </div>
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.3 - 2026年3月19日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
