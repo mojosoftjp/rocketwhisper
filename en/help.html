@@ -790,6 +790,66 @@
                     <li>Click "Connection Test" to verify</li>
                 </ol>
 
+                <h3>How to Get an API Key</h3>
+                <p>Using a cloud AI provider requires an API key from that service. Below we walk through <strong>Google Gemini</strong>, which has a generous free tier and is the easiest place to start. Setup takes about 3–5 minutes, and you can begin without registering a credit card.</p>
+
+                <ol>
+                    <li>Open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a> (https://aistudio.google.com/apikey) and sign in with your <strong>Google account</strong> (your Gmail address)</li>
+                    <li>Review and accept the <strong>Terms of Service</strong> (shown the first time only)</li>
+                    <li>Click "<strong>Create API key</strong>". If you are asked to choose a project, simply use the one created automatically for you</li>
+                    <li>Copy the displayed string beginning with <code>AIza</code> — this is your API key</li>
+                    <li>In RocketWhisper, open Settings → the "<strong>AI Processing</strong>" tab, select "<strong>Gemini</strong>" as the provider, and paste the key into the <strong>API Key</strong> field</li>
+                    <li>Click "<strong>Connection Test</strong>" to confirm it works</li>
+                </ol>
+
+                <h3>Where to Get a Key for Each Provider</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Where to create a key</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google Gemini</td>
+                            <td><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a></td>
+                            <td>Generous free tier — recommended for first-time users</td>
+                        </tr>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td><a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com/api-keys</a></td>
+                            <td>Pay-as-you-go (requires prepaid credit)</td>
+                        </tr>
+                        <tr>
+                            <td>Anthropic</td>
+                            <td><a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com/settings/keys</a></td>
+                            <td>Pay-as-you-go. Strong at natural writing</td>
+                        </tr>
+                        <tr>
+                            <td>Groq</td>
+                            <td><a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a></td>
+                            <td>Free tier available. Very fast</td>
+                        </tr>
+                        <tr>
+                            <td>Local LLM</td>
+                            <td>Not required</td>
+                            <td>Just point to your LM Studio / Ollama base URL</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-card">
+                    <h4>Notes on API Keys</h4>
+                    <ul>
+                        <li><strong>Speech recognition alone needs no API key</strong>: transcription runs locally with Whisper on your PC. A key is only needed for AI processing (formatting, summarizing, translating, and so on)</li>
+                        <li><strong>If the connection test fails</strong>: check that there is no extra whitespace around the key, that the whole key was pasted, and that the key matches the provider you selected</li>
+                        <li><strong>Keep your key private</strong>: treat it as a secret. If it is ever exposed, delete it in the provider's console and create a new one</li>
+                        <li><strong>Want to stay fully offline?</strong> Choose a local LLM (LM Studio / Ollama) — no API key and no internet connection required</li>
+                    </ul>
+                </div>
+
                 <h3>AI Processing Modes</h3>
                 <p>Once AI processing is configured, the following modes become available in app-specific processing.</p>
                 <table class="command-table">

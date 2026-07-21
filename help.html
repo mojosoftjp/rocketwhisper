@@ -790,6 +790,66 @@
                     <li>「接続テスト」で動作確認</li>
                 </ol>
 
+                <h3>APIキーの取得方法</h3>
+                <p>クラウドのAIプロバイダを利用するには、各サービスのAPIキーが必要です。ここでは、無料枠が大きく初めての方にも扱いやすい <strong>Google Gemini</strong> を例に、取得手順をご案内します。所要時間は3〜5分程度で、クレジットカードの登録なしに始められます。</p>
+
+                <ol>
+                    <li><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a>（https://aistudio.google.com/apikey）をブラウザで開き、<strong>Googleアカウント</strong>（Gmailのアドレス）でログインします</li>
+                    <li>初回のみ表示される<strong>利用規約</strong>を確認して同意します</li>
+                    <li>「<strong>APIキーを作成</strong>」（英語表示の場合は "Create API key"）をクリックします。プロジェクトの選択を求められた場合は、自動作成されるものをそのまま使えます</li>
+                    <li>表示された <code>AIza</code> で始まる文字列をコピーします（これがAPIキーです）</li>
+                    <li>RocketWhisperの設定画面 →「<strong>AI処理</strong>」タブ → プロバイダで「<strong>Gemini</strong>」を選び、「<strong>APIキー</strong>」欄に貼り付けます</li>
+                    <li>「<strong>接続テスト</strong>」で正常に接続できることを確認します</li>
+                </ol>
+
+                <h3>プロバイダ別のAPIキー発行先</h3>
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>プロバイダ</th>
+                            <th>発行先</th>
+                            <th>備考</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google Gemini</td>
+                            <td><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a></td>
+                            <td>無料枠が大きく、初めての方におすすめ</td>
+                        </tr>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td><a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com/api-keys</a></td>
+                            <td>従量課金（事前のクレジット購入が必要）</td>
+                        </tr>
+                        <tr>
+                            <td>Anthropic</td>
+                            <td><a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com/settings/keys</a></td>
+                            <td>従量課金。自然な日本語が得意</td>
+                        </tr>
+                        <tr>
+                            <td>Groq</td>
+                            <td><a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a></td>
+                            <td>無料枠あり。処理が高速</td>
+                        </tr>
+                        <tr>
+                            <td>ローカルLLM</td>
+                            <td>不要</td>
+                            <td>LM Studio / Ollama のベースURLを指定するだけ</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-card">
+                    <h4>APIキーに関する補足</h4>
+                    <ul>
+                        <li><strong>音声認識だけならAPIキーは不要です</strong>: 文字起こしはお使いのPC内のWhisperで動作します。APIキーが必要なのは、このAI処理（整形・要約・翻訳など）の機能のみです</li>
+                        <li><strong>接続テストで「失敗」と出る場合</strong>: キーの前後に余分な空白が入っていないか、キー全体が貼り付けられているか、選択中のプロバイダとキーの発行元が一致しているかをご確認ください</li>
+                        <li><strong>キーの取り扱い</strong>: APIキーは第三者に知られないよう管理してください。万一漏れた場合は、各サービスの管理画面で削除して再作成できます</li>
+                        <li><strong>完全オフラインで使いたい場合</strong>: ローカルLLM（LM Studio / Ollama）を選べば、APIキーもインターネット接続も不要です</li>
+                    </ul>
+                </div>
+
                 <h3>AI処理モード</h3>
                 <p>AI処理を設定すると、アプリ別処理で以下のモードが使用可能になります。</p>
                 <table class="command-table">
