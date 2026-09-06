@@ -207,6 +207,7 @@
                     <li><strong>Model Selection</strong>: Choose the Whisper model to use</li>
                     <li><strong>Language</strong>: Recognition language (Japanese/English/Chinese/Korean/Auto-detect)</li>
                     <li><strong>Punctuation Prompt</strong>: Instructs Whisper to include punctuation in the output (recommended)</li>
+                    <li><strong>Voice Activity Detection (VAD)</strong>: Skips silent or noise-only segments before recognition to prevent hallucinated text from silent recordings (since v2.0.0, on by default, recommended)</li>
                 </ul>
 
                 <h3>Input Device Tab</h3>
@@ -638,6 +639,7 @@
                 <div class="info-card">
                     <h4>Built-in Hallucination Protection</h4>
                     <p>RocketWhisper includes 73 built-in Whisper hallucination countermeasures. Unwanted phrases such as "Thank you for watching" are automatically removed.</p>
+                    <p>Since v2.0.0, Silero VAD-based voice activity detection additionally skips silent or noise-only segments before recognition. This prevents text from being generated from silence-only recordings and keeps subtitle start times accurate for files with leading silence (toggle on the Model &amp; Language tab).</p>
                 </div>
 
                 <div class="tip-box">
@@ -755,22 +757,22 @@
                     <tbody>
                         <tr>
                             <td>OpenAI</td>
-                            <td>gpt-4o, gpt-4o-mini</td>
+                            <td>GPT-5.6 Terra / Luna / Sol</td>
                             <td>High accuracy, consistent quality</td>
                         </tr>
                         <tr>
                             <td>Anthropic</td>
-                            <td>Claude 4.5 Sonnet/Haiku</td>
+                            <td>Claude Sonnet 5 / Haiku 4.5 / Opus 5</td>
                             <td>Natural language, long text support</td>
                         </tr>
                         <tr>
                             <td>Groq</td>
-                            <td>LLaMA 3.3 70B, Mixtral</td>
+                            <td>LLaMA 3.3 70B, LLaMA 3.1 8B</td>
                             <td>High speed, free tier available</td>
                         </tr>
                         <tr>
                             <td>Google Gemini</td>
-                            <td>gemini-2.5-pro/flash</td>
+                            <td>Gemini 3.7 Flash / 3.5 Flash Lite / 3.1 Pro / 2.5 Flash</td>
                             <td>Generous free tier, high quality</td>
                         </tr>
                         <tr>
@@ -1366,6 +1368,7 @@
                                 <li>Move the microphone closer to your mouth</li>
                                 <li>Reduce ambient noise</li>
                                 <li>Register custom terminology (* For even better accuracy with specialized terms, consider using the large-v3 model)</li>
+                                <li>If text appears from silent recordings, make sure "Voice Activity Detection (VAD)" is enabled on the Model &amp; Language tab (since v2.0.0)</li>
                             </ul>
                         </div>
                     </div>

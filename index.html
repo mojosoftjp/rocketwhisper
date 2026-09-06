@@ -44,7 +44,7 @@
             "priceCurrency": "JPY",
             "description": "個人版ライセンス（買い切り・月額不要）"
         },
-        "softwareVersion": "1.2.4",
+        "softwareVersion": "2.0.0",
         "author": {
             "@type": "Organization",
             "name": "Mojosoft Co., Ltd.",
@@ -947,7 +947,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">🐧 Linux版はこちら</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 1.2.4</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 2.0.0</p>
 
             <!-- エディション選択 -->
             <div class="edition-grid fade-in">
@@ -983,7 +983,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.4.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.0.0.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1027,7 +1027,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.4.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.0.0.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1097,6 +1097,16 @@
             <h2 class="section-title fade-in">バージョン<span class="highlight">更新情報</span></h2>
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.0 - 2026年9月6日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【認識精度】VAD（音声区間検出）によるハルシネーション抑制</strong> — Silero VADを搭載し、無音や環境音だけの区間を認識前に除外。無音の録音から架空の文章が生成される現象を入口で防ぎます（設定「モデル・言語」タブでオン/オフ可、既定オン）。</li>
+                        <li><strong>【GPU対応】CUDA 12 ドライバに対応</strong> — CUDA 12系ドライバのNVIDIA環境でGPU加速が有効になります。CUDA 13系・Vulkan（AMD/Intel）は従来通り。バージョン情報画面で使用中の認識エンジンを確認できます。</li>
+                        <li><strong>【AI処理】対応モデルを最新世代に更新</strong> — OpenAI GPT-5.6（Terra/Luna/Sol）、Anthropic Claude Sonnet 5 / Haiku 4.5 / Opus 5、Google Gemini 3.7 Flash ほかに刷新。旧モデルを設定していた場合は自動的に既定モデルへ切り替わります。</li>
+                        <li><strong>【配布】インストーラにコード署名を付与</strong> — 発行元「Mojosoft Co., Ltd.」の電子署名付きで配布します。</li>
+                        <li><strong>【内部】音声認識エンジンを Whisper.net 1.9.1 に更新</strong> — 未使用コンポーネントを整理し、インストールサイズを削減しました。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.4 - 2026年4月2日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【安定性改善】GPU障害からの自動回復</strong> — 休止状態復帰後にGPUドライバ（CUDA/Vulkan）がクラッシュした場合、Whisperモデルを自動で再読み込みして復帰します。</li>
@@ -1118,17 +1128,11 @@
                         <li><strong>【堅牢性向上】オーディオデバイス列挙の例外保護</strong> — マイクデバイスの列挙時にドライバエラーが発生してもアプリがクラッシュしない設計に改善。</li>
                     </ul>
                 </div>
-                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                <div class="target-card fade-in">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.1 - 2026年2月26日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>USBマイクのホットプラグ検出</strong> — マイクの接続・切断をリアルタイムに検出し、設定画面のデバイス一覧を自動更新。</li>
                         <li><strong>動画ファイルの文字起こし対応</strong> — MP4/MKV/AVI/MOV/WebMなどの動画ファイルからFFmpegで音声を抽出して直接文字起こし。</li>
-                    </ul>
-                </div>
-                <div class="target-card fade-in">
-                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.0 - 2026年2月11日</h3>
-                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
-                        <li><strong>カスタム指示機能</strong> — 専用ホットキーで特定のAI指示を即座に実行。テキスト翻訳・要約・校正などを音声入力なしで高速処理。</li>
                     </ul>
                 </div>
             </div>

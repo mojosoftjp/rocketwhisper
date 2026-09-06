@@ -207,6 +207,7 @@
                     <li><strong>モデル選択</strong>: 使用するWhisperモデルを選択</li>
                     <li><strong>言語</strong>: 認識言語（日本語/英語/中国語/韓国語/自動検出）</li>
                     <li><strong>句読点プロンプト</strong>: Whisperに句読点を含む認識結果を出力させる（推奨）</li>
+                    <li><strong>音声区間検出（VAD）</strong>: 無音・雑音だけの区間を認識前に除外し、無音の録音から架空の文章が生成される現象（ハルシネーション）を防ぐ（v2.0.0〜、既定オン・推奨）</li>
                 </ul>
 
                 <h3>入力デバイスタブ</h3>
@@ -638,6 +639,7 @@
                 <div class="info-card">
                     <h4>内蔵ハルシネーション対策</h4>
                     <p>RocketWhisperには73種類のWhisperハルシネーション対策が内蔵されています。「ご視聴ありがとうございました」などの不要なフレーズは自動的に削除されます。</p>
+                    <p>さらに v2.0.0 からは Silero VAD による音声区間検出が加わり、無音や環境音だけの区間を認識前に除外します。無音のみの録音から文章が生成される現象を入口で防ぎ、先頭に無音があるファイルでも字幕の開始時刻が正確になります（設定「モデル・言語」タブでオン/オフ可）。</p>
                 </div>
 
                 <div class="tip-box">
@@ -755,22 +757,22 @@
                     <tbody>
                         <tr>
                             <td>OpenAI</td>
-                            <td>gpt-4o, gpt-4o-mini</td>
+                            <td>GPT-5.6 Terra / Luna / Sol</td>
                             <td>高精度、安定した品質</td>
                         </tr>
                         <tr>
                             <td>Anthropic</td>
-                            <td>Claude 4.5 Sonnet/Haiku</td>
+                            <td>Claude Sonnet 5 / Haiku 4.5 / Opus 5</td>
                             <td>自然な日本語、長文対応</td>
                         </tr>
                         <tr>
                             <td>Groq</td>
-                            <td>LLaMA 3.3 70B, Mixtral</td>
+                            <td>LLaMA 3.3 70B, LLaMA 3.1 8B</td>
                             <td>高速・無料枠あり</td>
                         </tr>
                         <tr>
                             <td>Google Gemini</td>
-                            <td>gemini-2.5-pro/flash</td>
+                            <td>Gemini 3.7 Flash / 3.5 Flash Lite / 3.1 Pro / 2.5 Flash</td>
                             <td>無料枠豊富、高品質</td>
                         </tr>
                         <tr>
@@ -1374,6 +1376,7 @@
                                 <li>マイクを口に近づける</li>
                                 <li>周囲の騒音を減らす</li>
                                 <li>専門用語を登録する（※専門用語の認識精度をさらに向上させたい場合は、large-v3モデルの使用もご検討ください）</li>
+                                <li>無音の録音から架空の文章が出る場合は、「モデル・言語」タブの「音声区間検出（VAD）」がオンになっているか確認する（v2.0.0〜）</li>
                             </ul>
                         </div>
                     </div>

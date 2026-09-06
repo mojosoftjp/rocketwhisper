@@ -44,7 +44,7 @@
             "priceCurrency": "JPY",
             "description": "Personal License (one-time purchase, no subscription)"
         },
-        "softwareVersion": "1.2.4",
+        "softwareVersion": "2.0.0",
         "author": {
             "@type": "Organization",
             "name": "Mojosoft Co., Ltd.",
@@ -947,7 +947,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">&#x1F427; Linux version</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">Latest Version: 1.2.4</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">Latest Version: 2.0.0</p>
 
             <!-- Edition Selection -->
             <div class="edition-grid fade-in">
@@ -983,7 +983,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_1.2.4.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.0.0.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1027,7 +1027,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_1.2.4.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.0.0.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1097,6 +1097,16 @@
             <h2 class="section-title fade-in">Version <span class="highlight">History</span></h2>
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.0 - September 6, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Accuracy] Hallucination suppression with VAD</strong> — Built-in Silero voice activity detection skips silent or noise-only segments before recognition, preventing fabricated sentences from silent recordings (toggle on the Model &amp; Language tab, on by default).</li>
+                        <li><strong>[GPU] CUDA 12 driver support</strong> — GPU acceleration now works on NVIDIA systems with CUDA 12 drivers. CUDA 13 and Vulkan (AMD/Intel) continue to work as before. The About dialog shows which recognition engine is in use.</li>
+                        <li><strong>[AI Processing] Refreshed model list</strong> — OpenAI GPT-5.6 (Terra/Luna/Sol), Anthropic Claude Sonnet 5 / Haiku 4.5 / Opus 5, Google Gemini 3.7 Flash and more. Previously selected legacy models fall back to the provider default automatically.</li>
+                        <li><strong>[Distribution] Code-signed installers</strong> — Installers are now digitally signed by "Mojosoft Co., Ltd.".</li>
+                        <li><strong>[Internal] Speech engine updated to Whisper.net 1.9.1</strong> — Unused components removed for a smaller install.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.4 - April 2, 2026</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>[Stability] Auto-recovery from GPU crashes</strong> — Automatically reloads the Whisper model when CUDA/Vulkan GPU driver crashes after hibernate/sleep resume.</li>
@@ -1118,17 +1128,11 @@
                         <li><strong>[Robustness] Audio device enumeration protection</strong> — App no longer crashes when audio driver errors occur during microphone enumeration.</li>
                     </ul>
                 </div>
-                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                <div class="target-card fade-in">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.1 - February 26, 2026</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>USB microphone hotplug detection</strong> — Real-time detection of microphone connect/disconnect with automatic device list refresh.</li>
                         <li><strong>Video file transcription</strong> — Transcribe directly from MP4/MKV/AVI/MOV/WebM video files using FFmpeg audio extraction.</li>
-                    </ul>
-                </div>
-                <div class="target-card fade-in">
-                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.0 - February 11, 2026</h3>
-                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
-                        <li><strong>Custom Instructions</strong> — Execute specific AI instructions instantly with dedicated hotkeys. Fast processing for translation, summarization, proofreading without voice input.</li>
                     </ul>
                 </div>
             </div>
