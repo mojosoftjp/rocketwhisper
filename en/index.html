@@ -956,14 +956,14 @@
                     <div class="edition-header">
                         <span class="edition-badge lite">Lite</span>
                         <h3>RocketWhisper Lite</h3>
-                        <p class="edition-size">Approx. 50MB</p>
+                        <p class="edition-size">Approx. 260MB</p>
                     </div>
                     <div class="edition-body">
                         <p class="edition-description">Recommended for users with fast internet. Downloads the AI model on first launch after installation.</p>
                         <ul class="edition-features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                Lightweight installer (approx. 50MB)
+                                Installer approx. 260MB (includes GPU acceleration runtimes)
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1039,6 +1039,29 @@
                 </div>
             </div>
 
+            <!-- CUDA Runtime Pack (optional, NVIDIA GPUs) -->
+            <div class="target-card fade-in" style="max-width: 900px; margin: 1.5rem auto 0;">
+                <h3 style="color: #76B900; margin-bottom: 0.5rem;">Optional for NVIDIA GPUs: CUDA Runtime Pack</h3>
+                <p style="line-height: 1.8;">RocketWhisper automatically uses Vulkan GPU acceleration on NVIDIA, AMD and Intel GPUs. For the even faster <strong>CUDA</strong> path on NVIDIA GPUs, the NVIDIA CUDA runtime (cudart / cuBLAS) is required in addition to the driver. This pack adds the official NVIDIA runtime to the RocketWhisper folder.</p>
+                <p style="margin: 0.75rem 0;">
+                    <a href="https://mojosoft.biz/RocketWhisper_CudaRuntime13_Setup_13.0.exe" class="download-btn primary" style="display: inline-flex;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download CUDA Runtime Pack 13.0 (approx. 386MB)
+                    </a>
+                </p>
+                <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                    <li><strong>Requirements:</strong> RocketWhisper v2.0.0 or later, NVIDIA driver 580 or later, GeForce GTX 16 / RTX 20 series or newer. Not needed for AMD / Intel GPUs or PCs without a GPU (they run on Vulkan or CPU)</li>
+                    <li><strong>Steps:</strong> Install RocketWhisper first, then install this pack (it detects the RocketWhisper folder automatically) and <strong>restart RocketWhisper</strong>. The About dialog should show "Recognition engine: CUDA 13"</li>
+                    <li><strong>Notes:</strong> No update of RocketWhisper itself is needed, and future updates keep the pack working. It can be removed via "Apps &amp; features" &gt; "RocketWhisper CUDA Runtime Pack" without affecting the main application. Not needed if the NVIDIA CUDA Toolkit 13 is already installed</li>
+                    <li><strong>Contents:</strong> Official NVIDIA redistributables cudart64_13 / cublas64_13 / cublasLt64_13 (NVIDIA CUDA EULA included). Digitally signed. SHA256: <code style="font-size: 0.85em;">67BD86F299B966FB60345B7D09CB34FE9E189AB4E3521A1B3D0CE60F659897C7</code></li>
+                </ul>
+                <p style="margin-top: 0.5rem;"><a href="help.html#troubleshooting">If it does not work, see Help &gt; Troubleshooting</a></p>
+            </div>
+
             <!-- Comparison Table -->
             <div class="comparison-table fade-in">
                 <h3>Lite vs Full Comparison</h3>
@@ -1053,7 +1076,7 @@
                     <tbody>
                         <tr>
                             <td>Installer Size</td>
-                            <td>Approx. 50MB</td>
+                            <td>Approx. 260MB</td>
                             <td>Approx. 1.7GB</td>
                         </tr>
                         <tr>
@@ -1162,7 +1185,7 @@
                 <div class="target-card fade-in">
                     <div class="target-icon">&#x26A1;</div>
                     <h3>Do I need a GPU?</h3>
-                    <p>No, it works on CPU alone. With an NVIDIA, AMD or Intel GPU, Vulkan acceleration is enabled automatically for much faster recognition. For the even faster CUDA path on NVIDIA GPUs, the NVIDIA CUDA Toolkit 13 runtime must be installed separately (in-app setup is planned for the next version). The About dialog shows which engine is in use.</p>
+                    <p>No, it works on CPU alone. With an NVIDIA, AMD or Intel GPU, Vulkan acceleration is enabled automatically for much faster recognition. For the even faster CUDA path on NVIDIA GPUs, install the <a href="https://mojosoft.biz/RocketWhisper_CudaRuntime13_Setup_13.0.exe">CUDA Runtime Pack</a> (about 386 MB, no app update needed) or the NVIDIA CUDA Toolkit 13 (see <a href="help.html#troubleshooting">Help</a>). The About dialog shows which engine is in use.</p>
                 </div>
                 <div class="target-card fade-in">
                     <div class="target-icon">&#x1F4CB;</div>

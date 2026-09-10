@@ -956,14 +956,14 @@
                     <div class="edition-header">
                         <span class="edition-badge lite">Lite</span>
                         <h3>RocketWhisper Lite</h3>
-                        <p class="edition-size">約50MB</p>
+                        <p class="edition-size">約260MB</p>
                     </div>
                     <div class="edition-body">
                         <p class="edition-description">高速インターネット環境をお持ちの方におすすめ。インストール後、初回起動時にAIモデルをダウンロードします。</p>
                         <ul class="edition-features">
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                軽量インストーラー（約50MB）
+                                インストーラー約260MB（GPU加速用ランタイム同梱）
                             </li>
                             <li>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1039,6 +1039,29 @@
                 </div>
             </div>
 
+            <!-- CUDA ランタイムパック（NVIDIA GPU 向け・任意） -->
+            <div class="target-card fade-in" style="max-width: 900px; margin: 1.5rem auto 0;">
+                <h3 style="color: #76B900; margin-bottom: 0.5rem;">NVIDIA GPU で CUDA 加速を使う方へ（任意）: CUDA ランタイムパック</h3>
+                <p style="line-height: 1.8;">RocketWhisper は NVIDIA / AMD / Intel の GPU で Vulkan による GPU 加速を自動的に使います。NVIDIA GPU でさらに高速な <strong>CUDA 加速</strong>を使うには、NVIDIA の CUDA ランタイム（cudart / cuBLAS）が別途必要です。このパックをインストールすると、NVIDIA 公式のランタイムが RocketWhisper のフォルダに追加されます。</p>
+                <p style="margin: 0.75rem 0;">
+                    <a href="https://mojosoft.biz/RocketWhisper_CudaRuntime13_Setup_13.0.exe" class="download-btn primary" style="display: inline-flex;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        CUDA ランタイムパック 13.0 をダウンロード（約386MB）
+                    </a>
+                </p>
+                <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                    <li><strong>対象:</strong> RocketWhisper v2.0.0 以降 ＋ NVIDIA ドライバ 580 以降 ＋ GeForce GTX 16 / RTX 20 シリーズ以降の GPU。AMD / Intel GPU や GPU 非搭載の PC には不要です（Vulkan または CPU で動作します）</li>
+                    <li><strong>手順:</strong> 本体をインストールした後にこのパックをインストールし（本体のフォルダを自動検出）、<strong>RocketWhisper を起動し直します</strong>。バージョン情報画面で「認識エンジン: CUDA 13」と表示されれば有効です</li>
+                    <li><strong>注意:</strong> 本体の更新は不要です。本体を今後更新してもパックはそのまま使えます。不要になったら「アプリと機能」の「RocketWhisper CUDA Runtime Pack」から削除できます（本体には影響しません）。NVIDIA CUDA Toolkit 13 をすでにインストール済みの PC では不要です</li>
+                    <li><strong>内容:</strong> NVIDIA 公式再配布物の cudart64_13 / cublas64_13 / cublasLt64_13（NVIDIA CUDA EULA 同梱）。電子署名付き。SHA256: <code style="font-size: 0.85em;">67BD86F299B966FB60345B7D09CB34FE9E189AB4E3521A1B3D0CE60F659897C7</code></li>
+                </ul>
+                <p style="margin-top: 0.5rem;"><a href="help.html#troubleshooting">動作しない場合はヘルプのトラブルシューティングをご覧ください</a></p>
+            </div>
+
             <!-- 比較表 -->
             <div class="comparison-table fade-in">
                 <h3>Lite版 vs Full版 比較</h3>
@@ -1053,7 +1076,7 @@
                     <tbody>
                         <tr>
                             <td>インストーラーサイズ</td>
-                            <td>約50MB</td>
+                            <td>約260MB</td>
                             <td>約1.7GB</td>
                         </tr>
                         <tr>
@@ -1162,7 +1185,7 @@
                 <div class="target-card fade-in">
                     <div class="target-icon">⚡</div>
                     <h3>GPUがなくても使えますか？</h3>
-                    <p>はい、CPUのみでも動作します。NVIDIA / AMD / Intel のGPUをお持ちの場合はVulkan加速が自動的に有効になり、認識速度が大幅に向上します。NVIDIA GPUでさらに高速なCUDA加速を使うには、NVIDIA CUDA Toolkit 13（ランタイム）のインストールが別途必要です（アプリ内から導入できるよう次期バージョンで対応予定）。使用中のエンジンはバージョン情報画面で確認できます。</p>
+                    <p>はい、CPUのみでも動作します。NVIDIA / AMD / Intel のGPUをお持ちの場合はVulkan加速が自動的に有効になり、認識速度が大幅に向上します。NVIDIA GPUでさらに高速なCUDA加速を使うには、<a href="https://mojosoft.biz/RocketWhisper_CudaRuntime13_Setup_13.0.exe">CUDA ランタイムパック</a>（約386MB、本体の更新不要）をインストールするか、NVIDIA CUDA Toolkit 13 をインストールしてください（<a href="help.html#troubleshooting">ヘルプ</a>参照）。使用中のエンジンはバージョン情報画面で確認できます。</p>
                 </div>
                 <div class="target-card fade-in">
                     <div class="target-icon">📋</div>

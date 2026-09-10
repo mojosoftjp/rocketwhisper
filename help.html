@@ -1389,7 +1389,7 @@
                             <p>RocketWhisperのCUDA加速には、NVIDIAドライバとは別に <strong>NVIDIA CUDA Toolkit 13 のランタイム</strong>（cudart / cuBLAS）が必要です。見つからない場合は自動的にVulkanでGPU加速します（CPU処理ではありません）。CUDAを使うには次の手順を行ってください。</p>
                             <ul>
                                 <li>NVIDIAドライバを 580 以降に更新する（対象GPUは GeForce GTX 16 / RTX 20 シリーズ以降）</li>
-                                <li><strong>方法A（簡単）:</strong> <a href="https://mojosoft.biz/RocketWhisper_CudaRuntime13_Setup_13.0.exe">RocketWhisper CUDA ランタイムパック</a>（約386MB、電子署名付き）をインストールする。NVIDIA公式のCUDA 13ランタイム（cudart / cuBLAS）をRocketWhisperのフォルダに追加します。CUDA Toolkitのインストールは不要です</li>
+                                <li><strong>方法A（簡単）:</strong> <a href="https://mojosoft.biz/RocketWhisper_CudaRuntime13_Setup_13.0.exe">RocketWhisper CUDA ランタイムパック</a>（約386MB、電子署名付き）をインストールする。NVIDIA公式のCUDA 13ランタイム（cudart / cuBLAS）をRocketWhisperのフォルダに追加します。CUDA Toolkitのインストールは不要で、<strong>本体（v2.0.0以降）の更新も不要</strong>です。パックはインストール済みのRocketWhisperのフォルダを自動で検出します。不要になったら「アプリと機能」の「RocketWhisper CUDA Runtime Pack」から削除できます（本体には影響しません）</li>
                                 <li><strong>方法B:</strong> <a href="https://developer.nvidia.com/cuda-downloads">NVIDIA CUDA Toolkit 13.x</a> をインストールする（カスタムインストールで「CUDA → Runtime」だけを選ぶと容量を抑えられます。DLLのコピーやPATHの変更は不要です）</li>
                                 <li>RocketWhisperを起動し直し、バージョン情報の「認識エンジン: CUDA 13」を確認する</li>
                             </ul>
