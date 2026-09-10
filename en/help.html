@@ -1381,7 +1381,8 @@
                             <p>CUDA acceleration in RocketWhisper requires the <strong>NVIDIA CUDA Toolkit 13 runtime</strong> (cudart / cuBLAS) in addition to the NVIDIA driver. When it is not found, RocketWhisper automatically falls back to Vulkan GPU acceleration (this is not CPU processing). To use CUDA:</p>
                             <ul>
                                 <li>Update the NVIDIA driver to version 580 or later (supported GPUs: GeForce GTX 16 / RTX 20 series and newer)</li>
-                                <li>Install the <a href="https://developer.nvidia.com/cuda-downloads">NVIDIA CUDA Toolkit 13.x</a> (choose Custom and select only "CUDA &gt; Runtime" to save space; no DLL copying or PATH changes are needed)</li>
+                                <li><strong>Option A (easiest):</strong> Install the <a href="https://mojosoft.biz/RocketWhisper_CudaRuntime13_Setup_13.0.exe">RocketWhisper CUDA Runtime Pack</a> (about 386 MB, digitally signed). It adds the official NVIDIA CUDA 13 runtime (cudart / cuBLAS) to the RocketWhisper folder; no CUDA Toolkit installation is required</li>
+                                <li><strong>Option B:</strong> Install the <a href="https://developer.nvidia.com/cuda-downloads">NVIDIA CUDA Toolkit 13.x</a> (choose Custom and select only "CUDA &gt; Runtime" to save space; no DLL copying or PATH changes are needed)</li>
                                 <li>Restart RocketWhisper and check "Recognition engine: CUDA 13" in the About dialog</li>
                             </ul>
                             <p>In-app setup of the CUDA runtime is planned for the next version.</p>
