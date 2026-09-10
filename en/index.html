@@ -97,7 +97,7 @@
                 "name": "Do I need a GPU?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No, RocketWhisper works on CPU only. If you have an NVIDIA GPU, CUDA acceleration is automatically enabled. AMD and Intel GPUs are also supported via Vulkan acceleration for much faster recognition."
+                    "text": "No, RocketWhisper works on CPU only. With an NVIDIA, AMD or Intel GPU, Vulkan acceleration is enabled automatically for much faster recognition. For the even faster CUDA path on NVIDIA GPUs, the NVIDIA CUDA Toolkit 13 runtime must be installed separately. The About dialog shows which engine is in use."
                 }
             },
             {
@@ -357,7 +357,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>NVIDIA CUDA / AMD &amp; Intel Vulkan supported</span>
+                            <span>NVIDIA / AMD / Intel Vulkan supported; NVIDIA CUDA supported (requires CUDA Toolkit)</span>
                         </div>
                     </div>
                 </div>
@@ -928,8 +928,8 @@
                         <tr>
                             <th>GPU Acceleration</th>
                             <td>
-                                <span style="color: #76B900; font-weight: 600;">NVIDIA CUDA</span> / <span style="color: #E34F26; font-weight: 600;">AMD &amp; Intel Vulkan</span> Supported (auto-detected)<br>
-                                <small style="color: #888;">Automatically accelerated with NVIDIA/AMD/Intel GPU. Works fine on CPU without a GPU.</small>
+                                <span style="color: #E34F26; font-weight: 600;">NVIDIA / AMD / Intel Vulkan</span> Supported (auto-detected) / <span style="color: #76B900; font-weight: 600;">NVIDIA CUDA</span> Supported<br>
+                                <small style="color: #888;">Automatically accelerated via Vulkan with an NVIDIA/AMD/Intel GPU. CUDA acceleration on NVIDIA requires the NVIDIA CUDA Toolkit 13 (see Help). Works fine on CPU without a GPU.</small>
                             </td>
                         </tr>
                     </tbody>
@@ -1100,7 +1100,7 @@
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.0 - September 6, 2026</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>[Accuracy] Hallucination suppression with VAD</strong> — Built-in Silero voice activity detection skips silent or noise-only segments before recognition, preventing fabricated sentences from silent recordings (toggle on the Model &amp; Language tab, on by default).</li>
-                        <li><strong>[GPU] CUDA 12 driver support</strong> — GPU acceleration now works on NVIDIA systems with CUDA 12 drivers. CUDA 13 and Vulkan (AMD/Intel) continue to work as before. The About dialog shows which recognition engine is in use.</li>
+                        <li><strong>[GPU] CUDA 12 runtime added</strong> — CUDA acceleration now also works on NVIDIA systems that have the CUDA Toolkit 12 installed (CUDA acceleration requires the NVIDIA CUDA Toolkit 13 or 12; see Help &gt; Troubleshooting). Vulkan (NVIDIA/AMD/Intel) continues to work as before. The About dialog shows which recognition engine is in use.</li>
                         <li><strong>[AI Processing] Refreshed model list</strong> — OpenAI GPT-5.6 (Terra/Luna/Sol), Anthropic Claude Sonnet 5 / Haiku 4.5 / Opus 5, Google Gemini 3.7 Flash and more. Previously selected legacy models fall back to the provider default automatically.</li>
                         <li><strong>[Distribution] Code-signed installers</strong> — Installers are now digitally signed by "Mojosoft Co., Ltd.".</li>
                         <li><strong>[Internal] Speech engine updated to Whisper.net 1.9.1</strong> — Unused components removed for a smaller install.</li>
@@ -1162,7 +1162,7 @@
                 <div class="target-card fade-in">
                     <div class="target-icon">&#x26A1;</div>
                     <h3>Do I need a GPU?</h3>
-                    <p>No, it works on CPU alone. If you have an NVIDIA GPU, CUDA acceleration is automatically enabled. AMD and Intel GPUs are also supported via Vulkan acceleration. No setup required &mdash; fully automatic.</p>
+                    <p>No, it works on CPU alone. With an NVIDIA, AMD or Intel GPU, Vulkan acceleration is enabled automatically for much faster recognition. For the even faster CUDA path on NVIDIA GPUs, the NVIDIA CUDA Toolkit 13 runtime must be installed separately (in-app setup is planned for the next version). The About dialog shows which engine is in use.</p>
                 </div>
                 <div class="target-card fade-in">
                     <div class="target-icon">&#x1F4CB;</div>

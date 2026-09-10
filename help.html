@@ -98,7 +98,7 @@
                     <li>Windows 11 (64bit)</li>
                     <li>.NET 8.0 Desktop Runtime</li>
                     <li>RAM 8GB以上推奨</li>
-                    <li>GPU（CUDA対応）があると高速化</li>
+                    <li>GPUがあると高速化（NVIDIA / AMD / Intel の Vulkan 対応GPU。NVIDIAでCUDA加速を使う場合は NVIDIA CUDA Toolkit 13 のインストールが必要。トラブルシューティング参照）</li>
                 </ul>
 
                 <h3>インストール手順</h3>
@@ -1378,6 +1378,21 @@
                                 <li>専門用語を登録する（※専門用語の認識精度をさらに向上させたい場合は、large-v3モデルの使用もご検討ください）</li>
                                 <li>無音の録音から架空の文章が出る場合は、「モデル・言語」タブの「音声区間検出（VAD）」がオンになっているか確認する（v2.0.0〜）</li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">NVIDIA GPUなのに認識エンジンが「Vulkan」と表示される</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>RocketWhisperのCUDA加速には、NVIDIAドライバとは別に <strong>NVIDIA CUDA Toolkit 13 のランタイム</strong>（cudart / cuBLAS）が必要です。見つからない場合は自動的にVulkanでGPU加速します（CPU処理ではありません）。CUDAを使うには次の手順を行ってください。</p>
+                            <ul>
+                                <li>NVIDIAドライバを 580 以降に更新する（対象GPUは GeForce GTX 16 / RTX 20 シリーズ以降）</li>
+                                <li><a href="https://developer.nvidia.com/cuda-downloads">NVIDIA CUDA Toolkit 13.x</a> をインストールする（カスタムインストールで「CUDA → Runtime」だけを選ぶと容量を抑えられます。DLLのコピーやPATHの変更は不要です）</li>
+                                <li>RocketWhisperを起動し直し、バージョン情報の「認識エンジン: CUDA 13」を確認する</li>
+                            </ul>
+                            <p>次期バージョンでは、アプリ内からCUDAランタイムを導入できるよう対応予定です。</p>
                         </div>
                     </div>
                 </div>

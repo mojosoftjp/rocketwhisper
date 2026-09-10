@@ -98,7 +98,7 @@
                     <li>Windows 11 (64-bit)</li>
                     <li>.NET 8.0 Desktop Runtime</li>
                     <li>8GB+ RAM recommended</li>
-                    <li>GPU (CUDA-compatible) for accelerated processing</li>
+                    <li>GPU for accelerated processing (Vulkan-capable NVIDIA / AMD / Intel GPU. CUDA acceleration on NVIDIA requires the NVIDIA CUDA Toolkit 13; see Troubleshooting)</li>
                 </ul>
 
                 <h3>Installation Steps</h3>
@@ -1370,6 +1370,21 @@
                                 <li>Register custom terminology (* For even better accuracy with specialized terms, consider using the large-v3 model)</li>
                                 <li>If text appears from silent recordings, make sure "Voice Activity Detection (VAD)" is enabled on the Model &amp; Language tab (since v2.0.0)</li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">I have an NVIDIA GPU but the recognition engine says "Vulkan"</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>CUDA acceleration in RocketWhisper requires the <strong>NVIDIA CUDA Toolkit 13 runtime</strong> (cudart / cuBLAS) in addition to the NVIDIA driver. When it is not found, RocketWhisper automatically falls back to Vulkan GPU acceleration (this is not CPU processing). To use CUDA:</p>
+                            <ul>
+                                <li>Update the NVIDIA driver to version 580 or later (supported GPUs: GeForce GTX 16 / RTX 20 series and newer)</li>
+                                <li>Install the <a href="https://developer.nvidia.com/cuda-downloads">NVIDIA CUDA Toolkit 13.x</a> (choose Custom and select only "CUDA &gt; Runtime" to save space; no DLL copying or PATH changes are needed)</li>
+                                <li>Restart RocketWhisper and check "Recognition engine: CUDA 13" in the About dialog</li>
+                            </ul>
+                            <p>In-app setup of the CUDA runtime is planned for the next version.</p>
                         </div>
                     </div>
                 </div>
