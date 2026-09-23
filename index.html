@@ -101,21 +101,13 @@
   ]
 }
 </script>
-<style id="seo-navigation-style">
-.seo-navigation{max-width:1040px;margin:32px auto;padding:24px;line-height:1.8;border-top:1px solid #8886}
-.seo-navigation h2{font-size:1.2rem;margin:0 0 12px}.seo-navigation ul{padding-left:1.2em;display:flex;flex-wrap:wrap;gap:8px 28px}
-.seo-navigation a{text-decoration:underline;text-underline-offset:3px}.seo-navigation details{padding:12px 0;border-bottom:1px solid #8884}
-.seo-navigation summary{cursor:pointer;font-weight:600}.seo-navigation p{margin:10px 0}.seo-product-label{display:block;font-size:.35em;line-height:1.5;margin-bottom:.6em;letter-spacing:0}
-.seo-table-scroll{max-width:100%;overflow-x:auto;margin:16px 0}code{overflow-wrap:anywhere;word-break:break-word}
-@media(prefers-reduced-motion:reduce){.fade-in,.reveal,.reveal-scale,.rv{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}}
-</style><noscript><style>.fade-in,.reveal,.reveal-scale,.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
     <!-- ナビゲーション -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon" width="512" height="512" decoding="async">
+                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
                 <span>RocketWhisper</span>
             </a>
             <button class="nav-toggle" aria-label="メニュー">
@@ -151,10 +143,10 @@
         </div>
         <div class="hero-content">
             <div class="hero-icon-wrapper">
-                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="hero-icon floating" width="512" height="512" decoding="async">
+                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="hero-icon floating">
                 <div class="rocket-trail"></div>
             </div>
-            <h1 class="hero-title"><span class="seo-product-label">RocketWhisper Windows版</span>
+            <h1 class="hero-title">
                 <span class="gradient-text">声を、テキストに。</span><br>
                 <span class="gradient-text">瞬時に、正確に。</span>
             </h1>
@@ -833,7 +825,7 @@
             <!-- 動作環境 -->
             <div class="specs-card fade-in" style="margin-bottom: 2rem;">
                 <h3 style="margin-bottom: 1rem; color: var(--primary);">動作環境</h3>
-                <div class="seo-table-scroll" role="region" tabindex="0" aria-label="製品仕様・比較表"><table class="specs-table">
+                <table class="specs-table">
                     <tbody>
                         <tr>
                             <th>対応OS</th>
@@ -860,13 +852,13 @@
                             <td>マイク（リアルタイム認識用）<br>インターネット接続（モデルダウンロード時・クラウドLLMのAI処理機能使用時）<br><small style="color: #888;">※ ローカルLLM（LM Studio/Ollama）使用時はインターネット不要</small></td>
                         </tr>
                     </tbody>
-                </table></div>
+                </table>
             </div>
 
             <!-- モデル別要件 -->
             <div class="specs-card fade-in" style="margin-bottom: 2rem;">
                 <h3 style="margin-bottom: 1rem; color: var(--primary);">モデル別 メモリ・ディスク要件</h3>
-                <div class="seo-table-scroll" role="region" tabindex="0" aria-label="製品仕様・比較表"><table class="specs-table">
+                <table class="specs-table">
                     <thead>
                         <tr>
                             <th>モデル</th>
@@ -895,13 +887,13 @@
                             <td>20秒以上の長い発話に最適（最高精度）</td>
                         </tr>
                     </tbody>
-                </table></div>
+                </table>
             </div>
 
             <!-- テクニカルスペック -->
             <div class="specs-card fade-in">
                 <h3 style="margin-bottom: 1rem; color: var(--primary);">テクニカルスペック</h3>
-                <div class="seo-table-scroll" role="region" tabindex="0" aria-label="製品仕様・比較表"><table class="specs-table">
+                <table class="specs-table">
                     <tbody>
                         <tr>
                             <th>フレームワーク</th>
@@ -931,7 +923,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table></div>
+                </table>
             </div>
         </div>
     </section>
@@ -1063,7 +1055,7 @@
             <!-- 比較表 -->
             <div class="comparison-table fade-in">
                 <h3>Lite版 vs Full版 比較</h3>
-                <div class="seo-table-scroll" role="region" tabindex="0" aria-label="製品仕様・比較表"><table>
+                <table>
                     <thead>
                         <tr>
                             <th>項目</th>
@@ -1103,7 +1095,7 @@
                             <td>オフライン・セキュリティ重視</td>
                         </tr>
                     </tbody>
-                </table></div>
+                </table>
             </div>
 
             <p class="requirements fade-in" style="text-align: center; margin-top: 2rem;">
@@ -1200,12 +1192,11 @@
     </section>
 
     <!-- フッター -->
-    <nav class="seo-navigation" aria-label="関連製品"><h2>関連製品</h2><ul><li><a href="https://mojosoft.biz/#products">Mojosoftの製品一覧</a></li><li><a href="https://mojosoftjp.github.io/rocketwhisper-mac/ja/">RocketWhisper Mac版</a></li><li><a href="https://mojosoftjp.github.io/rocketwhisper-linux/">RocketWhisper Linux版</a></li><li><a href="https://mojosoftjp.github.io/mira-ai/">Mira</a></li></ul></nav>
-<footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo" width="512" height="512" decoding="async">
+                    <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
                     <span class="footer-name">RocketWhisper</span>
                     <p class="footer-tagline">声を、テキストに。瞬時に、正確に。</p>
                 </div>
