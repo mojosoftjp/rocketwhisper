@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="description" content="RocketWhisper Windows版の更新履歴。各バージョンで追加された新機能・改善点・不具合修正をまとめています。">
+    <meta name="keywords" content="RocketWhisper,更新履歴,バージョン履歴,リリースノート,新機能,不具合修正,音声認識,文字起こし,Windows">
+    <meta property="og:title" content="更新履歴 - RocketWhisper | AI音声認識・文字起こしソフト">
+    <meta property="og:description" content="RocketWhisper Windows版の更新履歴。各バージョンで追加された新機能・改善点・不具合修正をまとめています。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mojosoftjp.github.io/rocketwhisper/changelog.html">
+    <meta property="og:site_name" content="Mojosoft">
+    <title>更新履歴 - RocketWhisper | AI音声認識・文字起こしソフト</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon32.png">
+    <link rel="apple-touch-icon" href="images/RocketWhisper3.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://mojosoftjp.github.io/rocketwhisper/changelog.html">
+  <link rel="alternate" href="https://mojosoftjp.github.io/rocketwhisper/changelog.html" hreflang="ja">
+  <link rel="alternate" href="https://mojosoftjp.github.io/rocketwhisper/en/changelog.html" hreflang="en">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:title" content="更新履歴 - RocketWhisper | AI音声認識・文字起こしソフト">
+  <meta name="twitter:description" content="RocketWhisper Windows版の更新履歴。各バージョンで追加された新機能・改善点・不具合修正をまとめています。">
+  <meta property="og:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
+  <meta name="twitter:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
+  <meta property="og:image:alt" content="更新履歴 - RocketWhisper | AI音声認識・文字起こしソフト">
+  <meta name="twitter:image:alt" content="更新履歴 - RocketWhisper | AI音声認識・文字起こしソフト">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">機能</a></li>
+                <li><a href="index.html#how-it-works">使い方</a></li>
+                <li><a href="index.html#download">ダウンロード</a></li>
+                <li><a href="changelog.html" class="active">更新履歴</a></li>
+                <li><a href="purchase.html">購入</a></li>
+                <li><a href="help.html">ヘルプ</a></li>
+                <li><a href="privacy.html">プライバシー</a></li>
+                <li><a href="support.html">サポート</a></li>
+                <li><a href="en/changelog.html" onclick="sessionStorage.setItem('rw-lang','en')">&#x1F1EC;&#x1F1E7; English</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="page-header">
+        <div class="container">
+            <h1>更新履歴</h1>
+            <p>RocketWhisper Windows版の各バージョンで追加された機能・改善点・不具合修正の一覧です。</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="page-content">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.1 - 2026年10月6日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【不具合修正】休止状態・スリープからの復帰後に音声認識が使えなくなる問題を修正</strong> — 一部の GPU（AMD など）で、復帰後はアプリを再起動するまで認識できなくなることがありました。復帰時と GPU エラーの発生時にアプリが自動で再起動し、GPU を初期化し直します。メイン画面の文章はそのまま引き継がれます。</li>
+                        <li><strong>【不具合修正】Groq の AI 処理が動かない問題を修正</strong> — Groq 側で LLaMA 3.3 70B / 3.1 8B が2026年8月16日に提供終了したため、後継の GPT-OSS 120B / 20B に切り替えました。</li>
+                        <li><strong>【不具合修正】Claude Sonnet 5 / Opus 5 で AI 処理の結果が空になることがある問題を修正</strong></li>
+                        <li><strong>【不具合修正】認識に失敗したとき、前回の認識結果が自動貼り付けや AI コマンドに使われてしまう問題を修正</strong></li>
+                        <li><strong>【AI処理】対応モデルを更新</strong> — OpenAI GPT-6.1 Sol / GPT-6 Luna、Claude Sonnet 5.5 / Opus 5.5、Gemini 3.8 Flash（既定）。以前のモデルを選んでいた場合は、同じ価格帯の後継モデルへ自動で引き継ぎます。</li>
+                        <li><strong>【サポート】診断ログを追加</strong> — 不具合のお問い合わせの際に原因を調べやすくなりました（保存先 %APPDATA%\RocketWhisper\logs。音声・認識した文章・APIキーは記録しません）。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.0 - 2026年9月6日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【認識精度】VAD（音声区間検出）によるハルシネーション抑制</strong> — Silero VADを搭載し、無音や環境音だけの区間を認識前に除外。無音の録音から架空の文章が生成される現象を入口で防ぎます（設定「モデル・言語」タブでオン/オフ可、既定オン）。</li>
+                        <li><strong>【GPU対応】CUDA 12系ランタイムを追加</strong> — CUDA Toolkit 12系をインストール済みのNVIDIA環境でもCUDA加速が使えます（CUDA加速にはNVIDIA CUDA Toolkit 13または12のインストールが必要です。詳しくはヘルプのトラブルシューティング）。Vulkan（NVIDIA/AMD/Intel）は従来通り。バージョン情報画面で使用中の認識エンジンを確認できます。</li>
+                        <li><strong>【AI処理】対応モデルを最新世代に更新</strong> — OpenAI GPT-5.6（Terra/Luna/Sol）、Anthropic Claude Sonnet 5 / Haiku 4.5 / Opus 5、Google Gemini 3.7 Flash ほかに刷新。旧モデルを設定していた場合は自動的に既定モデルへ切り替わります。</li>
+                        <li><strong>【配布】インストーラにコード署名を付与</strong> — 発行元「Mojosoft Co., Ltd.」の電子署名付きで配布します。</li>
+                        <li><strong>【内部】音声認識エンジンを Whisper.net 1.9.1 に更新</strong> — 未使用コンポーネントを整理し、インストールサイズを削減しました。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.4 - 2026年4月2日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【安定性改善】GPU障害からの自動回復</strong> — 休止状態復帰後にGPUドライバ（CUDA/Vulkan）がクラッシュした場合、Whisperモデルを自動で再読み込みして復帰します。</li>
+                        <li><strong>【安定性改善】音声認識タイムアウト</strong> — GPUハング時に無限待機しなくなりました。タイムアウト検出後にモデルを自動再読み込みします。</li>
+                        <li><strong>【安定性改善】電源復帰時のリトライ</strong> — ドライバ復帰に時間がかかる場合も最大3回リトライして確実に再初期化します。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.3 - 2026年3月19日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>変換速度表示</strong> — 音声認識完了時にステータスバーに処理時間とRTF（リアルタイムファクター）を表示。パフォーマンスを一目で確認できます。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.2 - 2026年3月16日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【安定性改善】休止状態/スリープ復帰後の自動回復</strong> — 休止状態からの復帰時にWhisperモデルとオーディオデバイスを自動的に再初期化。CUDA GPUメモリの無効化やオーディオドライバの不整合を自動検出・復旧します。</li>
+                        <li><strong>【堅牢性向上】エラー発生時の安全な終了</strong> — 予期しないエラーが発生した際にプロセスが応答不能になる問題を改善。エラーメッセージを表示して安全に終了します。</li>
+                        <li><strong>【堅牢性向上】オーディオデバイス列挙の例外保護</strong> — マイクデバイスの列挙時にドライバエラーが発生してもアプリがクラッシュしない設計に改善。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.1 - 2026年2月26日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>USBマイクのホットプラグ検出</strong> — マイクの接続・切断をリアルタイムに検出し、設定画面のデバイス一覧を自動更新。</li>
+                        <li><strong>動画ファイルの文字起こし対応</strong> — MP4/MKV/AVI/MOV/WebMなどの動画ファイルからFFmpegで音声を抽出して直接文字起こし。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.0 - 2026年2月11日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>カスタム指示機能</strong> — 専用ホットキーで特定のAI指示を即座に実行。テキスト翻訳・要約・校正などを音声入力なしで高速処理。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.1.2 - 2026年2月5日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【不具合修正】右Altキーが押されたままの状態になることがある問題を修正（再発分）</strong></li>
+                        <li><strong>【改善】通知音を変更</strong> — 録音開始・停止の通知音を、Windows 標準の控えめな音に変更しました。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.1.1 - 2026年2月3日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【新機能】録音開始・停止の通知音</strong> — 録音の開始と停止を音でお知らせします（設定でオン/オフ可）。</li>
+                        <li><strong>【改善】録音中インジケーターを小型化</strong></li>
+                        <li><strong>【不具合修正】右Altキーが押されたままの状態になることがある問題を修正</strong> — 右Alt 押し続けモードのキー処理を見直しました。</li>
+                        <li><strong>【改善】録音できないときは右Altキーを通常どおり動作させるように変更</strong> — モデルの読み込み中や認識処理中など、録音を開始できないときは右Altキーをそのまま他のアプリに渡します。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.0.5 - 2026年2月2日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【新機能】右Alt 押し続けモード</strong> — 右Altキーを押している間だけ録音します。素早く2回押すと、もう一度押すまで録音を続けます。</li>
+                        <li><strong>【新機能】AIコマンドモード</strong> — テキストを選択して専用ホットキーを押し、音声で指示すると、選択したテキストを AI が指示どおりに処理します。</li>
+                        <li><strong>【新機能】音声検索</strong> — 「〇〇について調べて」などと話すと、ブラウザで Google 検索を実行します。</li>
+                        <li><strong>【変更】既定のホットキーを変更</strong> — 録音は「右Alt（押し続け）」、AIコマンドは「Ctrl + Space」になりました。</li>
+                        <li><strong>【変更】「AI整形」の名称を「AI処理」に変更</strong></li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.0.2</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【GPU対応】NVIDIA GPU による CUDA 加速に対応</strong> — CUDA 加速を使うには NVIDIA CUDA Toolkit のインストールが必要です（現在の要件は<a href="help.html#troubleshooting" style="color: #4A90D9;">ヘルプのトラブルシューティング</a>を参照）。</li>
+                        <li><strong>【改善】既定のモデルを large-v3-turbo に変更</strong> — 高い精度のまま、より高速に認識します。</li>
+                        <li><strong>【改善】モデルのダウンロード再開</strong> — 途中で止まったモデルのダウンロードを検出し、続きから再開できるようになりました。</li>
+                        <li><strong>【AI処理】Anthropic Claude のモデルを 4.5 世代に更新</strong></li>
+                        <li><strong>【不具合修正】自動貼り付け時のクリップボードに関する不具合を修正</strong></li>
+                        <li><strong>【改善】誤認識修正ルール機能を改善</strong></li>
+                        <li><strong>【不具合修正】誤認識修正ルールの画面でエラーが発生する問題を修正</strong></li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.0.0</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>初回リリース</strong></li>
+                    </ul>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 2rem;">※ v1.1.3 と v1.0.3 は、個別の更新内容を掲載していません。</p>
+                <p style="text-align: center; margin-top: 2rem;"><a href="index.html#download" style="color: #4A90D9;">最新版をダウンロード →</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">声を、テキストに。瞬時に、正確に。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>製品</h4>
+                        <ul>
+                            <li><a href="index.html#features">機能</a></li>
+                            <li><a href="index.html#download">ダウンロード</a></li>
+                            <li><a href="changelog.html">更新履歴</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="help.html">ヘルプ</a></li>
+                            <li><a href="support.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法的情報</h4>
+                        <ul>
+                            <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

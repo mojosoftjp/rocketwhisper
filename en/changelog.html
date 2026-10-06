@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="description" content="Release notes for RocketWhisper for Windows: new features, improvements and bug fixes in each version.">
+    <meta name="keywords" content="RocketWhisper,changelog,release notes,version history,new features,bug fixes,speech recognition,transcription,Windows">
+    <meta property="og:title" content="Changelog - RocketWhisper | AI Speech Recognition &amp; Transcription">
+    <meta property="og:description" content="Release notes for RocketWhisper for Windows: new features, improvements and bug fixes in each version.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mojosoftjp.github.io/rocketwhisper/en/changelog.html">
+    <meta property="og:site_name" content="Mojosoft">
+    <title>Changelog - RocketWhisper | AI Speech Recognition &amp; Transcription</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/icon32.png">
+    <link rel="apple-touch-icon" href="../images/RocketWhisper3.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://mojosoftjp.github.io/rocketwhisper/en/changelog.html">
+  <link rel="alternate" href="https://mojosoftjp.github.io/rocketwhisper/changelog.html" hreflang="ja">
+  <link rel="alternate" href="https://mojosoftjp.github.io/rocketwhisper/en/changelog.html" hreflang="en">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:title" content="Changelog - RocketWhisper | AI Speech Recognition &amp; Transcription">
+  <meta name="twitter:description" content="Release notes for RocketWhisper for Windows: new features, improvements and bug fixes in each version.">
+  <meta property="og:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
+  <meta name="twitter:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
+  <meta property="og:image:alt" content="Changelog - RocketWhisper | AI Speech Recognition &amp; Transcription">
+  <meta name="twitter:image:alt" content="Changelog - RocketWhisper | AI Speech Recognition &amp; Transcription">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="changelog.html" class="active">Changelog</a></li>
+                <li><a href="purchase.html">Purchase</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="../changelog.html" onclick="sessionStorage.setItem('rw-lang','ja')">&#x1F1EF;&#x1F1F5; Japanese</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Changelog</h1>
+            <p>New features, improvements and fixes in each version of RocketWhisper for Windows.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.1 - October 6, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Fix] Speech recognition stops working after resuming from hibernate or sleep</strong> — On some GPUs (such as AMD), recognition could stay unavailable until the app was restarted. RocketWhisper now restarts itself automatically on resume and after a GPU error so the GPU is initialized fresh. Text in the main window is carried over.</li>
+                        <li><strong>[Fix] Groq AI processing works again</strong> — Groq retired LLaMA 3.3 70B / 3.1 8B on August 16, 2026; RocketWhisper now uses GPT-OSS 120B / 20B.</li>
+                        <li><strong>[Fix] Claude Sonnet 5 / Opus 5 could return an empty result</strong></li>
+                        <li><strong>[Fix] After a failed recognition, the previous result could be pasted again or used for an AI command</strong></li>
+                        <li><strong>[AI Processing] Updated models</strong> — OpenAI GPT-6.1 Sol / GPT-6 Luna, Claude Sonnet 5.5 / Opus 5.5, Gemini 3.8 Flash (default). Previously selected models move to a successor in the same price range automatically.</li>
+                        <li><strong>[Support] Diagnostic logs</strong> — Makes it easier to investigate problems you report (saved in %APPDATA%\RocketWhisper\logs; audio, recognized text and API keys are never recorded).</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.0 - September 6, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Accuracy] Hallucination suppression with VAD</strong> — Built-in Silero voice activity detection skips silent or noise-only segments before recognition, preventing fabricated sentences from silent recordings (toggle on the Model &amp; Language tab, on by default).</li>
+                        <li><strong>[GPU] CUDA 12 runtime added</strong> — CUDA acceleration now also works on NVIDIA systems that have the CUDA Toolkit 12 installed (CUDA acceleration requires the NVIDIA CUDA Toolkit 13 or 12; see Help &gt; Troubleshooting). Vulkan (NVIDIA/AMD/Intel) continues to work as before. The About dialog shows which recognition engine is in use.</li>
+                        <li><strong>[AI Processing] Refreshed model list</strong> — OpenAI GPT-5.6 (Terra/Luna/Sol), Anthropic Claude Sonnet 5 / Haiku 4.5 / Opus 5, Google Gemini 3.7 Flash and more. Previously selected legacy models fall back to the provider default automatically.</li>
+                        <li><strong>[Distribution] Code-signed installers</strong> — Installers are now digitally signed by "Mojosoft Co., Ltd.".</li>
+                        <li><strong>[Internal] Speech engine updated to Whisper.net 1.9.1</strong> — Unused components removed for a smaller install.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.4 - April 2, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Stability] Auto-recovery from GPU crashes</strong> — Automatically reloads the Whisper model when CUDA/Vulkan GPU driver crashes after hibernate/sleep resume.</li>
+                        <li><strong>[Stability] Transcription timeout</strong> — No longer hangs indefinitely on GPU freeze. Detects timeout and auto-reloads the model.</li>
+                        <li><strong>[Stability] Power resume retry</strong> — Retries model reinitialization up to 3 times when driver recovery is slow.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.3 - March 19, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>Transcription speed display</strong> — Shows processing time and RTF (Real-Time Factor) in the status bar after recognition completes. Instantly see your transcription performance.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.2 - March 16, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Stability] Auto-recovery after hibernate/sleep resume</strong> — Automatically reinitializes Whisper model and audio devices after system resume. Detects and recovers from CUDA GPU memory invalidation and audio driver inconsistencies.</li>
+                        <li><strong>[Robustness] Graceful error handling</strong> — Improved handling of unexpected errors to prevent the app from becoming unresponsive. Displays error message and exits gracefully.</li>
+                        <li><strong>[Robustness] Audio device enumeration protection</strong> — App no longer crashes when audio driver errors occur during microphone enumeration.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.1 - February 26, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>USB microphone hotplug detection</strong> — Real-time detection of microphone connect/disconnect with automatic device list refresh.</li>
+                        <li><strong>Video file transcription</strong> — Transcribe directly from MP4/MKV/AVI/MOV/WebM video files using FFmpeg audio extraction.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.0 - February 11, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>Custom Instructions</strong> — Execute specific AI instructions instantly with dedicated hotkeys. Fast processing for translation, summarization, proofreading without voice input.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.1.2 - February 5, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Fix] The Right Alt key could get stuck in the pressed state (recurrence)</strong></li>
+                        <li><strong>[Improvement] New notification sounds</strong> — Recording start/stop sounds now use subtle standard Windows sounds.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.1.1 - February 3, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[New] Recording start/stop sounds</strong> — A sound tells you when recording starts and stops (can be turned on or off in Settings).</li>
+                        <li><strong>[Improvement] Smaller recording indicator</strong></li>
+                        <li><strong>[Fix] The Right Alt key could get stuck in the pressed state</strong> — Reworked key handling for Right Alt hold-to-talk mode.</li>
+                        <li><strong>[Improvement] Right Alt works normally when recording is unavailable</strong> — While the model is loading or recognition is in progress, the Right Alt key is passed through to other apps as usual.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.0.5 - February 2, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[New] Right Alt hold-to-talk mode</strong> — Records only while you hold the Right Alt key. Double-tap it to keep recording until you tap it again.</li>
+                        <li><strong>[New] AI Command Mode</strong> — Select text, press the dedicated hotkey and give a voice instruction; the AI processes the selected text as instructed.</li>
+                        <li><strong>[New] Voice Search</strong> — Ask by voice to look something up, and RocketWhisper runs a Google search in your browser.</li>
+                        <li><strong>[Change] New default hotkeys</strong> — Recording: Right Alt (hold); AI Command: Ctrl + Space.</li>
+                        <li><strong>[Change] "AI Formatting" renamed to "AI Processing"</strong></li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.0.2</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[GPU] NVIDIA CUDA acceleration</strong> — CUDA acceleration requires the NVIDIA CUDA Toolkit to be installed (for the current requirements, see <a href="help.html#troubleshooting" style="color: #4A90D9;">Help &gt; Troubleshooting</a>).</li>
+                        <li><strong>[Improvement] Default model changed to large-v3-turbo</strong> — Faster recognition while keeping high accuracy.</li>
+                        <li><strong>[Improvement] Resumable model downloads</strong> — Detects incomplete model downloads and resumes them where they left off.</li>
+                        <li><strong>[AI Processing] Anthropic Claude models updated to the 4.5 generation</strong></li>
+                        <li><strong>[Fix] Clipboard issue with auto-paste</strong></li>
+                        <li><strong>[Improvement] Improved misrecognition correction rules</strong></li>
+                        <li><strong>[Fix] Error in the correction rules window</strong></li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.0.0</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>Initial release</strong></li>
+                    </ul>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 2rem;">* Individual release notes are not available for v1.1.3 and v1.0.3.</p>
+                <p style="text-align: center; margin-top: 2rem;"><a href="index.html#download" style="color: #4A90D9;">Download the latest version →</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">Voice to text. Instant and accurate.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="changelog.html">Changelog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="help.html">Help</a></li>
+                            <li><a href="support.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

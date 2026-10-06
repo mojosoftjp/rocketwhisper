@@ -290,6 +290,8 @@ img {
         opacity: 0;
         visibility: hidden;
         transition: all var(--transition-normal);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -302,6 +304,14 @@ img {
         display: block;
         padding: var(--spacing-sm);
         font-size: 1rem;
+    }
+}
+
+/* ハンバーガーに切り替わる直前の幅ではメニューを詰めて、ロゴとの重なり・はみ出しを防ぐ */
+@media (min-width: 961px) and (max-width: 1100px) {
+    .nav-menu a {
+        padding: 0.4rem 0.35rem;
+        font-size: 0.85rem;
     }
 }
 
