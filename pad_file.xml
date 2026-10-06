@@ -19,8 +19,8 @@
     </Company_Info>
     <Program_Info>
         <Program_Name>RocketWhisper</Program_Name>
-        <Program_Version>2.0.0</Program_Version>
-        <Program_Release_Month>09</Program_Release_Month>
+        <Program_Version>2.0.1</Program_Version>
+        <Program_Release_Month>10</Program_Release_Month>
         <Program_Release_Day>06</Program_Release_Day>
         <Program_Release_Year>2026</Program_Release_Year>
         <Program_Cost_Dollars>32</Program_Cost_Dollars>
@@ -32,8 +32,8 @@
         <Program_OS_Support>Win11,Win10</Program_OS_Support>
         <Program_Language>English,Japanese</Program_Language>
         <File_Info>
-            <File_Size_Bytes>269823024</File_Size_Bytes>
-            <File_Size_K>263499</File_Size_K>
+            <File_Size_Bytes>269817144</File_Size_Bytes>
+            <File_Size_K>263493</File_Size_K>
             <File_Size_MB>257</File_Size_MB>
         </File_Info>
         <Expire_Info>
@@ -45,7 +45,7 @@
             <Expire_Day></Expire_Day>
             <Expire_Year></Expire_Year>
         </Expire_Info>
-        <Program_Change_Info>Version 2.0.0: Silero VAD voice activity detection suppresses hallucinated text on silent recordings, CUDA 12 and CUDA 13 driver support for NVIDIA GPUs (Vulkan for AMD/Intel), refreshed AI model list (GPT-5.6, Claude 5, Gemini 3.7), Whisper.net 1.9.1 engine, code-signed installers.</Program_Change_Info>
+        <Program_Change_Info>Version 2.0.1: Fixes speech recognition becoming unavailable after resuming from hibernate or sleep on some GPUs (automatic app restart re-initializes the GPU), Groq AI processing works again (GPT-OSS 120B/20B replaces the retired LLaMA models), fixes empty AI results with Claude Sonnet 5 / Opus 5, updated AI models (GPT-6.1 Sol, Claude Sonnet 5.5 / Opus 5.5, Gemini 3.8 Flash), diagnostic logs.</Program_Change_Info>
         <Program_Category_Class>Audio</Program_Category_Class>
         <Program_Specific_Category>Audio::Other</Program_Specific_Category>
         <Program_System_Requirements>.NET 8.0 Desktop Runtime (included in Full installer), Windows 10 or later, 4 GB RAM minimum (8 GB recommended)</Program_System_Requirements>
@@ -98,8 +98,8 @@ Free 7-day trial with all features. Personal license: $32 USD. Business license:
             <Application_XML_File_URL>https://mojosoftjp.github.io/rocketwhisper/pad_file.xml</Application_XML_File_URL>
         </Application_URLs>
         <Download_URLs>
-            <Primary_Download_URL>https://mojosoft.biz/RocketWhisper_Lite_Setup_2.0.0.exe</Primary_Download_URL>
-            <Secondary_Download_URL>https://mojosoft.biz/RocketWhisper_Full_Setup_2.0.0.exe</Secondary_Download_URL>
+            <Primary_Download_URL>https://mojosoft.biz/RocketWhisper_Lite_Setup_2.0.1.exe</Primary_Download_URL>
+            <Secondary_Download_URL>https://mojosoft.biz/RocketWhisper_Full_Setup_2.0.1.exe</Secondary_Download_URL>
             <Additional_Download_URL></Additional_Download_URL>
         </Download_URLs>
     </Web_Info>

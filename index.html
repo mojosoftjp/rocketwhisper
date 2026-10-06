@@ -901,7 +901,7 @@
                         </tr>
                         <tr>
                             <th>認識エンジン</th>
-                            <td>OpenAI Whisper (Whisper.NET 1.9.0)</td>
+                            <td>OpenAI Whisper (Whisper.NET 1.9.1)</td>
                         </tr>
                         <tr>
                             <th>対応言語</th>
@@ -937,7 +937,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">🐧 Linux版はこちら</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 2.0.0</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 2.0.1</p>
 
             <!-- エディション選択 -->
             <div class="edition-grid fade-in">
@@ -973,7 +973,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.0.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.0.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1017,7 +1017,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.0.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.0.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1110,6 +1110,17 @@
             <h2 class="section-title fade-in">バージョン<span class="highlight">更新情報</span></h2>
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.1 - 2026年10月6日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【不具合修正】休止状態・スリープからの復帰後に音声認識が使えなくなる問題を修正</strong> — 一部の GPU（AMD など）で、復帰後はアプリを再起動するまで認識できなくなることがありました。復帰時と GPU エラーの発生時にアプリが自動で再起動し、GPU を初期化し直します。メイン画面の文章はそのまま引き継がれます。</li>
+                        <li><strong>【不具合修正】Groq の AI 処理が動かない問題を修正</strong> — Groq 側で LLaMA 3.3 70B / 3.1 8B が2026年8月16日に提供終了したため、後継の GPT-OSS 120B / 20B に切り替えました。</li>
+                        <li><strong>【不具合修正】Claude Sonnet 5 / Opus 5 で AI 処理の結果が空になることがある問題を修正</strong></li>
+                        <li><strong>【不具合修正】認識に失敗したとき、前回の認識結果が自動貼り付けや AI コマンドに使われてしまう問題を修正</strong></li>
+                        <li><strong>【AI処理】対応モデルを更新</strong> — OpenAI GPT-6.1 Sol / GPT-6 Luna、Claude Sonnet 5.5 / Opus 5.5、Gemini 3.8 Flash（既定）。以前のモデルを選んでいた場合は、同じ価格帯の後継モデルへ自動で引き継ぎます。</li>
+                        <li><strong>【サポート】診断ログを追加</strong> — 不具合のお問い合わせの際に原因を調べやすくなりました（保存先 %APPDATA%\RocketWhisper\logs。音声・認識した文章・APIキーは記録しません）。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.0 - 2026年9月6日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【認識精度】VAD（音声区間検出）によるハルシネーション抑制</strong> — Silero VADを搭載し、無音や環境音だけの区間を認識前に除外。無音の録音から架空の文章が生成される現象を入口で防ぎます（設定「モデル・言語」タブでオン/オフ可、既定オン）。</li>
@@ -1133,19 +1144,12 @@
                         <li><strong>変換速度表示</strong> — 音声認識完了時にステータスバーに処理時間とRTF（リアルタイムファクター）を表示。パフォーマンスを一目で確認できます。</li>
                     </ul>
                 </div>
-                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                <div class="target-card fade-in">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.2 - 2026年3月16日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【安定性改善】休止状態/スリープ復帰後の自動回復</strong> — 休止状態からの復帰時にWhisperモデルとオーディオデバイスを自動的に再初期化。CUDA GPUメモリの無効化やオーディオドライバの不整合を自動検出・復旧します。</li>
                         <li><strong>【堅牢性向上】エラー発生時の安全な終了</strong> — 予期しないエラーが発生した際にプロセスが応答不能になる問題を改善。エラーメッセージを表示して安全に終了します。</li>
                         <li><strong>【堅牢性向上】オーディオデバイス列挙の例外保護</strong> — マイクデバイスの列挙時にドライバエラーが発生してもアプリがクラッシュしない設計に改善。</li>
-                    </ul>
-                </div>
-                <div class="target-card fade-in">
-                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.1 - 2026年2月26日</h3>
-                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
-                        <li><strong>USBマイクのホットプラグ検出</strong> — マイクの接続・切断をリアルタイムに検出し、設定画面のデバイス一覧を自動更新。</li>
-                        <li><strong>動画ファイルの文字起こし対応</strong> — MP4/MKV/AVI/MOV/WebMなどの動画ファイルからFFmpegで音声を抽出して直接文字起こし。</li>
                     </ul>
                 </div>
             </div>
