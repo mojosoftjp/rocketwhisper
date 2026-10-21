@@ -1172,7 +1172,17 @@
                 <div class="target-card fade-in">
                     <div class="target-icon">🔒</div>
                     <h3>インターネット接続なしで使えますか？</h3>
-                    <p>はい、完全オフラインで動作します。音声データはすべてお使いのPC内で処理され、外部サーバーに一切送信されません。プライバシーを重視する方に最適です。</p>
+                    <p>はい、音声認識は完全オフラインで動作します。音声データはお使いのPC内だけで処理され、外部に送信されることはありません。なお、任意の「AI処理」（文章の整形・翻訳・要約など）を使う場合に限り、認識後のテキストが、ご自身で設定したAIサービス（OpenAI・Anthropic・Googleなど）に送られます。LM StudioやOllamaなどPC内で動くAIを選べば、AI処理もPC内で完結します。</p>
+                </div>
+                <div class="target-card fade-in">
+                    <div class="target-icon">🆚</div>
+                    <h3>Windows標準の音声入力（Windowsキー＋H）との違いは？</h3>
+                    <p>Windows標準の音声入力は、無料ですぐに使える便利な機能です。ただし<a style="color: #4A90D9;" href="https://support.microsoft.com/ja-jp/accessibility/windows/use-voice-typing-to-talk-instead-of-type-on-your-pc">Microsoftの説明</a>によると、インターネット経由のオンライン音声認識（Azure Speech サービス）を使います。RocketWhisperは音声認識をPC内だけで行うため、オフラインでも使え、音声が外部に送られません。さらに、専門用語の登録、誤認識の修正ルール、録音・動画ファイルの文字起こしと字幕（SRT・VTT）の書き出し、AIによる整形・翻訳（任意）など、文字起こしの仕事に向けた機能を備えています。</p>
+                </div>
+                <div class="target-card fade-in">
+                    <div class="target-icon">⌨️</div>
+                    <h3>どのアプリで音声入力できますか？</h3>
+                    <p>文字を入力できるアプリならどれでも使えます。右Altを押しながら話して離すと、認識結果がクリップボードにコピーされます。「自動貼り付け」をオンにすると、Word・Excel・Outlook・Teams・ブラウザなど、カーソルのある場所にそのまま入力されます。</p>
                 </div>
                 <div class="target-card fade-in">
                     <div class="target-icon">🎯</div>
@@ -1193,6 +1203,11 @@
                     <div class="target-icon">🎬</div>
                     <h3>動画の字幕作成はできますか？</h3>
                     <p>はい、MP4・MKV・AVI・MOV・WebMなどの動画ファイルから直接文字起こしが可能です。SRT・VTT形式での字幕ファイル出力にも対応しています。</p>
+                </div>
+                <div class="target-card fade-in">
+                    <div class="target-icon">💻</div>
+                    <h3>MacやLinuxでも使えますか？</h3>
+                    <p>はい、Mac版とLinux版もあります。くわしくは<a style="color: #4A90D9;" href="https://mojosoftjp.github.io/rocketwhisper-mac/ja/">Mac版</a>・<a style="color: #4A90D9;" href="https://mojosoftjp.github.io/rocketwhisper-linux/">Linux版</a>のページをご覧ください。</p>
                 </div>
             </div>
         </div>
