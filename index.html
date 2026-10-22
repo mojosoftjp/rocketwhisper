@@ -939,7 +939,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">🐧 Linux版はこちら</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 2.0.1（<a href="changelog.html" style="color: #4A90D9;">更新履歴</a>）</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 2.1.0（<a href="changelog.html" style="color: #4A90D9;">更新履歴</a>）</p>
 
             <!-- エディション選択 -->
             <div class="edition-grid fade-in">
@@ -975,7 +975,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.0.1.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.1.0.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1019,7 +1019,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.0.1.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.1.0.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1112,6 +1112,14 @@
             <h2 class="section-title fade-in">バージョン<span class="highlight">更新情報</span></h2>
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.0 - 2026年10月22日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【不具合修正】右 Alt を押している間に Windows の確認画面などが前に出ると、右 Alt が押しっぱなしになることがある問題を修正</strong> — 押しっぱなしの間は、ほかのキーが Alt との組み合わせになり、自動貼り付けもできなくなっていました。右 Alt を離したときに Windows 側の状態を確かめ、押されたままなら自動で離します。</li>
+                        <li><strong>【サポート】バージョン情報の画面に「ログフォルダを開く」を追加</strong> — お問い合わせの際に診断ログを探しやすくなりました。</li>
+                        <li><strong>【サポート】貼り付けに失敗しうる状態を診断ログに記録するようにしました</strong></li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.1 - 2026年10月6日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【不具合修正】休止状態・スリープからの復帰後に音声認識が使えなくなる問題を修正</strong> — 一部の GPU（AMD など）で、復帰後はアプリを再起動するまで認識できなくなることがありました。復帰時と GPU エラーの発生時にアプリが自動で再起動し、GPU を初期化し直します。メイン画面の文章はそのまま引き継がれます。</li>
@@ -1140,18 +1148,10 @@
                         <li><strong>【安定性改善】電源復帰時のリトライ</strong> — ドライバ復帰に時間がかかる場合も最大3回リトライして確実に再初期化します。</li>
                     </ul>
                 </div>
-                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                <div class="target-card fade-in">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.3 - 2026年3月19日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>変換速度表示</strong> — 音声認識完了時にステータスバーに処理時間とRTF（リアルタイムファクター）を表示。パフォーマンスを一目で確認できます。</li>
-                    </ul>
-                </div>
-                <div class="target-card fade-in">
-                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.2 - 2026年3月16日</h3>
-                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
-                        <li><strong>【安定性改善】休止状態/スリープ復帰後の自動回復</strong> — 休止状態からの復帰時にWhisperモデルとオーディオデバイスを自動的に再初期化。CUDA GPUメモリの無効化やオーディオドライバの不整合を自動検出・復旧します。</li>
-                        <li><strong>【堅牢性向上】エラー発生時の安全な終了</strong> — 予期しないエラーが発生した際にプロセスが応答不能になる問題を改善。エラーメッセージを表示して安全に終了します。</li>
-                        <li><strong>【堅牢性向上】オーディオデバイス列挙の例外保護</strong> — マイクデバイスの列挙時にドライバエラーが発生してもアプリがクラッシュしない設計に改善。</li>
                     </ul>
                 </div>
                 <p class="fade-in" style="text-align: center; margin-top: 2rem;"><a href="changelog.html" style="color: #4A90D9;">すべての更新履歴を見る →</a></p>

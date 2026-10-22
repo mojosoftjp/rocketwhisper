@@ -72,6 +72,14 @@
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.0 - October 22, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Fix] Right Alt could get stuck when a Windows dialog (such as a confirmation prompt) appeared while you were holding it</strong> — While stuck, other keys acted as Alt shortcuts and auto-paste failed. RocketWhisper now checks the key state when you release Right Alt and releases it if Windows still thinks it is pressed.</li>
+                        <li><strong>[Support] Added "Open log folder" to the About dialog</strong> — Makes it easier to find the diagnostic logs when contacting support.</li>
+                        <li><strong>[Support] The diagnostic log now records situations that can make auto-paste fail</strong></li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.0.1 - October 6, 2026</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>[Fix] Speech recognition stops working after resuming from hibernate or sleep</strong> — On some GPUs (such as AMD), recognition could stay unavailable until the app was restarted. RocketWhisper now restarts itself automatically on resume and after a GPU error so the GPU is initialized fresh. Text in the main window is carried over.</li>
