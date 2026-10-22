@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <title>Windows で音声入力する方法 — 標準の音声入力・音声アクセス・Word・RocketWhisper の違い</title>
+    <meta name="description" content="Windows で声で文字を入力する方法を、標準の音声入力（Win + H）・音声アクセス・Word のディクテーション・RocketWhisper で比べます。日本語への対応、インターネットの要否、費用、音声がどこで処理されるかを、Microsoft の公式情報をもとにまとめました。">
+    <meta property="og:title" content="Windows で音声入力する方法 — 標準の音声入力・音声アクセス・Word・RocketWhisper の違い">
+    <meta property="og:description" content="Windows で声で文字を入力する方法を、標準の音声入力（Win + H）・音声アクセス・Word のディクテーション・RocketWhisper で比べます。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mojosoftjp.github.io/rocketwhisper/guide/voice-typing-windows.html">
+    <meta property="og:site_name" content="Mojosoft">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://mojosoftjp.github.io/rocketwhisper/guide/voice-typing-windows.html">
+    <link rel="alternate" href="https://mojosoftjp.github.io/rocketwhisper/guide/voice-typing-windows.html" hreflang="ja">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/icon32.png">
+    <link rel="apple-touch-icon" href="../images/RocketWhisper3.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* この記事だけの体裁（サイト共通の CSS は変えない） */
+        .page-content section.content-section { padding: 1.25rem 0; margin-bottom: 0; }
+        .guide-meta { color: var(--text-secondary); font-size: 0.95rem; }
+        .guide-toc ol { margin-left: 1.5rem; }
+        .guide-toc a, .content-section p a, .content-section li a, .guide-sources a { color: #4A90D9; }
+        .table-scroll { overflow-x: auto; margin-bottom: var(--spacing-md); }
+        .table-scroll .command-table { margin-bottom: 0; }
+        .table-scroll .command-table.wide { min-width: 640px; }
+        .command-table th, .command-table td { vertical-align: top; }
+        .guide-faq h3 { font-size: 1.1rem; }
+        .guide-cta { text-align: center; margin-top: 2rem; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://mojosoftjp.github.io/rocketwhisper/guide/voice-typing-windows.html#article",
+          "headline": "Windows で音声入力する方法 — 標準の音声入力・音声アクセス・Word・RocketWhisper の違い",
+          "description": "Windows で声で文字を入力する方法を、標準の音声入力（Win + H）・音声アクセス・Word のディクテーション・RocketWhisper で比べます。",
+          "inLanguage": "ja",
+          "datePublished": "2026-10-22",
+          "dateModified": "2026-10-22",
+          "image": "https://mojosoftjp.github.io/rocketwhisper/images/RocketWhisper3.png",
+          "mainEntityOfPage": "https://mojosoftjp.github.io/rocketwhisper/guide/voice-typing-windows.html",
+          "author": { "@id": "https://mojosoft.biz/#organization" },
+          "publisher": {
+            "@type": "Organization",
+            "@id": "https://mojosoft.biz/#organization",
+            "name": "Mojosoft",
+            "url": "https://mojosoft.biz/"
+          },
+          "about": { "@id": "https://mojosoftjp.github.io/rocketwhisper/#software" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Mojosoft", "item": "https://mojosoft.biz/" },
+            { "@type": "ListItem", "position": 2, "name": "RocketWhisper Windows版", "item": "https://mojosoftjp.github.io/rocketwhisper/" },
+            { "@type": "ListItem", "position": 3, "name": "Windows で音声入力する方法", "item": "https://mojosoftjp.github.io/rocketwhisper/guide/voice-typing-windows.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="nav-icon">
+                <span>RocketWhisper</span>
+            </a>
+            <button class="nav-toggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../index.html#features">機能</a></li>
+                <li><a href="../index.html#how-it-works">使い方</a></li>
+                <li><a href="../index.html#download">ダウンロード</a></li>
+                <li><a href="../changelog.html">更新履歴</a></li>
+                <li><a href="../purchase.html">購入</a></li>
+                <li><a href="../help.html">ヘルプ</a></li>
+                <li><a href="../privacy.html">プライバシー</a></li>
+                <li><a href="../support.html">サポート</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Windows で音声入力する方法</h1>
+            <p class="guide-meta">標準の音声入力・音声アクセス・Word のディクテーション・RocketWhisper の違い ｜ 2026 年 10 月 22 日 ｜ Mojosoft</p>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+
+            <section class="content-section">
+                <p>「キーボードの代わりに、声で文字を入力したい」とき、Windows には無料で使える標準機能があります。まずは標準機能を試し、足りないところがあれば専用のソフトを検討するのがおすすめです。</p>
+                <p>この記事では、Windows の音声入力（Win + H）と音声アクセス、Word のディクテーション、そして音声入力・文字起こしソフトの RocketWhisper を、できること・日本語への対応・インターネットの要否・費用で比べます。内容は 2026 年 10 月時点の Microsoft の公式情報に基づいています（出典は記事の最後）。</p>
+                <div class="info-card">
+                    <p style="margin-bottom: 0;">※ RocketWhisper は、この記事を書いている Mojosoft が開発・販売しているアプリです。</p>
+                </div>
+            </section>
+
+            <section class="content-section guide-toc">
+                <h2>目次</h2>
+                <ol>
+                    <li><a href="#purpose">目的別の早見表</a></li>
+                    <li><a href="#voice-typing">音声入力（Win + H）</a></li>
+                    <li><a href="#voice-access">音声アクセス（Windows 11 の標準機能）</a></li>
+                    <li><a href="#word">Word のディクテーション</a></li>
+                    <li><a href="#rocketwhisper">RocketWhisper（オフラインの音声入力・文字起こしソフト）</a></li>
+                    <li><a href="#compare">比較表</a></li>
+                    <li><a href="#data">声やデータはどこで処理されるか</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                </ol>
+            </section>
+
+            <section class="content-section" id="purpose">
+                <h2>目的別の早見表</h2>
+                <div class="table-scroll">
+                    <table class="command-table">
+                        <tr><th>やりたいこと</th><th>向いている方法</th></tr>
+                        <tr><td>Windows 11 で、まずは無料で声で文字を入力したい</td><td>音声入力（Win + H）</td></tr>
+                        <tr><td>インターネットにつながない環境で、無料で声で入力したい。声でパソコンの操作もしたい</td><td>音声アクセス（Windows 11 の標準機能）</td></tr>
+                        <tr><td>Word で文書を声で書きたい（Microsoft 365 を契約している）</td><td>Word のディクテーション</td></tr>
+                        <tr><td>声を PC の外に出さずに入力したい。専門用語や名前を正しく出したい。録音や動画を文字に起こして字幕を作りたい</td><td>RocketWhisper</td></tr>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-section" id="voice-typing">
+                <h2>音声入力（Win + H）</h2>
+                <p>Windows 11 の標準機能で、キーボードの代わりに声で文字を入力できます。日本語に対応しています。</p>
+                <ol>
+                    <li>文字を入力したい欄にカーソルを置く</li>
+                    <li>Win + H を押して話す</li>
+                    <li>止めるときは「聞き取りを停止する」と言うか、マイクのボタンを押す</li>
+                </ol>
+                <p>音声入力の画面の歯車アイコンから、句読点を自動で入れる設定（自動句読点）や、文字の入力欄で音声入力をすぐ呼び出せる「音声入力ランチャー」を設定できます。</p>
+                <p>音声の認識は Microsoft のクラウド（Azure の音声サービス）で行うため、インターネット接続が必要です。</p>
+                <p>Windows 10 にも Win + H のディクテーションがありますが、Microsoft が案内する対応言語に日本語は含まれていません。</p>
+            </section>
+
+            <section class="content-section" id="voice-access">
+                <h2>音声アクセス（Windows 11 の標準機能）</h2>
+                <p>声で Windows 全体を操作するための機能で、声で文字を入力することもできます。アクセシビリティ（障がいのある方などの使いやすさ）のための機能として作られていますが、誰でも使えます。</p>
+                <ul>
+                    <li><strong>日本語</strong>: 2025 年 10 月 28 日の更新（KB5067036。Windows 11 バージョン 24H2 / 25H2）から対応しました</li>
+                    <li><strong>インターネット</strong>: 音声の認識は PC の中で行うため、インターネットに接続していなくても使えます。最初の設定で、認識用の言語ファイルをダウンロードするときだけインターネット接続が必要です</li>
+                    <li><strong>始め方</strong>: ［スタート］＞［設定］＞［アクセシビリティ］＞［音声認識］を開き、「音声アクセス」をオンにします（画面の案内に沿って初期設定をします）</li>
+                </ul>
+                <p>クリックやスクロールまで声で行う方法は、別の記事「<a href="https://mojosoftjp.github.io/mira-ai/guide/voice-control-windows.html">Windows で声でパソコンを操作する方法</a>」にまとめています。</p>
+            </section>
+
+            <section class="content-section" id="word">
+                <h2>Word のディクテーション</h2>
+                <p>Word で文書を声で書く機能です。日本語に対応しています。</p>
+                <ul>
+                    <li><strong>使える人</strong>: Microsoft 365 のサブスクリプションを契約している人（Microsoft 365 にサインインして使います）</li>
+                    <li><strong>使い方</strong>: ［ホーム］＞［ディクテーション］を選んで話します</li>
+                    <li><strong>インターネット</strong>: 必要です。音声は Microsoft に送られ、文字にするためだけに使われます（Microsoft の説明では、音声と文字にした結果は保存されません）</li>
+                </ul>
+                <p>Word には、録音した音声ファイルを文字に起こす「トランスクリプト」もあります。ただし 2026 年 10 月時点の Microsoft の説明では、使えるのは法人向け（商用テナント）の Windows 版 Word for Microsoft 365 などに限られ、Microsoft 365 のサブスクリプションでは月 300 分までです。</p>
+            </section>
+
+            <section class="content-section" id="rocketwhisper">
+                <h2>RocketWhisper（オフラインの音声入力・文字起こしソフト）</h2>
+                <p>RocketWhisper は、声で文字を入力するための Windows 用ソフトです。OpenAI が公開している音声認識モデル Whisper を PC の中で動かすので、音声を PC の外に出さずに使えます。</p>
+                <h3>できること</h3>
+                <ul>
+                    <li>右 Alt キーを押しながら話して離すと、カーソルのある場所に文字が入ります（Word・メール・Teams・ブラウザなど、文字を入力できるアプリならどれでも）</li>
+                    <li>専門用語や名前の登録、よく間違える言葉を自動で直すルール、句読点の自動挿入</li>
+                    <li>録音・動画ファイル（MP3・WAV・M4A・MP4 など）の文字起こし、字幕ファイル（SRT・VTT）の書き出し、複数ファイルのまとめての処理</li>
+                    <li>AI 処理（任意）: ご自身の API キーで、認識した文章の整形・要約・翻訳ができます（OpenAI・Anthropic・Google など。LM Studio・Ollama など PC の中で動く AI も選べます）</li>
+                    <li>GPU（NVIDIA・AMD・Intel）で認識を速くできます。GPU が無くても CPU で動きます</li>
+                </ul>
+                <h3>できないこと</h3>
+                <ul>
+                    <li>クリックやスクロールなど、パソコンの操作はできません。声で操作したいときは音声アクセスを使ってください</li>
+                    <li>話している最中に文字が少しずつ出るのではなく、話し終えて（右 Alt キーを離して）から、まとめて文字になります</li>
+                    <li>認識の速さは PC の性能によります。GPU が無い PC や古い PC では、文字になるまでに時間がかかることがあります</li>
+                </ul>
+                <h3>必要なもの・費用</h3>
+                <ul>
+                    <li>Windows 11 / Windows 10（バージョン 1809 以降）の 64 ビット版、マイク</li>
+                    <li>メモリ 8GB 以上を推奨（初期設定の large-v3-turbo モデルの場合）</li>
+                    <li>7 日間は無料ですべての機能を試せます。続けて使うには、個人版 5,280 円（税込）の買い切りライセンスが必要です（月額料金はかかりません）</li>
+                    <li>インターネット接続が必要なのは、認識用のモデル（約 1.6GB）を最初にダウンロードするときと、クラウドの AI 処理を使うときだけです。モデルと実行環境を同梱した Full 版なら、インストールしたときからオフラインで使えます</li>
+                </ul>
+                <h3>始め方</h3>
+                <ol>
+                    <li><a href="../index.html#download">ダウンロード</a>から Lite 版か Full 版を入手してインストールする</li>
+                    <li>Lite 版は、初回起動時に認識用のモデルをダウンロードする（.NET 8.0 Desktop Runtime が無い場合はインストールが案内されます。Full 版はどちらも同梱）</li>
+                    <li>文字を入力したい場所をクリックし、右 Alt キーを押しながら話して、離す</li>
+                </ol>
+                <p>使い方の詳細は <a href="../help.html">RocketWhisper のヘルプ</a>をご覧ください。</p>
+            </section>
+
+            <section class="content-section" id="compare">
+                <h2>比較表</h2>
+                <p>表は横にスクロールできます。「—」は、その方法の主な機能に含まれないことを示します。</p>
+                <div class="table-scroll">
+                    <table class="command-table wide">
+                        <tr><th></th><th>音声入力（Win + H）</th><th>音声アクセス</th><th>Word のディクテーション</th><th>RocketWhisper</th></tr>
+                        <tr><th>主な用途</th><td>文字の入力</td><td>Windows 全体の操作と文字の入力</td><td>Word での文書作成</td><td>文字の入力、録音・動画の文字起こし</td></tr>
+                        <tr><th>日本語</th><td>○（Windows 11）</td><td>○（2025 年 10 月の更新から）</td><td>○</td><td>○</td></tr>
+                        <tr><th>入力できる場所</th><td>文字を入力できるアプリ</td><td>文字を入力できるアプリ</td><td>Word</td><td>文字を入力できるアプリ</td></tr>
+                        <tr><th>インターネット</th><td>必要</td><td>不要（最初の設定のときは必要）</td><td>必要</td><td>不要（モデルのダウンロードと、クラウドの AI 処理を使うときは必要）</td></tr>
+                        <tr><th>音声の処理場所</th><td>Microsoft のクラウド</td><td>PC の中</td><td>Microsoft のサービス</td><td>PC の中</td></tr>
+                        <tr><th>録音・動画ファイルの文字起こし</th><td>—</td><td>—</td><td>トランスクリプト（条件あり。上記）</td><td>○（字幕 SRT・VTT の書き出しも）</td></tr>
+                        <tr><th>費用</th><td>無料（Windows の標準機能）</td><td>無料（Windows の標準機能）</td><td>Microsoft 365 のサブスクリプション</td><td>7 日間無料。以降は 5,280 円（税込）の買い切り</td></tr>
+                        <tr><th>必要なもの</th><td>Windows 11（日本語で使う場合）</td><td>Windows 11</td><td>Microsoft 365</td><td>Windows 11 / 10（64 ビット）</td></tr>
+                    </table>
+                </div>
+            </section>
+
+            <section class="content-section" id="data">
+                <h2>声やデータはどこで処理されるか</h2>
+                <ul>
+                    <li><strong>音声入力（Win + H）</strong> — Microsoft のクラウド（Azure の音声サービス）で認識します</li>
+                    <li><strong>音声アクセス</strong> — 音声の認識は PC の中で行います</li>
+                    <li><strong>Word のディクテーション</strong> — 音声は Microsoft に送られ、文字にするためだけに使われます（Microsoft の説明では保存されません）</li>
+                    <li><strong>RocketWhisper</strong> — 音声の認識は PC の中で行い、音声を外部に送りません。任意の AI 処理を使う場合だけ、認識した文章をご自身で設定した AI サービスに送ります（LM Studio・Ollama など PC の中で動く AI を選べば、AI 処理も PC の中で完結します）。詳しくは<a href="../privacy.html">プライバシーポリシー</a>をご覧ください</li>
+                </ul>
+            </section>
+
+            <section class="content-section guide-faq" id="faq">
+                <h2>よくある質問</h2>
+                <h3>Q. 無料で、声で文字を入力できますか？</h3>
+                <p>できます。Windows 11 なら、音声入力（Win + H）と音声アクセスが標準機能として無料で使えます。</p>
+                <h3>Q. Windows 10 で日本語の音声入力はできますか？</h3>
+                <p>Windows 10 の Win + H（ディクテーション）は、Microsoft が案内する対応言語に日本語が含まれていません。音声アクセスも Windows 11 の機能です。Windows 10 では、以前からある Windows 音声認識か、RocketWhisper（Windows 10 バージョン 1809 以降の 64 ビット版に対応）などのソフトを使います。なお、Windows 10 のサポートは 2025 年 10 月 14 日に終了しています。</p>
+                <h3>Q. 会議の録音を文字に起こせますか？</h3>
+                <p>Windows の音声入力と音声アクセスは、話した声をその場で入力する機能で、録音ファイルの文字起こしには向きません。RocketWhisper は、録音・動画ファイルを PC の中で文字に起こせます（複数ファイルのまとめての処理や、字幕の書き出しもできます）。Word のトランスクリプトは、使える契約と月の時間に上限があります（上記）。</p>
+                <p>会議を録音するときは、参加者に録音することを伝え、了解を得てください。</p>
+                <h3>Q. 専門用語や人の名前がうまく変換されません</h3>
+                <p>静かな場所で、マイクに近づいてはっきり話すと認識しやすくなります。RocketWhisper では、専門用語や名前を登録したり、よく間違える言葉を自動で直すルールを作ったりできます。</p>
+                <h3>Q. RocketWhisper は無料ですか？</h3>
+                <p>7 日間は無料ですべての機能を試せます。続けて使うには、個人版 5,280 円（税込）の買い切りライセンスが必要です（月額料金はかかりません）。</p>
+            </section>
+
+            <section class="content-section guide-sources" id="sources">
+                <h2>出典（Microsoft の公式情報）</h2>
+                <ul>
+                    <li><a href="https://support.microsoft.com/ja-jp/accessibility/windows/use-voice-typing-to-talk-instead-of-type-on-your-pc">音声入力を使って PC で入力する代わりに話す</a>（Windows 11 / 10 の対応言語・止め方・設定）</li>
+                    <li><a href="https://support.microsoft.com/ja-jp/accessibility/windows/voice-access/set-up-voice-access">音声アクセスを設定する</a>（対応言語・オフラインでの利用・初期設定）</li>
+                    <li><a href="https://support.microsoft.com/en-us/help/5067036">KB5067036（2025 年 10 月 28 日・音声アクセスの日本語対応）</a></li>
+                    <li><a href="https://support.microsoft.com/ja-jp/word/dictate-your-documents-in-word">Word で文書をディクテーションする</a>（使える条件・インターネット・対応言語）</li>
+                    <li><a href="https://support.microsoft.com/ja-jp/word/transcribe-your-recordings">録音を文字起こしする</a>（Word のトランスクリプトの条件と上限）</li>
+                    <li><a href="https://support.microsoft.com/ja-jp/windows/deployment/updates-lifecycle/windows-10-support-has-ended-on-october-14-2025">Windows 10 のサポート終了（2025 年 10 月 14 日）</a></li>
+                </ul>
+                <p>Microsoft の機能や条件は更新されることがあります。最新の情報は各公式ページでご確認ください。</p>
+            </section>
+
+            <p class="guide-cta"><a href="../index.html#download" style="color: #4A90D9;">RocketWhisper をダウンロード（7 日間無料）→</a></p>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../images/RocketWhisper3.png" alt="RocketWhisper" class="footer-logo">
+                    <span class="footer-name">RocketWhisper</span>
+                    <p class="footer-tagline">声を、テキストに。瞬時に、正確に。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>製品</h4>
+                        <ul>
+                            <li><a href="../index.html#features">機能</a></li>
+                            <li><a href="../index.html#download">ダウンロード</a></li>
+                            <li><a href="../changelog.html">更新履歴</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="../help.html">ヘルプ</a></li>
+                            <li><a href="../support.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法的情報</h4>
+                        <ul>
+                            <li><a href="../privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</p>
+                <p class="footer-credits">Powered by OpenAI Whisper</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
