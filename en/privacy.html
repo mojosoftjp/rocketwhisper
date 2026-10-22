@@ -75,15 +75,15 @@
     <main class="page-content">
         <div class="container">
             <section class="content-section">
-                <p><strong>Last Updated: January 24, 2026</strong></p>
+                <p><strong>Last Updated: October 22, 2026</strong></p>
                 <p>This Privacy Policy explains how data is handled in RocketWhisper (hereinafter "the App"). Mojosoft Co., Ltd. (hereinafter "we") designs and develops the App with user privacy protection as the highest priority.</p>
             </section>
 
             <section class="content-section">
                 <h2>1. Core Principle</h2>
                 <div class="info-card">
-                    <h4>Completely Offline &amp; Fully Local Processing</h4>
-                    <p>RocketWhisper is an application that operates <strong>completely offline</strong>. All speech recognition processing is performed on your computer, and <strong>audio data and recognition results are never sent to any external server</strong>.</p>
+                    <h4>Speech Recognition Stays on Your Computer</h4>
+                    <p>RocketWhisper recognizes speech only on your computer, and it works without an Internet connection. <strong>Audio data is never sent externally.</strong> Recognized text leaves your computer only if you choose a cloud service for the optional AI processing feature (see 6. Network Communication).</p>
                 </div>
             </section>
 
@@ -126,6 +126,7 @@
                     <li>Hotkey settings</li>
                     <li>Auto copy/paste settings</li>
                     <li>Window position and size</li>
+                    <li>API keys for AI processing (stored encrypted with a Windows feature)</li>
                 </ul>
                 <p><strong>Location:</strong> <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code></p>
 
@@ -149,7 +150,14 @@
                 <ul>
                     <li>Downloaded Whisper models (.bin format)</li>
                 </ul>
-                <p><strong>Location:</strong> <code>%APPDATA%\RocketWhisper\Models\</code></p>
+                <p><strong>Location:</strong> <code>%PUBLIC%\Documents\RocketWhisper\Models\</code> (shared by all users of this computer)</p>
+
+                <h3>Diagnostic Logs</h3>
+                <ul>
+                    <li>A record of how the app runs, such as start-up and recognition times and error types (kept for 14 days)</li>
+                    <li>Audio, recognized text and API keys are never recorded</li>
+                </ul>
+                <p><strong>Location:</strong> <code>%APPDATA%\RocketWhisper\logs\</code></p>
 
                 <div class="info-card">
                     <h4>How to Delete Data</h4>
@@ -157,6 +165,7 @@
                     <ol>
                         <li>Uninstall RocketWhisper</li>
                         <li>Delete the <code>%APPDATA%\RocketWhisper</code> folder</li>
+                        <li>Delete the <code>%PUBLIC%\Documents\RocketWhisper</code> folder (downloaded models)</li>
                         <li>Optionally, delete <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code> using Registry Editor</li>
                     </ol>
                 </div>
@@ -164,7 +173,7 @@
 
             <section class="content-section">
                 <h2>5. Third-Party Sharing</h2>
-                <p>Since the App does not send data externally, <strong>we do not share any data with third parties</strong>.</p>
+                <p>We never receive the data the App handles (audio, recognized text, settings and so on), and <strong>we do not share it with third parties</strong>. If you choose a cloud service for the optional AI processing feature, the recognized text is sent directly to the provider you set up (OpenAI, Anthropic, Google, Groq, etc.) and is handled under that provider's privacy policy.</p>
             </section>
 
             <section class="content-section">
@@ -197,8 +206,9 @@
                 <h2>7. Security</h2>
                 <p>The App is designed with security in mind:</p>
                 <ul>
-                    <li>All processing is completed locally, minimizing the risk of data leakage</li>
-                    <li>No data transmission over the network eliminates the risk of man-in-the-middle attacks</li>
+                    <li>Speech recognition is completed locally and audio is never sent over the network, minimizing the risk of data leakage</li>
+                    <li>Communication with cloud AI services is encrypted (HTTPS)</li>
+                    <li>API keys for AI processing are stored encrypted with a Windows feature (DPAPI)</li>
                     <li>Recognition history is stored only in the user's local storage</li>
                 </ul>
             </section>
@@ -224,7 +234,7 @@
             <section class="content-section">
                 <div class="info-card">
                     <h4>Summary</h4>
-                    <p>RocketWhisper fully protects your voice data and privacy. All processing is completed on your computer, and nothing is sent externally. Use it with confidence.</p>
+                    <p>RocketWhisper fully protects your voice data and privacy. Speech recognition runs entirely on your computer and audio is never sent anywhere (only if you set up AI processing with your own API key is the text being processed sent to that provider). Use it with confidence.</p>
                 </div>
             </section>
         </div>

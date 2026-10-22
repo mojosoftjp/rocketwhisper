@@ -75,15 +75,15 @@
     <main class="page-content">
         <div class="container">
             <section class="content-section">
-                <p><strong>最終更新日: 2026年1月24日</strong></p>
+                <p><strong>最終更新日: 2026年10月22日</strong></p>
                 <p>本プライバシーポリシーは、RocketWhisper（以下「本アプリ」）におけるデータの取り扱いについて説明します。Mojosoft Co., Ltd.（以下「当社」）は、ユーザーのプライバシー保護を最優先に考え、本アプリを設計・開発しています。</p>
             </section>
 
             <section class="content-section">
                 <h2>1. 基本方針</h2>
                 <div class="info-card">
-                    <h4>完全オフライン・完全ローカル処理</h4>
-                    <p>RocketWhisperは<strong>完全オフライン</strong>で動作するアプリケーションです。音声認識処理はすべてお使いのコンピュータ内で行われ、<strong>音声データや認識結果が外部サーバーに送信されることは一切ありません</strong>。</p>
+                    <h4>音声認識はお使いのコンピュータの中だけで</h4>
+                    <p>RocketWhisperの音声認識は、お使いのコンピュータの中だけで行われ、インターネットに接続していなくても使えます。<strong>音声データが外部に送信されることはありません</strong>。認識した文章が外部に送られるのは、お客様がオプションの「AI処理」でクラウドのサービスを選んだ場合だけです（6. ネットワーク通信）。</p>
                 </div>
             </section>
 
@@ -126,6 +126,7 @@
                     <li>ホットキー設定</li>
                     <li>自動コピー/貼り付け設定</li>
                     <li>ウィンドウ位置・サイズ</li>
+                    <li>AI処理の API キー（Windows の機能で暗号化して保存）</li>
                 </ul>
                 <p><strong>保存場所:</strong> <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code></p>
 
@@ -149,7 +150,14 @@
                 <ul>
                     <li>ダウンロードしたWhisperモデル（.bin形式）</li>
                 </ul>
-                <p><strong>保存場所:</strong> <code>%APPDATA%\RocketWhisper\Models\</code></p>
+                <p><strong>保存場所:</strong> <code>%PUBLIC%\Documents\RocketWhisper\Models\</code>（このパソコンのすべてのユーザーで共有）</p>
+
+                <h3>診断ログ</h3>
+                <ul>
+                    <li>起動や認識にかかった時間、エラーの種類などの動作の記録（14 日分）</li>
+                    <li>音声・認識した文章・API キーは記録しません</li>
+                </ul>
+                <p><strong>保存場所:</strong> <code>%APPDATA%\RocketWhisper\logs\</code></p>
 
                 <div class="info-card">
                     <h4>データの削除方法</h4>
@@ -157,6 +165,7 @@
                     <ol>
                         <li>RocketWhisperをアンインストール</li>
                         <li><code>%APPDATA%\RocketWhisper</code> フォルダを削除</li>
+                        <li><code>%PUBLIC%\Documents\RocketWhisper</code> フォルダ（ダウンロードしたモデル）を削除</li>
                         <li>レジストリエディタで <code>HKEY_CURRENT_USER\Software\Mojosoft\RocketWhisper</code> を削除（任意）</li>
                     </ol>
                 </div>
@@ -164,7 +173,7 @@
 
             <section class="content-section">
                 <h2>5. 第三者への提供</h2>
-                <p>本アプリはデータを外部に送信しないため、<strong>第三者へのデータ提供は一切行いません</strong>。</p>
+                <p>当社は、本アプリで扱うデータ（音声・認識した文章・設定など）を受け取ることはなく、<strong>第三者に提供することもありません</strong>。なお、オプションの AI 処理でクラウドのサービスを選んだ場合は、認識した文章がお客様の設定したプロバイダ（OpenAI・Anthropic・Google・Groq など）に直接送られ、各社のプライバシーポリシーに従って扱われます。</p>
             </section>
 
             <section class="content-section">
@@ -197,8 +206,9 @@
                 <h2>7. セキュリティ</h2>
                 <p>本アプリはセキュリティを考慮して設計されています：</p>
                 <ul>
-                    <li>すべての処理がローカルで完結するため、データ漏洩のリスクが最小限</li>
-                    <li>ネットワーク経由でのデータ送信がないため、中間者攻撃のリスクなし</li>
+                    <li>音声認識はローカルで完結し、音声データをネットワークに送らないため、漏洩のリスクを最小限に抑えています</li>
+                    <li>クラウドの AI サービスとの通信は暗号化（HTTPS）されます</li>
+                    <li>AI 処理の API キーは、Windows の機能（DPAPI）で暗号化して保存します</li>
                     <li>認識履歴はユーザーのローカルストレージにのみ保存</li>
                 </ul>
             </section>
@@ -224,7 +234,7 @@
             <section class="content-section">
                 <div class="info-card">
                     <h4>まとめ</h4>
-                    <p>RocketWhisperは、あなたの音声データとプライバシーを完全に保護します。すべての処理はお使いのコンピュータ内で完結し、外部への送信は一切行いません。安心してご利用ください。</p>
+                    <p>RocketWhisperは、あなたの音声データとプライバシーを完全に保護します。音声認識はお使いのコンピュータの中で完結し、音声データを外部に送ることはありません（AI 処理をご自身の API キーで設定した場合のみ、処理する文章をそのプロバイダに送ります）。安心してご利用ください。</p>
                 </div>
             </section>
         </div>
