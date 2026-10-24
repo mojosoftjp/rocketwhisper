@@ -204,7 +204,7 @@
                     <li><strong>コピー</strong>: コピーボタンでクリップボードにコピー</li>
                     <li><strong>保存</strong>: 保存ボタンでテキストファイルとして保存</li>
                     <li><strong>自動コピー</strong>: 設定で有効にすると認識完了時に自動コピー</li>
-                    <li><strong>自動貼り付け</strong>: 設定で有効にすると認識完了時に自動貼り付け</li>
+                    <li><strong>自動貼り付け</strong>: 認識完了時にアクティブなアプリへ自動で貼り付け（初期設定でオン。設定で切り替えられます）</li>
                 </ul>
             </section>
 
@@ -1405,6 +1405,19 @@
                                 <li>RocketWhisperを起動し直し、バージョン情報の「認識エンジン: CUDA 13」を確認する</li>
                             </ul>
                             <p>次期バージョンでは、アプリ内からCUDAランタイムを導入できるよう対応予定です。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Microsoft Store 版をお使いの場合</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>GPU 加速は Vulkan（NVIDIA / AMD / Intel）で行います。CUDA と CUDA ランタイムパックは Store 版では使えません。</li>
+                                <li>診断ログは、バージョン情報画面の「ログフォルダを開く」から開けます。</li>
+                                <li>DL 版と Store 版を同じ PC に入れることはできますが、同時には起動できません。両方で「Windows 起動時に自動起動」をオンにすると、先に起動した方だけが動きます。どちらか一方だけをオンにしてください。</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

@@ -204,7 +204,7 @@
                     <li><strong>Copy</strong>: Click the copy button to copy to clipboard</li>
                     <li><strong>Save</strong>: Click the save button to save as a text file</li>
                     <li><strong>Auto Copy</strong>: When enabled in settings, automatically copies upon recognition completion</li>
-                    <li><strong>Auto Paste</strong>: When enabled in settings, automatically pastes upon recognition completion</li>
+                    <li><strong>Auto Paste</strong>: Automatically pastes into the active app upon recognition completion (on by default; can be turned off in settings)</li>
                 </ul>
             </section>
 
@@ -1397,6 +1397,19 @@
                                 <li>Restart RocketWhisper and check "Recognition engine: CUDA 13" in the About dialog</li>
                             </ul>
                             <p>In-app setup of the CUDA runtime is planned for the next version.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">If you use the Microsoft Store edition</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>GPU acceleration uses Vulkan (NVIDIA / AMD / Intel). CUDA and the CUDA Runtime Pack are not available in the Store edition.</li>
+                                <li>Open diagnostic logs from "Open log folder" in the About window.</li>
+                                <li>The download edition and the Store edition can be installed on the same PC but cannot run at the same time. If both have "Start with Windows" turned on, only the one that starts first runs, so turn it on in only one of them.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
