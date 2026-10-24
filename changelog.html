@@ -72,6 +72,13 @@
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.1 - 2026年10月24日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【不具合修正】「こんにちは」「ありがとうございます」など、短いあいさつだけを話すと何も入力されない問題を修正</strong> — 無音から誤って生まれやすい定型句として消していました。VAD（音声区間検出）が発話を確認できた場合は、そのまま入力します。「ご視聴ありがとうございました」のような動画の締めの句は、これまでどおり消します。</li>
+                        <li><strong>【サポート】音声が入力されなかったときの理由（無音と判断した・定型句として消した など）を診断ログに記録するようにしました</strong> — 認識した文章そのものは記録しません。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.0 - 2026年10月22日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【不具合修正】右 Alt を押している間に Windows の確認画面などが前に出ると、右 Alt が押しっぱなしになることがある問題を修正</strong> — 押しっぱなしの間は、ほかのキーが Alt との組み合わせになり、自動貼り付けもできなくなっていました。右 Alt を離したときに Windows 側の状態を確かめ、押されたままなら自動で離します。</li>

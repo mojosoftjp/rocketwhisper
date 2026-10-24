@@ -609,7 +609,7 @@
                         </svg>
                     </div>
                     <h3>誤認識自動修正</h3>
-                    <p>カスタムルールと正規表現で誤認識を自動修正。73種類のハルシネーション対策も内蔵。</p>
+                    <p>カスタムルールと正規表現で誤認識を自動修正。無音から架空の文章が生まれる現象（ハルシネーション）を防ぐ仕組みも内蔵。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-number">08</div>
@@ -939,7 +939,7 @@
                 <span style="color: rgba(255,255,255,0.3); margin: 0 0.5rem;">|</span>
                 <a href="https://mojosoftjp.github.io/rocketwhisper-linux/" style="color: #4A90D9; text-decoration: none; font-size: 1rem;">🐧 Linux版はこちら</a>
             </p>
-            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 2.1.0（<a href="changelog.html" style="color: #4A90D9;">更新履歴</a>）</p>
+            <p class="version" style="text-align: center; margin-bottom: 2rem;">最新バージョン: 2.1.1（<a href="changelog.html" style="color: #4A90D9;">更新履歴</a>）</p>
 
             <!-- エディション選択 -->
             <div class="edition-grid fade-in">
@@ -975,7 +975,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.1.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Lite_Setup_2.1.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1019,7 +1019,7 @@
                         </div>
                     </div>
                     <div class="edition-footer">
-                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.1.0.exe" class="download-btn primary">
+                        <a href="https://mojosoft.biz/RocketWhisper_Full_Setup_2.1.1.exe" class="download-btn primary">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7,10 12,15 17,10"></polyline>
@@ -1112,6 +1112,13 @@
             <h2 class="section-title fade-in">バージョン<span class="highlight">更新情報</span></h2>
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.1 - 2026年10月24日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【不具合修正】「こんにちは」「ありがとうございます」など、短いあいさつだけを話すと何も入力されない問題を修正</strong> — 無音から誤って生まれやすい定型句として消していました。VAD（音声区間検出）が発話を確認できた場合は、そのまま入力します。「ご視聴ありがとうございました」のような動画の締めの句は、これまでどおり消します。</li>
+                        <li><strong>【サポート】音声が入力されなかったときの理由（無音と判断した・定型句として消した など）を診断ログに記録するようにしました</strong> — 認識した文章そのものは記録しません。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.0 - 2026年10月22日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【不具合修正】右 Alt を押している間に Windows の確認画面などが前に出ると、右 Alt が押しっぱなしになることがある問題を修正</strong> — 押しっぱなしの間は、ほかのキーが Alt との組み合わせになり、自動貼り付けもできなくなっていました。右 Alt を離したときに Windows 側の状態を確かめ、押されたままなら自動で離します。</li>
@@ -1140,18 +1147,12 @@
                         <li><strong>【内部】音声認識エンジンを Whisper.net 1.9.1 に更新</strong> — 未使用コンポーネントを整理し、インストールサイズを削減しました。</li>
                     </ul>
                 </div>
-                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                <div class="target-card fade-in">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.4 - 2026年4月2日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【安定性改善】GPU障害からの自動回復</strong> — 休止状態復帰後にGPUドライバ（CUDA/Vulkan）がクラッシュした場合、Whisperモデルを自動で再読み込みして復帰します。</li>
                         <li><strong>【安定性改善】音声認識タイムアウト</strong> — GPUハング時に無限待機しなくなりました。タイムアウト検出後にモデルを自動再読み込みします。</li>
                         <li><strong>【安定性改善】電源復帰時のリトライ</strong> — ドライバ復帰に時間がかかる場合も最大3回リトライして確実に再初期化します。</li>
-                    </ul>
-                </div>
-                <div class="target-card fade-in">
-                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v1.2.3 - 2026年3月19日</h3>
-                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
-                        <li><strong>変換速度表示</strong> — 音声認識完了時にステータスバーに処理時間とRTF（リアルタイムファクター）を表示。パフォーマンスを一目で確認できます。</li>
                     </ul>
                 </div>
                 <p class="fade-in" style="text-align: center; margin-top: 2rem;"><a href="changelog.html" style="color: #4A90D9;">すべての更新履歴を見る →</a></p>
@@ -1187,7 +1188,7 @@
                 <div class="target-card fade-in">
                     <div class="target-icon">🎯</div>
                     <h3>認識精度はどの程度ですか？</h3>
-                    <p>OpenAI Whisperの最新モデル（large-v3-turbo）を搭載し、日本語の認識精度は業界トップクラスです。73個のハルシネーション対策と専門用語登録で実用的な精度を実現しています。</p>
+                    <p>OpenAI Whisperの最新モデル（large-v3-turbo）を搭載し、日本語の認識精度は業界トップクラスです。音声区間検出（VAD）と定型句フィルタによるハルシネーション対策、専門用語登録で実用的な精度を実現しています。</p>
                 </div>
                 <div class="target-card fade-in">
                     <div class="target-icon">⚡</div>
