@@ -107,7 +107,7 @@
                 <h3>動作要件</h3>
                 <ul>
                     <li>Windows 11 (64bit)</li>
-                    <li>.NET 8.0 Desktop Runtime</li>
+                    <li>.NET 10 Desktop Runtime（インストーラーに同梱。入っていない場合は自動でインストール）</li>
                     <li>RAM 8GB以上推奨</li>
                     <li>GPUがあると高速化（NVIDIA / AMD / Intel の Vulkan 対応GPU。NVIDIAでCUDA加速を使う場合は NVIDIA CUDA Toolkit 13 のインストールが必要。トラブルシューティング参照）</li>
                 </ul>
@@ -115,9 +115,9 @@
                 <h3>インストール手順</h3>
                 <ol>
                     <li><a href="index.html#download">ダウンロードページ</a>から最新版をダウンロード</li>
-                    <li>ダウンロードしたZIPファイルを展開</li>
-                    <li><code>RocketWhisper.exe</code> を実行</li>
-                    <li>初回起動時、使用するWhisperモデルをダウンロード</li>
+                    <li>ダウンロードしたインストーラー（<code>RocketWhisper_Lite_Setup_x.x.x.exe</code> または <code>RocketWhisper_Full_Setup_x.x.x.exe</code>）を実行し、画面の案内に沿ってインストール（.NET 10 Desktop Runtime と Visual C++ ランタイムは、入っていない場合だけ自動でインストールされます）</li>
+                    <li>インストールの完了後、RocketWhisper を起動</li>
+                    <li>Lite版は、初回起動時に使用するWhisperモデルをダウンロード（Full版はモデルを同梱）</li>
                 </ol>
 
                 <div class="info-card">
@@ -1454,9 +1454,21 @@
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <ul>
-                                <li>.NET 8.0 Desktop Runtimeがインストールされているか確認</li>
+                                <li>.NET Desktop Runtime がインストールされているか確認（2.2.0 以降は .NET 10、2.1.2 以前は .NET 8.0。2.2.0 以降のインストーラーは、入っていない場合に自動でインストールします）</li>
                                 <li>Windows 11 64bitであるか確認</li>
                                 <li>アンチウイルスソフトにブロックされていないか確認</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">「Model load error: Failed to load native whisper library」と表示されて認識できない</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>音声認識エンジンに必要な Microsoft Visual C++ ランタイムが入っていないか、古い可能性があります</li>
+                                <li>2.2.0 以降のインストーラーは、必要な場合に Visual C++ ランタイムを自動でインストールします。最新版をインストールし直してください</li>
+                                <li>手動で入れる場合は、Microsoft の<a href="https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist">Visual C++ 再頒布可能パッケージ</a>（X64）をインストールしてから、RocketWhisper を起動し直してください</li>
                             </ul>
                         </div>
                     </div>

@@ -107,7 +107,7 @@
                 <h3>System Requirements</h3>
                 <ul>
                     <li>Windows 11 (64-bit)</li>
-                    <li>.NET 8.0 Desktop Runtime</li>
+                    <li>.NET 10 Desktop Runtime (included in the installer; installed automatically when missing)</li>
                     <li>8GB+ RAM recommended</li>
                     <li>GPU for accelerated processing (Vulkan-capable NVIDIA / AMD / Intel GPU. CUDA acceleration on NVIDIA requires the NVIDIA CUDA Toolkit 13; see Troubleshooting)</li>
                 </ul>
@@ -115,9 +115,9 @@
                 <h3>Installation Steps</h3>
                 <ol>
                     <li>Download the latest version from the <a href="index.html#download">Download page</a></li>
-                    <li>Extract the downloaded ZIP file</li>
-                    <li>Run <code>RocketWhisper.exe</code></li>
-                    <li>On first launch, download the Whisper model you want to use</li>
+                    <li>Run the downloaded installer (<code>RocketWhisper_Lite_Setup_x.x.x.exe</code> or <code>RocketWhisper_Full_Setup_x.x.x.exe</code>) and follow the on-screen instructions (the .NET 10 Desktop Runtime and the Visual C++ runtime are installed automatically only when missing)</li>
+                    <li>Start RocketWhisper after the installation finishes</li>
+                    <li>The Lite edition downloads the Whisper model you choose on first launch (the Full edition includes the model)</li>
                 </ol>
 
                 <div class="info-card">
@@ -1446,9 +1446,21 @@
                     <div class="faq-answer">
                         <div class="faq-answer-content">
                             <ul>
-                                <li>Verify that .NET 8.0 Desktop Runtime is installed</li>
+                                <li>Verify that the .NET Desktop Runtime is installed (.NET 10 for version 2.2.0 or later, .NET 8.0 for version 2.1.2 or earlier; the installer for 2.2.0 or later installs it automatically when missing)</li>
                                 <li>Confirm you are running Windows 11 64-bit</li>
                                 <li>Check if antivirus software is blocking the application</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">"Model load error: Failed to load native whisper library" appears and recognition does not work</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <ul>
+                                <li>The Microsoft Visual C++ runtime that the speech engine needs may be missing or outdated</li>
+                                <li>The installer for version 2.2.0 or later installs the Visual C++ runtime automatically when it is needed. Please reinstall the latest version</li>
+                                <li>To install it manually, install the <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist">Visual C++ Redistributable</a> (X64) from Microsoft, then restart RocketWhisper</li>
                             </ul>
                         </div>
                     </div>

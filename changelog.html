@@ -72,6 +72,13 @@
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.2.0 - 2026年10月29日</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>【不具合修正】一部の PC で「Model load error: Failed to load native whisper library」と表示され、音声認識が使えない問題を修正</strong> — 音声認識エンジンに必要な Microsoft Visual C++ ランタイムが入っていない PC で起きていました。インストーラーが、必要な場合だけ Visual C++ ランタイムをインストールします。それでもランタイムが無い・古い場合は、アプリが案内を表示し、そこから Microsoft のランタイムをダウンロードできます。</li>
+                        <li><strong>【動作環境】.NET 10 に移行</strong> — 実行環境を .NET 8 から、2028年11月までセキュリティ更新が提供される .NET 10（長期サポート版）に移行しました（.NET 8 のサポートは2026年11月10日に終了します）。Lite 版のインストーラーにも .NET 10 Desktop Runtime を同梱し、入っていない場合だけインストールします。</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.2 - 2026年10月26日</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>【不具合修正】ファイル入力やマイクで文字起こしした結果が、アプリを再起動するまで認識履歴に表示されない問題を修正</strong></li>

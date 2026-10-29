@@ -24,9 +24,9 @@
 
   <Program_Info>
     <Program_Name>RocketWhisper - Offline Voice Typing</Program_Name>
-    <Program_Version>2.1.2</Program_Version>
+    <Program_Version>2.2.0</Program_Version>
     <Program_Release_Month>10</Program_Release_Month>
-    <Program_Release_Day>26</Program_Release_Day>
+    <Program_Release_Day>29</Program_Release_Day>
     <Program_Release_Year>2026</Program_Release_Year>
     <Program_Cost_Dollars>39.99</Program_Cost_Dollars>
     <Program_Cost_Other_Code>JPY</Program_Cost_Other_Code>
@@ -36,14 +36,14 @@
     <Program_Install_Support>Install and Uninstall</Program_Install_Support>
     <Program_OS_Support>Win10,Win11</Program_OS_Support>
     <Program_Language>English,Japanese</Program_Language>
-    <Program_Change_Info>v2.1.2: Fixes new transcriptions (file input or microphone) not appearing in Recognition History until the app was restarted; fixes items removed with Delete or Delete All in Recognition History coming back after the next transcription</Program_Change_Info>
+    <Program_Change_Info>v2.2.0: Fixes "Model load error: Failed to load native whisper library" on PCs without the Microsoft Visual C++ runtime (the installer now installs it when missing); moves to .NET 10 (long-term support) because .NET 8 support ends on November 10, 2026; the Lite installer now also includes the .NET 10 Desktop Runtime</Program_Change_Info>
     <Program_Specific_Category>Speech Recognition</Program_Specific_Category>
     <Program_Category_Class>Audio &amp; Multimedia::Other</Program_Category_Class>
-    <Program_System_Requirements>Windows 10 64-bit (version 1809 or later) or Windows 11, 4GB RAM (8GB recommended for the default large-v3-turbo model), about 200MB disk plus 1.6GB for the default speech model, microphone, .NET 8.0 Desktop Runtime (included in the Full installer)</Program_System_Requirements>
+    <Program_System_Requirements>Windows 10 64-bit (version 1809 or later) or Windows 11, 4GB RAM (8GB recommended for the default large-v3-turbo model), about 200MB disk plus 1.6GB for the default speech model, microphone, .NET 10 Desktop Runtime (included in the Lite and Full installers)</Program_System_Requirements>
     <File_Info>
-      <File_Size_Bytes>269822472</File_Size_Bytes>
-      <File_Size_K>263498</File_Size_K>
-      <File_Size_MB>257</File_Size_MB>
+      <File_Size_Bytes>347304384</File_Size_Bytes>
+      <File_Size_K>339164</File_Size_K>
+      <File_Size_MB>331</File_Size_MB>
     </File_Info>
     <Expire_Info>
       <Has_Expire_Info>Y</Has_Expire_Info>
@@ -102,8 +102,8 @@ Pricing: free 7-day trial with all features. Personal license $39.99, Business l
       <Application_XML_File_URL>https://mojosoftjp.github.io/rocketwhisper/pad_file.xml</Application_XML_File_URL>
     </Application_URLs>
     <Download_URLs>
-      <Primary_Download_URL>https://mojosoft.biz/RocketWhisper_Lite_Setup_2.1.2.exe</Primary_Download_URL>
-      <Secondary_Download_URL>https://mojosoft.biz/RocketWhisper_Full_Setup_2.1.2.exe</Secondary_Download_URL>
+      <Primary_Download_URL>https://mojosoft.biz/RocketWhisper_Lite_Setup_2.2.0.exe</Primary_Download_URL>
+      <Secondary_Download_URL>https://mojosoft.biz/RocketWhisper_Full_Setup_2.2.0.exe</Secondary_Download_URL>
     </Download_URLs>
   </Web_Info>
 </XML_DIZ_INFO>

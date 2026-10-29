@@ -72,6 +72,13 @@
         <div class="container">
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.2.0 - October 29, 2026</h3>
+                    <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                        <li><strong>[Fix] On some PCs, "Model load error: Failed to load native whisper library" appeared and speech recognition could not be used</strong> — This happened on PCs without the Microsoft Visual C++ runtime that the speech engine needs. The installer now installs the Visual C++ runtime only when it is needed. If the runtime is still missing or outdated, RocketWhisper shows a notice from which you can download it from Microsoft.</li>
+                        <li><strong>[Runtime] Moved to .NET 10</strong> — RocketWhisper now runs on .NET 10 (long-term support, with security updates until November 2028) instead of .NET 8, whose support ends on November 10, 2026. The Lite installer now also includes the .NET 10 Desktop Runtime and installs it only when it is missing.</li>
+                    </ul>
+                </div>
+                <div class="target-card fade-in" style="margin-bottom: 1.5rem;">
                     <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">v2.1.2 - October 26, 2026</h3>
                     <ul style="line-height: 1.8; padding-left: 1.2rem;">
                         <li><strong>[Fix] New transcriptions (file input or microphone) did not appear in Recognition History until the app was restarted</strong></li>
