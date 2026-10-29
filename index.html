@@ -54,6 +54,9 @@
       "operatingSystem": "Windows 10, Windows 11",
       "applicationCategory": "UtilitiesApplication",
       "inLanguage": "ja",
+      "sameAs": [
+        "https://apps.microsoft.com/detail/9PGN15N4M8XZ"
+      ],
       "publisher": {
         "@type": "Organization",
         "@id": "https://mojosoft.biz/#organization",
@@ -1029,6 +1032,20 @@
                         </a>
                     </div>
                 </div>
+            </div>
+
+            <!-- Microsoft Store 版（無料・機能限定。Pro は Store のアドオン） -->
+            <div class="target-card fade-in" style="max-width: 900px; margin: 1.5rem auto 0;">
+                <h3 style="color: #4A90D9; margin-bottom: 0.5rem;">Microsoft Store 版（無料・機能限定）</h3>
+                <p style="line-height: 1.8;">Microsoft Store からも入手できます。音声認識モデルと .NET を同梱しているので、インストールしてすぐに使えます。音声入力・文字起こしの基本機能は<strong>無料・期限なし</strong>で使え、AI 処理などは Store のアドオン「RocketWhisper Pro」（買い切り）で追加できます。</p>
+                <p style="margin: 0.75rem 0;">
+                    <a href="https://apps.microsoft.com/detail/9PGN15N4M8XZ?cid=web-download" class="download-btn primary" style="display: inline-flex;">Microsoft Store で入手</a>
+                </p>
+                <ul style="line-height: 1.8; padding-left: 1.2rem;">
+                    <li><strong>無料で使える機能:</strong> 音声認識（large-v3-turbo モデル同梱）、右 Alt を押しながら話してどのアプリにも入力、自動貼り付け、音声・動画ファイルの文字起こし、句読点・自動改行・音声コマンド、誤認識の修正ルール、専門用語、認識履歴</li>
+                    <li><strong>RocketWhisper Pro で使える機能:</strong> AI 処理（ご自身の API キーまたはローカル LLM）、AI コマンド、カスタム指示、音声検索、音声ランチャー、アプリ別の処理モード、まとめての文字起こし、字幕（SRT/VTT）の書き出し</li>
+                    <li><strong>DL 版との違い:</strong> 購入は Microsoft Store の決済で、DL 版のライセンスキーは使えません（DL 版と Store 版は別々の購入です）。GPU 加速は Vulkan のみで、CUDA と CUDA ランタイムパックは使えません。</li>
+                </ul>
             </div>
 
             <!-- CUDA ランタイムパック（NVIDIA GPU 向け・任意） -->
